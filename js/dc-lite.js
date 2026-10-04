@@ -58,11 +58,13 @@
           if (isFor) { sc = Object.create(s); sc[as] = list[i]; }
           if (!insts[i]) {
             var inst = instantiate(frag);
+            inst.update(sc); // заполнить src/текст до вставки в страницу
             var last = i ? insts[i - 1].nodes[insts[i - 1].nodes.length - 1] : anchor;
             last.parentNode.insertBefore(inst.frag, last.nextSibling);
             insts[i] = inst;
+          } else {
+            insts[i].update(sc);
           }
-          insts[i].update(sc);
         }
       });
       return;

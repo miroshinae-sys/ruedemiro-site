@@ -16,7 +16,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F6F4F0">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "RUE DE MIRÓ", "url": "https://ruedemiro.com/", "logo": "https://ruedemiro.com/img/logo.svg", "email": "salut@ruedemiro.com", "sameAs": ["https://t.me/ruedemiro", "https://ru.pinterest.com/RUEDEMIRO/"]}</script>
-<link rel="icon" type="image/png" href="/img/mirror-mark.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <style>sc-if,sc-for{display:none}html,body{overflow-x:clip}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&amp;family=Forum&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap">
@@ -59,6 +61,8 @@ h2{font-size:30px !important}
 .g2m{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
 }
 /*MOBILE2*/
+.qz [style*="background: #FFFFFF"]{background:#FFFFDC !important}
+.qz .qopt:hover{background:#F7F3C4 !important}
 .qz{background:#1B1A19 !important;color:#FFFFFF}
 .qz .qz-head div,.qz .qz-head p{color:#D6D2CB !important}
 .qz .qz-head h1,.qz .qz-head h2{color:#FFFFFF}
@@ -170,7 +174,7 @@ h2{font-size:26px !important}
 <sc-if value="{{qDone}}" hint-placeholder-val="{{false}}">
 <div style="display: flex; flex-direction: column; gap: 16px">
 <div class="g" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); background: #FFFFFF; border: 1px solid #D6D2CB">
-<div class="qz-img" style="grid-column: span 5; min-height: 420px; overflow: hidden; background: {{res.color}}"><img loading="lazy" decoding="async" data-dc-src="{{res.img}}" alt="Масло {{res.name}}" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div class="qz-img" style="grid-column: span 5; min-height: 420px; overflow: hidden; background: {{res.color}}"><img data-dc-src="{{res.img}}" alt="Масло {{res.name}}" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
 <div class="qz-body" style="grid-column: span 7; padding: 40px; display: flex; flex-direction: column; gap: 16px">
 <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Ваша основная формула</div>
 <div class="qz-name" style="font-family: 'Forum', Georgia, serif; font-size: 44px; letter-spacing: 0.08em">{{res.name}}</div>
@@ -185,7 +189,7 @@ h2{font-size:26px !important}
 </div>
 </div>
 <div class="qz-add" style="display: flex; align-items: center; gap: 24px; padding: 24px; background: #FFFFFF; border: 1px solid #D6D2CB">
-<div style="width: 96px; height: 120px; flex-shrink: 0; overflow: hidden; background: {{add.color}}"><img loading="lazy" decoding="async" data-dc-src="{{add.img}}" alt="Масло {{add.name}}" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div style="width: 96px; height: 120px; flex-shrink: 0; overflow: hidden; background: {{add.color}}"><img data-dc-src="{{add.img}}" alt="Масло {{add.name}}" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
 <div style="display: flex; flex-direction: column; gap: 8px; flex-grow: 1">
 <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Дополнительно</div>
 <div style="font-family: 'Forum', Georgia, serif; font-size: 26px; letter-spacing: 0.08em">{{add.name}}</div>
@@ -220,7 +224,7 @@ h2{font-size:26px !important}
 
 <sc-if value="{{hasResult}}" hint-placeholder-val="{{false}}">
 <div class="g" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 0; background: #FFFFFF; border: 1px solid #D6D2CB">
-<div class="qz-img" style="grid-column: span 5; min-height: 420px; overflow: hidden; background: {{result.color}}"><img loading="lazy" decoding="async" data-dc-src="{{result.img}}" alt="{{result.alt}}" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div class="qz-img" style="grid-column: span 5; min-height: 420px; overflow: hidden; background: {{result.color}}"><img data-dc-src="{{result.img}}" alt="{{result.alt}}" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
 <div class="qz-body" style="grid-column: span 7; padding: 48px; display: flex; flex-direction: column; gap: 20px">
 <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Ваша формула</div>
 <div style="font-family: 'Forum', Georgia, serif; font-size: 48px; letter-spacing: 0.08em">{{result.name}}</div>
@@ -274,8 +278,8 @@ renderVals() {
 var F = [
 { id: 'core', href: '/core', state: 'Сухость и стянутость', hint: 'После душа тянет, локти и колени шершавые', name: 'CORE', tagline: 'Восстановление и комфорт', color: '#EFEBE0', img: '/img/core.jpeg', zones: 'голени · руки · локти · колени', inci: 'Squalane, Almond oil, Cholesterol', text: 'Поддерживает защитный барьер. Кожа ощущается мягче, без жирной плёнки.' },
 { id: 'recharge', href: '/recharge', state: 'Потеря тонуса и гладкости', hint: 'Хочется, чтобы кожа ощущалась плотнее', name: 'RECHARGE', tagline: 'Тонус и эластичность', color: '#EDC6CC', img: '/img/recharge.jpg', zones: 'бёдра · ягодицы · живот · грудь · руки', inci: 'Amaranth, Ginger, Soybean oil', text: 'Питает и дарит ощущение тонуса. Визуально кожа выглядит более гладкой.' },
-{ id: 'escape', href: '/escape', state: 'Неровная текстура', hint: 'Несовершенства на спине и плечах', name: 'ESCAPE', tagline: 'Баланс и ровная текстура', color: '#DCCFC1', img: '/img/escape.jpg', zones: 'спина · плечи · руки · декольте', inci: 'Neem oil, Willow bark, Witch hazel', text: 'Помогает коже прийти в баланс. Текстура визуально ровнее.' },
-{ id: 'weightless', href: '/weightless', state: 'Тяжесть и напряжение', hint: 'Ноги устали, плечи зажаты', name: 'WEIGHTLESS', tagline: 'Расслабление и лёгкость', color: '#E4E0DA', img: '/img/weightless.jpg', zones: 'икры · ступни · трапеция', inci: 'Almond oil, Menthyl lactate, Cornflower', text: 'Лёгкое охлаждение и ощущение лёгкости. Хорошо вечером, после долгого дня.' },
+{ id: 'escape', href: '/escape', state: 'Неровная текстура', hint: 'Хочется обновления и гладкости', name: 'ESCAPE', tagline: 'Баланс и ровная текстура', color: '#DCCFC1', img: '/img/escape.jpg', zones: 'спина · плечи · руки · декольте', inci: 'Neem oil, Willow bark, Witch hazel', text: 'Помогает коже прийти в баланс. Текстура визуально ровнее.' },
+{ id: 'weightless', href: '/weightless', state: 'Лёгкость и прохлада', hint: 'Хочется лёгкости и прохлады после долгого дня', name: 'WEIGHTLESS', tagline: 'Расслабление и лёгкость', color: '#E4E0DA', img: '/img/weightless.jpg', zones: 'икры · ступни · трапеция', inci: 'Almond oil, Menthyl lactate, Cornflower', text: 'Лёгкое охлаждение и ощущение лёгкости. Хорошо вечером, после долгого дня.' },
 { id: 'balance', href: '/balance', state: 'Тусклый и неровный вид', hint: 'Хочется сияния и ровного тона', name: 'BALANCE', tagline: 'Ровный тон и сатиновый финиш', color: '#EEDC8C', img: '/img/balance.jpg', zones: 'руки · плечи · декольте · ноги', inci: 'Celery extract, Pearl powder', text: 'Экстракт сельдерея и жемчужная пудра визуально выравнивают тон и дают мягкое сияние с сатиновым финишем.' }
 ];
 var self = this;
@@ -283,7 +287,7 @@ var st = this.state || {};
 var FM = {
 core: { href: '/core', name: 'CORE', tagline: 'Восстановление и комфорт', zones: 'голени · руки · локти · колени', img: '/img/core-1.jpg', color: '#EFEBE0', why: 'Ваша кожа просит комфорта: сквалан, миндальное масло и холестерин поддерживают защитный барьер и снимают ощущение стянутости.', use: 'на локти, колени и голени, где кожа суше всего' },
 recharge: { href: '/recharge', name: 'RECHARGE', tagline: 'Тонус и эластичность', zones: 'бёдра · ягодицы · живот · грудь · руки', img: '/img/recharge-1.jpg', color: '#EDC6CC', why: 'Вам важны упругость и тонус: амарант, имбирь и соевое масло питают кожу, и она визуально выглядит более гладкой.', use: 'на бёдра и живот, чтобы добавить ощущение тонуса' },
-escape: { href: '/escape', name: 'ESCAPE', tagline: 'Баланс и ровная текстура', zones: 'спина · плечи · руки · декольте', img: '/img/escape-1.jpg', color: '#DCCFC1', why: 'Коже нужен баланс: масло нима, кора ивы и гамамелис помогают ей выглядеть ровнее и чище.', use: 'на спину и плечи, где появляются несовершенства' },
+escape: { href: '/escape', name: 'ESCAPE', tagline: 'Баланс и ровная текстура', zones: 'спина · плечи · руки · декольте', img: '/img/escape-1.jpg', color: '#DCCFC1', why: 'Коже нужен баланс: масло нима, кора ивы и гамамелис помогают ей выглядеть ровнее и чище.', use: 'на спину и плечи, чтобы кожа выглядела ровнее' },
 weightless: { href: '/weightless', name: 'WEIGHTLESS', tagline: 'Расслабление и лёгкость', zones: 'икры · ступни · трапеция', img: '/img/weightless-1.jpg', color: '#E4E0DA', why: 'Телу не хватает лёгкости: ментил лактат дарит мягкую прохладу, миндальное масло смягчает кожу, а экстракт василька её успокаивает.', use: 'на икры и ступни вечером, когда ноги устали' },
 balance: { href: '/balance', name: 'BALANCE', tagline: 'Ровный тон и сатиновый финиш', zones: 'руки · плечи · декольте · ноги', img: '/img/balance-1.jpg', color: '#EEDC8C', why: 'Коже не хватает сияния: экстракт сельдерея и жемчужная пудра визуально выравнивают тон и дают мягкое сияние с сатиновым финишем.', use: 'на руки, плечи и декольте — для мягкого сияния и ровного тона' }
 };
@@ -291,8 +295,8 @@ var Q = [
 { t: 'Что сейчас больше всего беспокоит кожу тела?', o: [
 { t: 'Сухость и стянутость после душа', s: { core: 3 } },
 { t: 'Кожа стала менее упругой', s: { recharge: 3 } },
-{ t: 'Неровная текстура, несовершенства', s: { escape: 3 } },
-{ t: 'Тяжесть и напряжение, особенно в ногах', s: { weightless: 3 } },
+{ t: 'Неровная текстура, хочется обновления', s: { escape: 3 } },
+{ t: 'Хочется лёгкости и прохлады', s: { weightless: 3 } },
 { t: 'Тусклый, неровный тон', s: { balance: 3 } }
 ] },
 { t: 'Какой зоне хочется уделить больше внимания?', o: [
