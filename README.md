@@ -14,7 +14,7 @@
 | `quiz.html`, `about-us.html`, `where-to-buy.html`, `collab.html` | Остальные разделы |
 | `js/dc-lite.js` | Маленький рантайм интерактивности страниц (`{{ … }}`, `sc-if`, `sc-for`) |
 | `img/`, `vid/` | Фотографии, логотип, видео текстуры |
-| `robots.txt`, `sitemap.xml` | Для поисковиков. В sitemap адреса без `.html` (`/core`) — их обслуживает правило в `.htaccess` на сервере |
+| `robots.txt`, `sitemap.xml` | Для поисковиков. Страницы ссылаются на чистые адреса (`/core`, не `core.html`), как и sitemap — их обслуживает правило в `.htaccess` на сервере; адреса с `.html` получают 301 на чистые |
 | `.nojekyll` | Остался от GitHub Pages (сейчас выключен): На хостинг не заливается |
 | `.github/workflows/deploy.yml` | Автодеплой на хостинг nic.ru |
 | `.github/known_hosts` | Ключ SSH-сервера хостинга (проверяется при деплое) |

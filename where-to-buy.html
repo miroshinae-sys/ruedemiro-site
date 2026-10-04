@@ -9,7 +9,7 @@
 <meta property="og:description" content="Где купить сухие масла для тела RUE DE MIRÓ.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://ruedemiro.com/img/hero-blur.jpg">
-<link rel="icon" type="image/png" href="img/mirror-mark.png">
+<link rel="icon" type="image/png" href="/img/mirror-mark.png">
 <style>sc-if,sc-for{display:none}html,body{overflow-x:clip}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&amp;family=Forum&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap">
@@ -50,6 +50,54 @@ h2{font-size:30px !important}
 [style*="repeat(4, minmax(0, 1fr))"]{grid-template-columns:repeat(1,minmax(0,1fr)) !important}
 .g2m{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
 }
+/*MOBILE2*/
+.qz{background:#1B1A19 !important;color:#FFFFFF}
+.qz .qz-head div,.qz .qz-head p{color:#D6D2CB !important}
+.qz .qz-head h1,.qz .qz-head h2{color:#FFFFFF}
+.qz .qstrip div{color:#FFFFFF}
+.qz .qz-note{color:#D6D2CB !important}
+.qz .qz-reset{color:#FFFFFF !important}
+.qz .qz-card,.qz .qz-body,.qz .qz-add{color:#1B1A19}
+.qz .qz-add a{color:#1B1A19}
+@media (max-width:900px){
+.mnav nav{padding:4px 20px 16px !important;max-height:calc(100svh - 76px);overflow:auto}
+.mnav nav a{min-height:44px !important;font-size:12px !important}
+.mnav nav a.btn{margin-top:12px !important}
+.py{padding-top:48px !important;padding-bottom:48px !important}
+.hero{display:flex !important;flex-direction:column;min-height:0 !important}
+.hero-img{order:-1;min-height:0 !important;height:56svh}
+.hero-img img{object-position:50% 80% !important}
+.hero-txt{padding:24px 20px 40px !important;gap:16px !important}
+.hero-lbl,.hero-lede{display:none !important}
+.ahero{min-height:72svh !important}
+.qz{padding:44px 0 !important}
+.qz>div{gap:20px !important}
+.qz-head{gap:8px !important}
+.qz-head p{display:none !important}
+.qz-head h1,.qz-head h2{font-size:26px !important}
+.qz-card{padding:20px 16px !important;gap:14px !important}
+.qz-q{font-size:20px !important;line-height:1.25 !important}
+.qopt{min-height:46px !important;padding:10px 4px !important;font-size:14px !important;gap:10px !important}
+.qz-img{min-height:0 !important;height:220px}
+.qz-body{padding:20px 16px !important;gap:10px !important}
+.qz-name{font-size:30px !important}
+.qz-body p{font-size:14px !important}
+.qz-add{flex-direction:row !important;align-items:center !important;padding:12px !important;gap:12px !important}
+.qz-add>div:first-child{width:64px !important;height:80px !important}
+.qz-add p{font-size:13px !important}
+.qz-add>a{display:none}
+.qz-note{font-size:17px !important}
+.opt{min-height:0 !important;padding:16px !important;gap:10px !important}
+}
+@media (max-width:600px){
+h1{font-size:30px !important}
+h2{font-size:26px !important}
+[style*="font-size: 34px"]{font-size:24px !important}
+[style*="font-size: 30px"]{font-size:22px !important}
+[style*="font-size: 28px"]{font-size:22px !important}
+[style*="font-size: 26px"]{font-size:21px !important}
+}
+/*/MOBILE2*/
 </style>
 </head>
 <body>
@@ -59,26 +107,26 @@ h2{font-size:30px !important}
 
 <header style="position: sticky; top: 0; z-index: 10; margin-bottom: -77px; background: {{hdrBg}}; border-bottom: 1px solid {{hdrLine}}; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); transition: background 400ms cubic-bezier(.25,.1,.25,1), border-color 400ms">
 <div class="px" style="max-width: 1280px; margin: 0 auto; padding: 16px 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
-<a href="index.html" aria-label="RUE DE MIRÓ, на главную" style="display: flex; align-items: center; min-height: 44px"><img src="img/logo.svg" alt="RUE DE MIRÓ" style="height: 18px; width: auto; display: block"></a>
+<a href="/" aria-label="RUE DE MIRÓ, на главную" style="display: flex; align-items: center; min-height: 44px"><img src="/img/logo.svg" alt="RUE DE MIRÓ" style="height: 18px; width: auto; display: block"></a>
 <nav class="hide-m" aria-label="Основное меню" style="display: flex; gap: 28px; flex-wrap: wrap; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">
-<a href="assort.html" style="text-decoration: none; padding: 12px 0">Ассортимент</a>
-<a href="quiz.html" style="text-decoration: none; padding: 12px 0">Подбор</a>
-<a href="about-us.html" style="text-decoration: none; padding: 12px 0">О бренде</a>
-<a href="where-to-buy.html" aria-current="page" style="text-decoration: underline; text-underline-offset: 6px; padding: 12px 0">Где купить</a>
-<a href="collab.html" style="text-decoration: none; padding: 12px 0">Сотрудничество</a>
+<a href="/assort" style="text-decoration: none; padding: 12px 0">Ассортимент</a>
+<a href="/quiz" style="text-decoration: none; padding: 12px 0">Подбор</a>
+<a href="/about-us" style="text-decoration: none; padding: 12px 0">О бренде</a>
+<a href="/where-to-buy" aria-current="page" style="text-decoration: underline; text-underline-offset: 6px; padding: 12px 0">Где купить</a>
+<a href="/collab" style="text-decoration: none; padding: 12px 0">Сотрудничество</a>
 </nav>
 <details class="mnav">
 <summary aria-label="Открыть меню" style="display: flex; align-items: center; min-height: 44px; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">Меню</summary>
 <nav aria-label="Мобильное меню" style="position: absolute; left: 0; right: 0; top: 100%; display: flex; flex-direction: column; padding: 8px 20px 24px; background: #F6F4F0; border-bottom: 1px solid #D6D2CB; font-size: 13px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">
-<a href="assort.html" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Ассортимент</a>
-<a href="quiz.html" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Подбор формулы</a>
-<a href="about-us.html" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">О бренде</a>
-<a href="where-to-buy.html" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Где купить</a>
-<a href="collab.html" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Сотрудничество</a>
-<a href="quiz.html" class="btn" style="display: flex; align-items: center; justify-content: center; min-height: 52px; margin-top: 20px; background: #1B1A19; color: #FFFFFF; text-decoration: none">Подобрать формулу</a>
+<a href="/assort" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Ассортимент</a>
+<a href="/quiz" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Подбор формулы</a>
+<a href="/about-us" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">О бренде</a>
+<a href="/where-to-buy" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Где купить</a>
+<a href="/collab" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Сотрудничество</a>
+<a href="/quiz" class="btn" style="display: flex; align-items: center; justify-content: center; min-height: 52px; margin-top: 20px; background: #1B1A19; color: #FFFFFF; text-decoration: none">Подобрать формулу</a>
 </nav>
 </details>
-<a href="quiz.html" class="btn hide-m" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 24px; background: #1B1A19; color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">Подобрать формулу</a>
+<a href="/quiz" class="btn hide-m" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 24px; background: #1B1A19; color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">Подобрать формулу</a>
 </div>
 </header>
 
@@ -94,23 +142,23 @@ h2{font-size:30px !important}
 <div class="px" style="max-width: 1280px; margin: 0 auto; padding: 0 40px">
 <ul style="margin: 0; padding: 0; list-style: none; border-top: 1px solid #1B1A19">
 <li><a href="https://goldapple.ru/brands/rue-de-miro" target="_blank" rel="noopener" class="row col-m" style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 32px 16px; border-bottom: 1px solid #D6D2CB; text-decoration: none">
-<span style="display: flex; align-items: center; gap: 28px"><span class="shoplogo" style="width: 120px; height: 44px; flex-shrink: 0; display: flex; align-items: center"><img src="img/shops/goldapple.png" alt="" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block"></span><span class="shopname" style="font-family: 'Forum', Georgia, serif; font-size: 34px; letter-spacing: 0.04em">Золотое яблоко</span></span>
+<span style="display: flex; align-items: center; gap: 28px"><span class="shoplogo" style="width: 120px; height: 44px; flex-shrink: 0; display: flex; align-items: center"><img src="/img/shops/goldapple.png" alt="" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block"></span><span class="shopname" style="font-family: 'Forum', Georgia, serif; font-size: 34px; letter-spacing: 0.04em">Золотое яблоко</span></span>
 <span style="display: flex; gap: 40px; align-items: center"><span style="font-size: 14px; color: #4A4846">Онлайн и магазины</span><span style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">Перейти →</span></span>
 </a></li>
 <li><a href="https://ozon.ru/s/rue-de-miro" target="_blank" rel="noopener" class="row col-m" style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 32px 16px; border-bottom: 1px solid #D6D2CB; text-decoration: none">
-<span style="display: flex; align-items: center; gap: 28px"><span class="shoplogo" style="width: 120px; height: 44px; flex-shrink: 0; display: flex; align-items: center"><img src="img/shops/ozon-select.png" alt="" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block"></span><span class="shopname" style="font-family: 'Forum', Georgia, serif; font-size: 34px; letter-spacing: 0.04em">Ozon</span></span>
+<span style="display: flex; align-items: center; gap: 28px"><span class="shoplogo" style="width: 120px; height: 44px; flex-shrink: 0; display: flex; align-items: center"><img src="/img/shops/ozon-select.png" alt="" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block"></span><span class="shopname" style="font-family: 'Forum', Georgia, serif; font-size: 34px; letter-spacing: 0.04em">Ozon</span></span>
 <span style="display: flex; gap: 40px; align-items: center"><span style="font-size: 14px; color: #4A4846">Маркетплейс</span><span style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">Перейти →</span></span>
 </a></li>
 <li><a href="https://market.yandex.ru/cc/96wC5R" target="_blank" rel="noopener" class="row col-m" style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 32px 16px; border-bottom: 1px solid #D6D2CB; text-decoration: none">
-<span style="display: flex; align-items: center; gap: 28px"><span class="shoplogo" style="width: 120px; height: 44px; flex-shrink: 0; display: flex; align-items: center"><img src="img/shops/yandex-market.png" alt="" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block"></span><span class="shopname" style="font-family: 'Forum', Georgia, serif; font-size: 34px; letter-spacing: 0.04em">Яндекс Маркет</span></span>
+<span style="display: flex; align-items: center; gap: 28px"><span class="shoplogo" style="width: 120px; height: 44px; flex-shrink: 0; display: flex; align-items: center"><img src="/img/shops/yandex-market.png" alt="" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block"></span><span class="shopname" style="font-family: 'Forum', Georgia, serif; font-size: 34px; letter-spacing: 0.04em">Яндекс Маркет</span></span>
 <span style="display: flex; gap: 40px; align-items: center"><span style="font-size: 14px; color: #4A4846">Маркетплейс</span><span style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">Перейти →</span></span>
 </a></li>
 <li><a href="https://liostore.com/ryu-de-mir%C3%B3" target="_blank" rel="noopener" class="row col-m" style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 32px 16px; border-bottom: 1px solid #D6D2CB; text-decoration: none">
-<span style="display: flex; align-items: center; gap: 28px"><span class="shoplogo" style="width: 120px; height: 44px; flex-shrink: 0; display: flex; align-items: center"><img src="img/shops/lio.png" alt="" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block"></span><span class="shopname" style="font-family: 'Forum', Georgia, serif; font-size: 34px; letter-spacing: 0.04em">LIO store</span></span>
+<span style="display: flex; align-items: center; gap: 28px"><span class="shoplogo" style="width: 120px; height: 44px; flex-shrink: 0; display: flex; align-items: center"><img src="/img/shops/lio.png" alt="" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block"></span><span class="shopname" style="font-family: 'Forum', Georgia, serif; font-size: 34px; letter-spacing: 0.04em">LIO store</span></span>
 <span style="display: flex; gap: 40px; align-items: center"><span style="font-size: 14px; color: #4A4846">Онлайн-магазин</span><span style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">Перейти →</span></span>
 </a></li>
 <li><div class="col-m" style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 32px 16px; border-bottom: 1px solid #D6D2CB; text-decoration: none">
-<span style="display: flex; align-items: center; gap: 28px"><span class="shoplogo" style="width: 120px; height: 44px; flex-shrink: 0; display: flex; align-items: center"><img src="img/shops/moodra.png" alt="" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block"></span><span class="shopname" style="font-family: 'Forum', Georgia, serif; font-size: 34px; letter-spacing: 0.04em">MOODRĀ SHOP</span></span>
+<span style="display: flex; align-items: center; gap: 28px"><span class="shoplogo" style="width: 120px; height: 44px; flex-shrink: 0; display: flex; align-items: center"><img src="/img/shops/moodra.png" alt="" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block"></span><span class="shopname" style="font-family: 'Forum', Georgia, serif; font-size: 34px; letter-spacing: 0.04em">MOODRĀ SHOP</span></span>
 <span style="display: flex; gap: 40px; align-items: center"><span style="font-size: 14px; color: #4A4846">Концептуальный магазин</span></span>
 </div></li>
 </ul>
@@ -136,7 +184,7 @@ h2{font-size:30px !important}
 <section class="py" style="padding: 96px 0">
 <div class="px col-m" style="max-width: 1280px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; gap: 32px">
 <p style="margin: 0; max-width: 640px; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 26px; line-height: 1.3">Хотите видеть RUE DE MIRÓ в своём магазине или салоне?</p>
-<a href="collab.html" class="btn" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 32px; background: #1B1A19; color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">Сотрудничество</a>
+<a href="/collab" class="btn" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 32px; background: #1B1A19; color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">Сотрудничество</a>
 </div>
 </section>
 
@@ -144,19 +192,19 @@ h2{font-size:30px !important}
 <div class="px" style="max-width: 1280px; margin: 0 auto; padding: 72px 40px 40px; display: flex; flex-direction: column; gap: 56px">
 <div class="g" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px">
 <div style="display: flex; flex-direction: column; gap: 16px">
-<img src="img/logo.svg" alt="RUE DE MIRÓ" style="height: 24px; width: auto; align-self: flex-start">
+<img src="/img/logo.svg" alt="RUE DE MIRÓ" style="height: 24px; width: auto; align-self: flex-start">
 <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 22px">Кожа отражает</div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px">
 <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Уход</div>
-<a href="assort.html" style="text-decoration: none">Ассортимент</a>
-<a href="quiz.html" style="text-decoration: none">Подбор формулы</a>
-<a href="where-to-buy.html" style="text-decoration: none">Где купить</a>
+<a href="/assort" style="text-decoration: none">Ассортимент</a>
+<a href="/quiz" style="text-decoration: none">Подбор формулы</a>
+<a href="/where-to-buy" style="text-decoration: none">Где купить</a>
 </div>
 <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px">
 <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Бренд</div>
-<a href="about-us.html" style="text-decoration: none">О бренде</a>
-<a href="collab.html" style="text-decoration: none">Сотрудничество</a>
+<a href="/about-us" style="text-decoration: none">О бренде</a>
+<a href="/collab" style="text-decoration: none">Сотрудничество</a>
 </div>
 <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px">
 <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Связь</div>
@@ -167,7 +215,7 @@ h2{font-size:30px !important}
 </div>
 <div class="col-m" style="display: flex; justify-content: space-between; gap: 16px; padding-top: 24px; border-top: 1px solid #D6D2CB; font-size: 12px; color: #4A4846">
 <span>© 2026 RUE DE MIRÓ · ИП Мирошина Е. В.</span>
-<span style="display: flex; gap: 24px"><a href="privacy.html" style="color: #4A4846">Политика конфиденциальности</a><a href="terms.html" style="color: #4A4846">Условия покупки</a></span>
+<span style="display: flex; gap: 24px"><a href="/privacy" style="color: #4A4846">Политика конфиденциальности</a><a href="/terms" style="color: #4A4846">Условия покупки</a></span>
 </div>
 </div>
 </footer>
@@ -189,9 +237,9 @@ return { hdrBg: (this.state && this.state.scrolled) ? '#F6F4F0' : 'rgba(246, 244
 }
 }
 </script>
-<script src="js/dc-lite.js"></script>
+<script src="/js/dc-lite.js"></script>
 <div id="ck" role="dialog" aria-live="polite" aria-label="Cookie" hidden style="position:fixed;left:16px;right:16px;bottom:16px;z-index:50;max-width:560px;margin:0 auto;background:#F6F4F0;border:1px solid #1B1A19;padding:20px 24px;display:none;flex-direction:column;gap:16px;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-weight:300;font-size:14px;line-height:1.6;color:#1B1A19">
-<p style="margin:0">Мы&nbsp;используем cookie и&nbsp;Яндекс Метрику с&nbsp;Вебвизором, чтобы понимать, как&nbsp;работает сайт. Подробнее&nbsp;— в&nbsp;<a href="privacy.html" style="color:#1B1A19;text-underline-offset:3px">политике конфиденциальности</a>.</p>
+<p style="margin:0">Мы&nbsp;используем cookie и&nbsp;Яндекс Метрику с&nbsp;Вебвизором, чтобы понимать, как&nbsp;работает сайт. Подробнее&nbsp;— в&nbsp;<a href="/privacy" style="color:#1B1A19;text-underline-offset:3px">политике конфиденциальности</a>.</p>
 <div style="display:flex;gap:12px;flex-wrap:wrap">
 <button type="button" id="ck-yes" class="btn" style="min-height:44px;padding:0 24px;background:#1B1A19;color:#fff;border:0;font:inherit;font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;cursor:pointer">Принять</button>
 <button type="button" id="ck-no" class="btn-o" style="min-height:44px;padding:0 24px;background:transparent;color:#1B1A19;border:1px solid #1B1A19;font:inherit;font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;cursor:pointer">Только необходимые</button>
@@ -220,7 +268,7 @@ return { hdrBg: (this.state && this.state.scrolled) ? '#F6F4F0' : 'rgba(246, 244
   };
   var v=get(); if(v==='yes'){hide();metrika()} else if(v!=='no')show(); else hide();
   // ссылка «Настройки cookie» в подвале
-  document.querySelectorAll('a[href="privacy.html"]').forEach(function(a){
+  document.querySelectorAll('a[href="/privacy"]').forEach(function(a){
     if(!a.closest('footer'))return;
     var s=document.createElement('a');s.href='#';s.textContent='Настройки cookie';s.style.color='#4A4846';
     s.onclick=function(e){e.preventDefault();show()};

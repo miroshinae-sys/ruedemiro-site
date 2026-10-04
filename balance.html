@@ -9,7 +9,7 @@
 <meta property="og:description" content="BALANCE — сухое масло для тела для ровного тона и сатинового финиша. Содержит SPF 20.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://ruedemiro.com/img/hero-blur.jpg">
-<link rel="icon" type="image/png" href="img/mirror-mark.png">
+<link rel="icon" type="image/png" href="/img/mirror-mark.png">
 <style>sc-if,sc-for{display:none}html,body{overflow-x:clip}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&amp;family=Forum&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap">
@@ -55,6 +55,54 @@ h2{font-size:30px !important}
 [style*="repeat(4, minmax(0, 1fr))"]{grid-template-columns:repeat(1,minmax(0,1fr)) !important}
 .g2m{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
 }
+/*MOBILE2*/
+.qz{background:#1B1A19 !important;color:#FFFFFF}
+.qz .qz-head div,.qz .qz-head p{color:#D6D2CB !important}
+.qz .qz-head h1,.qz .qz-head h2{color:#FFFFFF}
+.qz .qstrip div{color:#FFFFFF}
+.qz .qz-note{color:#D6D2CB !important}
+.qz .qz-reset{color:#FFFFFF !important}
+.qz .qz-card,.qz .qz-body,.qz .qz-add{color:#1B1A19}
+.qz .qz-add a{color:#1B1A19}
+@media (max-width:900px){
+.mnav nav{padding:4px 20px 16px !important;max-height:calc(100svh - 76px);overflow:auto}
+.mnav nav a{min-height:44px !important;font-size:12px !important}
+.mnav nav a.btn{margin-top:12px !important}
+.py{padding-top:48px !important;padding-bottom:48px !important}
+.hero{display:flex !important;flex-direction:column;min-height:0 !important}
+.hero-img{order:-1;min-height:0 !important;height:56svh}
+.hero-img img{object-position:50% 80% !important}
+.hero-txt{padding:24px 20px 40px !important;gap:16px !important}
+.hero-lbl,.hero-lede{display:none !important}
+.ahero{min-height:72svh !important}
+.qz{padding:44px 0 !important}
+.qz>div{gap:20px !important}
+.qz-head{gap:8px !important}
+.qz-head p{display:none !important}
+.qz-head h1,.qz-head h2{font-size:26px !important}
+.qz-card{padding:20px 16px !important;gap:14px !important}
+.qz-q{font-size:20px !important;line-height:1.25 !important}
+.qopt{min-height:46px !important;padding:10px 4px !important;font-size:14px !important;gap:10px !important}
+.qz-img{min-height:0 !important;height:220px}
+.qz-body{padding:20px 16px !important;gap:10px !important}
+.qz-name{font-size:30px !important}
+.qz-body p{font-size:14px !important}
+.qz-add{flex-direction:row !important;align-items:center !important;padding:12px !important;gap:12px !important}
+.qz-add>div:first-child{width:64px !important;height:80px !important}
+.qz-add p{font-size:13px !important}
+.qz-add>a{display:none}
+.qz-note{font-size:17px !important}
+.opt{min-height:0 !important;padding:16px !important;gap:10px !important}
+}
+@media (max-width:600px){
+h1{font-size:30px !important}
+h2{font-size:26px !important}
+[style*="font-size: 34px"]{font-size:24px !important}
+[style*="font-size: 30px"]{font-size:22px !important}
+[style*="font-size: 28px"]{font-size:22px !important}
+[style*="font-size: 26px"]{font-size:21px !important}
+}
+/*/MOBILE2*/
 </style>
 </head>
 <body>
@@ -64,39 +112,39 @@ h2{font-size:30px !important}
 
 <header style="position: sticky; top: 0; z-index: 10; margin-bottom: -77px; background: {{hdrBg}}; border-bottom: 1px solid {{hdrLine}}; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); transition: background 400ms cubic-bezier(.25,.1,.25,1), border-color 400ms">
 <div class="px" style="max-width: 1280px; margin: 0 auto; padding: 16px 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
-<a href="index.html" aria-label="RUE DE MIRÓ, на главную" style="display: flex; align-items: center; min-height: 44px"><img src="img/logo.svg" alt="RUE DE MIRÓ" style="height: 18px; width: auto; display: block"></a>
+<a href="/" aria-label="RUE DE MIRÓ, на главную" style="display: flex; align-items: center; min-height: 44px"><img src="/img/logo.svg" alt="RUE DE MIRÓ" style="height: 18px; width: auto; display: block"></a>
 <nav class="hide-m" aria-label="Основное меню" style="display: flex; gap: 28px; flex-wrap: wrap; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">
-<a href="assort.html" aria-current="page" style="text-decoration: underline; text-underline-offset: 6px; padding: 12px 0">Ассортимент</a>
-<a href="quiz.html" style="text-decoration: none; padding: 12px 0">Подбор</a>
-<a href="about-us.html" style="text-decoration: none; padding: 12px 0">О бренде</a>
-<a href="where-to-buy.html" style="text-decoration: none; padding: 12px 0">Где купить</a>
-<a href="collab.html" style="text-decoration: none; padding: 12px 0">Сотрудничество</a>
+<a href="/assort" aria-current="page" style="text-decoration: underline; text-underline-offset: 6px; padding: 12px 0">Ассортимент</a>
+<a href="/quiz" style="text-decoration: none; padding: 12px 0">Подбор</a>
+<a href="/about-us" style="text-decoration: none; padding: 12px 0">О бренде</a>
+<a href="/where-to-buy" style="text-decoration: none; padding: 12px 0">Где купить</a>
+<a href="/collab" style="text-decoration: none; padding: 12px 0">Сотрудничество</a>
 </nav>
 <details class="mnav">
 <summary aria-label="Открыть меню" style="display: flex; align-items: center; min-height: 44px; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">Меню</summary>
 <nav aria-label="Мобильное меню" style="position: absolute; left: 0; right: 0; top: 100%; display: flex; flex-direction: column; padding: 8px 20px 24px; background: #F6F4F0; border-bottom: 1px solid #D6D2CB; font-size: 13px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">
-<a href="assort.html" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Ассортимент</a>
-<a href="quiz.html" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Подбор формулы</a>
-<a href="about-us.html" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">О бренде</a>
-<a href="where-to-buy.html" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Где купить</a>
-<a href="collab.html" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Сотрудничество</a>
-<a href="quiz.html" class="btn" style="display: flex; align-items: center; justify-content: center; min-height: 52px; margin-top: 20px; background: #1B1A19; color: #FFFFFF; text-decoration: none">Подобрать формулу</a>
+<a href="/assort" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Ассортимент</a>
+<a href="/quiz" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Подбор формулы</a>
+<a href="/about-us" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">О бренде</a>
+<a href="/where-to-buy" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Где купить</a>
+<a href="/collab" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Сотрудничество</a>
+<a href="/quiz" class="btn" style="display: flex; align-items: center; justify-content: center; min-height: 52px; margin-top: 20px; background: #1B1A19; color: #FFFFFF; text-decoration: none">Подобрать формулу</a>
 </nav>
 </details>
-<a href="quiz.html" class="btn hide-m" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 24px; background: #1B1A19; color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">Подобрать формулу</a>
+<a href="/quiz" class="btn hide-m" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 24px; background: #1B1A19; color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">Подобрать формулу</a>
 </div>
 </header>
 
 <div class="px" style="max-width: 1280px; margin: 0 auto; padding: 101px 40px 0; font-size: 12px; color: #4A4846">
-<a href="index.html" style="color: #4A4846">Главная</a> · <a href="assort.html" style="color: #4A4846">Ассортимент</a> · BALANCE
+<a href="/" style="color: #4A4846">Главная</a> · <a href="/assort" style="color: #4A4846">Ассортимент</a> · BALANCE
 </div>
 
 <section style="padding: 32px 0 104px">
 <div class="px g" style="max-width: 1280px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 56px; align-items: start">
 <div class="sp" style="grid-column: span 7; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
-<div style="grid-column: span 2; aspect-ratio: 1 / 1; overflow: hidden; background: #ECE8E1"><img src="img/balance-1.jpg" alt="Масло BALANCE" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
-<div style="aspect-ratio: 4 / 5; overflow: hidden; background: #FFFFFF"><img src="img/balance-pack.jpg" alt="Флакон и коробка BALANCE, 100 мл" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
-<div style="aspect-ratio: 4 / 5; overflow: hidden; background: #ECE8E1"><img src="img/balance.jpg" alt="BALANCE на коже" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div style="grid-column: span 2; aspect-ratio: 1 / 1; overflow: hidden; background: #ECE8E1"><img src="/img/balance-1.jpg" alt="Масло BALANCE" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div style="aspect-ratio: 4 / 5; overflow: hidden; background: #FFFFFF"><img src="/img/balance-pack.jpg" alt="Флакон и коробка BALANCE, 100 мл" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div style="aspect-ratio: 4 / 5; overflow: hidden; background: #ECE8E1"><img src="/img/balance.jpg" alt="BALANCE на коже" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
 </div>
 <div class="sp" style="grid-column: span 5; position: sticky; top: 104px; display: flex; flex-direction: column; gap: 24px">
 <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Тусклый и неровный вид</div>
@@ -121,7 +169,7 @@ h2{font-size:30px !important}
 
 <section class="py" style="padding: 104px 0; background: #FFFFFF; border-top: 1px solid #D6D2CB; border-bottom: 1px solid #D6D2CB">
 <div class="px g" style="max-width: 1280px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px; align-items: center">
-<div style="aspect-ratio: 1 / 1; overflow: hidden; background: #ECE8E1"><img src="img/balance-ingredients.jpg" alt="Ключевые компоненты BALANCE" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div style="aspect-ratio: 1 / 1; overflow: hidden; background: #ECE8E1"><img src="/img/balance-ingredients.jpg" alt="Ключевые компоненты BALANCE" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
 <div style="display: flex; flex-direction: column; gap: 32px">
 <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Что внутри</div>
 <h2 style="margin: 0; font-family: 'Forum', Georgia, serif; font-weight: 400; font-size: 40px; line-height: 1.1; letter-spacing: 0.04em; text-transform: uppercase">Celery Extract &amp; Pearl Powder</h2>
@@ -200,26 +248,26 @@ h2{font-size:30px !important}
 <div class="px" style="max-width: 1280px; margin: 0 auto; padding: 0 40px; display: flex; flex-direction: column; gap: 48px">
 <div class="col-m" style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px">
 <h2 style="margin: 0; font-family: 'Forum', Georgia, serif; font-weight: 400; font-size: 40px; line-height: 1.1; letter-spacing: 0.04em; text-transform: uppercase">Другие состояния</h2>
-<a href="assort.html" style="font-size: 14px; font-weight: 500; text-underline-offset: 4px; padding: 12px 0">Весь ассортимент →</a>
+<a href="/assort" style="font-size: 14px; font-weight: 500; text-underline-offset: 4px; padding: 12px 0">Весь ассортимент →</a>
 </div>
 <div class="g2m" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px">
-<a href="core.html" class="card" style="display: flex; flex-direction: column; gap: 12px; text-decoration: none">
-<div style="aspect-ratio: 4 / 5; overflow: hidden; background: #EFEBE0"><img src="img/core-1.jpg" alt="Масло CORE" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<a href="/core" class="card" style="display: flex; flex-direction: column; gap: 12px; text-decoration: none">
+<div style="aspect-ratio: 4 / 5; overflow: hidden; background: #EFEBE0"><img src="/img/core-1.jpg" alt="Масло CORE" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
 <div style="font-family: 'Forum', Georgia, serif; font-size: 22px; letter-spacing: 0.08em">CORE</div>
 <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 18px">Восстановление и комфорт</div>
 </a>
-<a href="recharge.html" class="card" style="display: flex; flex-direction: column; gap: 12px; text-decoration: none">
-<div style="aspect-ratio: 4 / 5; overflow: hidden; background: #EDC6CC"><img src="img/recharge-1.jpg" alt="Масло RECHARGE" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<a href="/recharge" class="card" style="display: flex; flex-direction: column; gap: 12px; text-decoration: none">
+<div style="aspect-ratio: 4 / 5; overflow: hidden; background: #EDC6CC"><img src="/img/recharge-1.jpg" alt="Масло RECHARGE" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
 <div style="font-family: 'Forum', Georgia, serif; font-size: 22px; letter-spacing: 0.08em">RECHARGE</div>
 <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 18px">Тонус и эластичность</div>
 </a>
-<a href="escape.html" class="card" style="display: flex; flex-direction: column; gap: 12px; text-decoration: none">
-<div style="aspect-ratio: 4 / 5; overflow: hidden; background: #DCCFC1"><img src="img/escape-1.jpg" alt="Масло ESCAPE" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<a href="/escape" class="card" style="display: flex; flex-direction: column; gap: 12px; text-decoration: none">
+<div style="aspect-ratio: 4 / 5; overflow: hidden; background: #DCCFC1"><img src="/img/escape-1.jpg" alt="Масло ESCAPE" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
 <div style="font-family: 'Forum', Georgia, serif; font-size: 22px; letter-spacing: 0.08em">ESCAPE</div>
 <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 18px">Баланс и ровная текстура</div>
 </a>
-<a href="weightless.html" class="card" style="display: flex; flex-direction: column; gap: 12px; text-decoration: none">
-<div style="aspect-ratio: 4 / 5; overflow: hidden; background: #E4E0DA"><img src="img/weightless-1.jpg" alt="Масло WEIGHTLESS" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<a href="/weightless" class="card" style="display: flex; flex-direction: column; gap: 12px; text-decoration: none">
+<div style="aspect-ratio: 4 / 5; overflow: hidden; background: #E4E0DA"><img src="/img/weightless-1.jpg" alt="Масло WEIGHTLESS" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
 <div style="font-family: 'Forum', Georgia, serif; font-size: 22px; letter-spacing: 0.08em">WEIGHTLESS</div>
 <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 18px">Расслабление и лёгкость</div>
 </a>
@@ -231,19 +279,19 @@ h2{font-size:30px !important}
 <div class="px" style="max-width: 1280px; margin: 0 auto; padding: 72px 40px 40px; display: flex; flex-direction: column; gap: 56px">
 <div class="g" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px">
 <div style="display: flex; flex-direction: column; gap: 16px">
-<img src="img/logo.svg" alt="RUE DE MIRÓ" style="height: 24px; width: auto; align-self: flex-start">
+<img src="/img/logo.svg" alt="RUE DE MIRÓ" style="height: 24px; width: auto; align-self: flex-start">
 <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 22px">Кожа отражает</div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px">
 <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Уход</div>
-<a href="assort.html" style="text-decoration: none">Ассортимент</a>
-<a href="quiz.html" style="text-decoration: none">Подбор формулы</a>
-<a href="where-to-buy.html" style="text-decoration: none">Где купить</a>
+<a href="/assort" style="text-decoration: none">Ассортимент</a>
+<a href="/quiz" style="text-decoration: none">Подбор формулы</a>
+<a href="/where-to-buy" style="text-decoration: none">Где купить</a>
 </div>
 <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px">
 <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Бренд</div>
-<a href="about-us.html" style="text-decoration: none">О бренде</a>
-<a href="collab.html" style="text-decoration: none">Сотрудничество</a>
+<a href="/about-us" style="text-decoration: none">О бренде</a>
+<a href="/collab" style="text-decoration: none">Сотрудничество</a>
 </div>
 <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px">
 <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Связь</div>
@@ -254,7 +302,7 @@ h2{font-size:30px !important}
 </div>
 <div class="col-m" style="display: flex; justify-content: space-between; gap: 16px; padding-top: 24px; border-top: 1px solid #D6D2CB; font-size: 12px; color: #4A4846">
 <span>© 2026 RUE DE MIRÓ · ИП Мирошина Е. В.</span>
-<span style="display: flex; gap: 24px"><a href="privacy.html" style="color: #4A4846">Политика конфиденциальности</a><a href="terms.html" style="color: #4A4846">Условия покупки</a></span>
+<span style="display: flex; gap: 24px"><a href="/privacy" style="color: #4A4846">Политика конфиденциальности</a><a href="/terms" style="color: #4A4846">Условия покупки</a></span>
 </div>
 </div>
 </footer>
@@ -276,9 +324,9 @@ return { hdrBg: (this.state && this.state.scrolled) ? '#F6F4F0' : 'rgba(246, 244
 }
 }
 </script>
-<script src="js/dc-lite.js"></script>
+<script src="/js/dc-lite.js"></script>
 <div id="ck" role="dialog" aria-live="polite" aria-label="Cookie" hidden style="position:fixed;left:16px;right:16px;bottom:16px;z-index:50;max-width:560px;margin:0 auto;background:#F6F4F0;border:1px solid #1B1A19;padding:20px 24px;display:none;flex-direction:column;gap:16px;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-weight:300;font-size:14px;line-height:1.6;color:#1B1A19">
-<p style="margin:0">Мы&nbsp;используем cookie и&nbsp;Яндекс Метрику с&nbsp;Вебвизором, чтобы понимать, как&nbsp;работает сайт. Подробнее&nbsp;— в&nbsp;<a href="privacy.html" style="color:#1B1A19;text-underline-offset:3px">политике конфиденциальности</a>.</p>
+<p style="margin:0">Мы&nbsp;используем cookie и&nbsp;Яндекс Метрику с&nbsp;Вебвизором, чтобы понимать, как&nbsp;работает сайт. Подробнее&nbsp;— в&nbsp;<a href="/privacy" style="color:#1B1A19;text-underline-offset:3px">политике конфиденциальности</a>.</p>
 <div style="display:flex;gap:12px;flex-wrap:wrap">
 <button type="button" id="ck-yes" class="btn" style="min-height:44px;padding:0 24px;background:#1B1A19;color:#fff;border:0;font:inherit;font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;cursor:pointer">Принять</button>
 <button type="button" id="ck-no" class="btn-o" style="min-height:44px;padding:0 24px;background:transparent;color:#1B1A19;border:1px solid #1B1A19;font:inherit;font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;cursor:pointer">Только необходимые</button>
@@ -307,7 +355,7 @@ return { hdrBg: (this.state && this.state.scrolled) ? '#F6F4F0' : 'rgba(246, 244
   };
   var v=get(); if(v==='yes'){hide();metrika()} else if(v!=='no')show(); else hide();
   // ссылка «Настройки cookie» в подвале
-  document.querySelectorAll('a[href="privacy.html"]').forEach(function(a){
+  document.querySelectorAll('a[href="/privacy"]').forEach(function(a){
     if(!a.closest('footer'))return;
     var s=document.createElement('a');s.href='#';s.textContent='Настройки cookie';s.style.color='#4A4846';
     s.onclick=function(e){e.preventDefault();show()};

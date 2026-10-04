@@ -81,7 +81,9 @@ jobs:
           echo "checking over $scheme"
           fail=0
           for f in index.html assort.html core.html quiz.html js/dc-lite.js sitemap.xml; do
-            url="${scheme}://${SITE_HOST}/$(python3 -c 'import sys,urllib.parse;print(urllib.parse.quote(sys.argv[1]))' "$f")"
+            # страницы открываются по чистым адресам: index.html -> /, core.html -> /core (правило в .htaccess)
+            path=$f; [ "$f" = index.html ] && path=; path=${path%.html}
+            url="${scheme}://${SITE_HOST}/$(python3 -c 'import sys,urllib.parse;print(urllib.parse.quote(sys.argv[1]))' "$path")"
             expected=$(md5sum < "$f" | cut -d' ' -f1)
             code=$(curl -sk --resolve "${SITE_HOST}:${port}:${ip}" -o got -w '%{http_code}' "$url?deploy=${GITHUB_SHA::7}")
             actual=$(md5sum < got | cut -d' ' -f1)
