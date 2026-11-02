@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /cart
+Disallow: /thanks
+Disallow: /api/
 
 Sitemap: https://ruedemiro.com/sitemap.xml

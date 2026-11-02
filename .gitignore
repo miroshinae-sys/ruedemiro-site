@@ -1,2 +1,9 @@
 .DS_Store
 Thumbs.db
+
+# Секреты и данные магазина: живут только на сервере, в git не кладём
+api/config.php
+api/orders/*
+!api/orders/.htaccess
+*.bak
+*.bak-*

@@ -1,11 +1,10 @@
-# Деплой сайта на хостинг RU-CENTER (nic.ru) при каждом push в main.
+# Деплой сайта на хостинг RU-CENTER (nic.ru) — только вручную (Actions → Run workflow).
+# С 30.10.2026 сайт обновляется прямо на сервере, а workflow выключен (gh workflow disable).
 # Бэкап на сервере → rsync файлов → проверка md5 прямо с IP хостинга.
 # Секреты и порядок обновления описаны в README.md.
 name: Deploy to nic.ru
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 concurrency:
@@ -62,7 +61,9 @@ jobs:
           SH
 
       # Служебные файлы репозитория на хостинг не нужны.
-      # .htaccess и .well-known (проверка Let's Encrypt) на сервере ведутся вручную — не трогаем их
+      # .htaccess и .well-known (проверка Let's Encrypt) на сервере ведутся вручную — не трогаем их.
+      # api/config.php (ключи банка, СДЭК, почты) и api/orders/ (заказы, сертификаты, подписчики) есть только на сервере:
+      # без этих исключений --delete их сотрёт.
       - name: Upload
         env:
           REMOTE_PATH: ${{ secrets.SFTP_REMOTE_PATH }}
@@ -70,6 +71,7 @@ jobs:
           rsync -rlvz --checksum --delete --chmod=D755,F644 \
             --exclude '.git/' --exclude '.github/' --exclude '.gitignore' \
             --exclude '.nojekyll' --exclude 'README.md' --exclude 'CLAUDE.md' --exclude '.htaccess' --exclude '.well-known/' \
+            --exclude '/api/config.php' --exclude '/api/orders/' \
             ./ nicru:"${REMOTE_PATH}/"
 
       - name: Check site
@@ -80,7 +82,7 @@ jobs:
           if ! curl -sk -m 15 --resolve "${SITE_HOST}:443:${ip}" -o /dev/null "https://${SITE_HOST}/"; then scheme=http; port=80; fi
           echo "checking over $scheme"
           fail=0
-          for f in index.html assort.html core.html quiz.html js/dc-lite.js sitemap.xml; do
+          for f in index.html cart.html core.html quiz.html js/dc-lite.js sitemap.xml; do
             # страницы открываются по чистым адресам: index.html -> /, core.html -> /core (правило в .htaccess)
             path=$f; [ "$f" = index.html ] && path=; path=${path%.html}
             url="${scheme}://${SITE_HOST}/$(python3 -c 'import sys,urllib.parse;print(urllib.parse.quote(sys.argv[1]))' "$path")"

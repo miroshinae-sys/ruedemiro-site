@@ -73,10 +73,10 @@
       if (a.value.indexOf('{{') < 0) return;
       var name = a.name, tpl = a.value;
       if (name.indexOf('data-dc-') === 0) { n.removeAttribute(name); name = name.slice(8); }
-      if (name === 'onclick') {
-        n.removeAttribute('onclick');
+      if (name === 'onclick' || name === 'oninput' || name === 'onchange') {
+        n.removeAttribute(name);
         var cur = null;
-        n.addEventListener('click', function (e) { if (typeof cur === 'function') cur(e); });
+        n.addEventListener(name.slice(2), function (e) { if (typeof cur === 'function') cur(e); });
         ups.push(function (s) { cur = interp(tpl, s); });
         return;
       }

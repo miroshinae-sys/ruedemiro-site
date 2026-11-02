@@ -15,554 +15,569 @@
 <meta property="og:image" content="https://ruedemiro.com/img/hero-blur.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F6F4F0">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "RUE DE MIRÓ", "url": "https://ruedemiro.com/", "logo": "https://ruedemiro.com/img/logo.svg", "email": "salut@ruedemiro.com", "sameAs": ["https://t.me/ruedemiro", "https://ru.pinterest.com/RUEDEMIRO/"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "RUE DE MIRÓ", "url": "https://ruedemiro.com/", "logo": "https://ruedemiro.com/img/logo.svg", "email": "salut@ruedemiro.com", "telephone": "+7-926-377-74-99", "sameAs": ["https://t.me/ruedemiro", "https://ru.pinterest.com/RUEDEMIRO/", "https://www.instagram.com/ruedemiro/"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "RUE DE MIRÓ", "url": "https://ruedemiro.com/", "inLanguage": "ru"}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <style>sc-if,sc-for{display:none}html,body{overflow-x:clip}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&amp;family=Forum&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&amp;family=Forum&amp;family=Montserrat:wght@300;400;500&amp;family=IBM+Plex+Mono:wght@300;400&amp;display=swap">
 <style>
-body{margin:0;background:#F6F4F0;color:#1B1A19;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-weight:300}
+body{margin:0;background:#FFFFFF;color:#1B1A19;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-weight:300}
 a{color:#1B1A19}a:hover{color:#4A4846}
-.btn:hover{background:#4A4846 !important;color:#FFFFFF !important}
+.btn:hover{background:#4A4846 !important}
 .btn-o:hover{background:#1B1A19 !important;color:#FFFFFF !important}
-.card img{transition:transform 400ms cubic-bezier(.25,.1,.25,1)}
-.card:hover img{transform:scale(1.03)}
-.card .alt{opacity:0;transition:opacity 500ms cubic-bezier(.25,.1,.25,1),transform 400ms cubic-bezier(.25,.1,.25,1)}
-.card:hover .alt,.card:focus-visible .alt{opacity:1}
-.qopt{transition:background 200ms}
-@media (max-width:900px){.vrow{padding:40px 20px !important}.vbox{width:100% !important}}.qopt:hover{background:#F6F4F0 !important}
+.row:hover{background:#F6F4F0}
+/* калька над открыткой: поднимается при наведении и при прокрутке */
+.veil{transform:translateY(0);transition:transform 1200ms cubic-bezier(.22,.61,.36,1)}
+.stack:hover .veil{transform:translateY(-62%)}
+@supports (animation-timeline: view()){
+  .veil{animation:lift linear both;animation-timeline:view();animation-range:entry 60% cover 60%}
+  .stack:hover .veil{animation:none;transform:translateY(-62%)}
+}
+@keyframes lift{from{transform:translateY(0)}to{transform:translateY(-62%)}}
+@media (prefers-reduced-motion: reduce){.veil{animation:none !important;transition:none !important}}
+@media (max-width:1100px){.c5{grid-template-columns:repeat(3,minmax(0,1fr)) !important}.c4{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
 @media (max-width:900px){
-.g{grid-template-columns:repeat(1,minmax(0,1fr)) !important}
-.g2m{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
-.hide-m{display:none !important}
-.col-m{flex-direction:column !important;align-items:flex-start !important}
+.g{grid-template-columns:minmax(0,1fr) !important}
+.g>*{grid-column:auto !important}
+.c5,.c4{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
 .px{padding-left:20px !important;padding-right:20px !important}
 .py{padding-top:64px !important;padding-bottom:64px !important}
+.hide-m{display:none !important}
+.h1x{font-size:40px !important}
+.h2x{font-size:30px !important}
 }
-
-summary{list-style:none;cursor:pointer}summary::-webkit-details-marker{display:none}
-.mnav{display:none}
-h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}img{max-width:100%}
-@media (max-width:1100px){
-[style*="repeat(5, minmax(0, 1fr))"]{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
-[style*="repeat(4, minmax(0, 1fr))"]{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
-}
-@media (max-width:900px){
-.mnav{display:block}
-.g>*{grid-column:auto !important}
-.sp{position:static !important}
-[style*="repeat(5, minmax(0, 1fr))"]{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
-dl{grid-template-columns:110px minmax(0,1fr) !important}
-h1{font-size:34px !important;hyphens:auto}
-h2{font-size:30px !important}
-[style*="min-height: 720px"],[style*="min-height: 860px"],[style*="min-height: 640px"]{min-height:0 !important}
-[style*="min-height: 640px"] img,[style*="min-height: 560px"]{min-height:420px}
-}
-@media (max-width:480px){
-[style*="repeat(4, minmax(0, 1fr))"]{grid-template-columns:repeat(1,minmax(0,1fr)) !important}
-.g2m{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
-}
-@media (max-width:900px){.press{font-size:20px !important;gap:8px 28px !important}}
-/*MOBILE2*/
-.qz [style*="background: #FFFFFF"]{background:#FFFFDC !important}
-.qz .qopt:hover{background:#F7F3C4 !important}
-.qz{background:#1B1A19 !important;color:#FFFFFF}
-.qz .qz-head div,.qz .qz-head p{color:#D6D2CB !important}
-.qz .qz-head h1,.qz .qz-head h2{color:#FFFFFF}
-.qz .qstrip div{color:#FFFFFF}
-.qz .qz-note{color:#D6D2CB !important}
-.qz .qz-reset{color:#FFFFFF !important}
-.qz .qz-card,.qz .qz-body,.qz .qz-add{color:#1B1A19}
-.qz .qz-add a{color:#1B1A19}
-@media (max-width:900px){
-.mnav nav{padding:4px 20px 16px !important;max-height:calc(100svh - 76px);overflow:auto}
-.mnav nav a{min-height:44px !important;font-size:12px !important}
-.mnav nav a.btn{margin-top:12px !important}
-.py{padding-top:48px !important;padding-bottom:48px !important}
-.hero{display:flex !important;flex-direction:column;min-height:0 !important}
-.hero-img{order:-1;min-height:0 !important;height:48svh}
-.hero-txt p{font-size:18px !important}
-.hero-txt h1{font-size:28px !important}
-.hero-txt .btn,.hero-txt .btn-o{padding:0 18px !important;white-space:nowrap;font-size:11px !important;min-height:48px !important}
-.hero-txt>div:last-child{gap:10px !important}
-.hero-img video{object-position:50% 50% !important}
-.hero-txt{padding:24px 20px 40px !important;gap:16px !important}
-.hero-lede{display:none !important}
-.g2m>div span{font-size:13px !important}
-.ahero{min-height:72svh !important}
-.qz{padding:44px 0 !important}
-.qz>div{gap:20px !important}
-.qz-head{gap:8px !important}
-.qz-head p{display:none !important}
-.qz-head h1,.qz-head h2{font-size:26px !important}
-.qz-card{padding:20px 16px !important;gap:14px !important}
-.qz-q{font-size:20px !important;line-height:1.25 !important}
-.qopt{min-height:46px !important;padding:10px 4px !important;font-size:14px !important;gap:10px !important}
-.qz-img{min-height:0 !important;height:220px}
-.qz-body{padding:20px 16px !important;gap:10px !important}
-.qz-name{font-size:30px !important}
-.qz-body p{font-size:14px !important}
-.qz-add{flex-direction:row !important;align-items:center !important;padding:12px !important;gap:12px !important}
-.qz-add>div:first-child{width:64px !important;height:80px !important}
-.qz-add p{font-size:13px !important}
-.qz-add>a{display:none}
-.qz-note{font-size:17px !important}
-.opt{min-height:0 !important;padding:16px !important;gap:10px !important}
-}
-@media (max-width:600px){
-h1{font-size:30px !important}
-h2{font-size:26px !important}
-[style*="font-size: 34px"]{font-size:24px !important}
-[style*="font-size: 30px"]{font-size:22px !important}
-[style*="font-size: 28px"]{font-size:22px !important}
-[style*="font-size: 26px"]{font-size:21px !important}
-}
-/*/MOBILE2*/
-[id]{scroll-margin-top:84px}
-
+@media (max-width:900px){.adv{grid-template-columns:repeat(2,minmax(0,1fr)) !important}.adv>div{border-left:0 !important;padding:18px 12px 18px 0 !important}.pr .btn{width:100%}}
+@media (max-width:520px){.c4{grid-template-columns:minmax(0,1fr) !important}}
+.mnav{display:none;position:static}@media (max-width:420px){header .px{gap:12px !important}header a,header summary{font-size:12px !important}}.mnav summary{list-style:none;cursor:pointer}.mnav summary::-webkit-details-marker{display:none}
+@media (max-width:900px){.mnav{display:block}header{position:sticky}}
+.seal{animation:spin 40s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}@media (prefers-reduced-motion: reduce){.seal{animation:none}}
+.life{scrollbar-width:none}@media (max-width:900px){.hero-fig{order:-1;aspect-ratio:16 / 10 !important;max-height:none !important;min-height:0 !important}.hero-sec{padding-top:16px !important}.hero-sec .g{gap:20px !important}.hero-txt{gap:14px !important}.hero-txt h1{font-size:32px !important}.hero-txt p{font-size:19px !important}}@media (max-width:900px){.rv{flex-basis:86% !important;grid-template-columns:minmax(0,1fr) !important;min-height:0 !important}.rv>div:first-child{aspect-ratio:4 / 3}}.life::-webkit-scrollbar{display:none}
 </style>
 </head>
 <body>
 <div id="dc-root" data-dc-pending>
 
-<div style="min-height: 100vh; background: #F6F4F0">
+<div style="background: #FFFFFF">
 
-<header style="position: sticky; top: 0; z-index: 10; margin-bottom: -77px; background: {{hdrBg}}; border-bottom: 1px solid {{hdrLine}}; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); transition: background 400ms cubic-bezier(.25,.1,.25,1), border-color 400ms">
-<div class="px" style="max-width: 1280px; margin: 0 auto; padding: 16px 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
+<div class="px" style="border-bottom: 1px solid #1B1A19; padding: 10px 40px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em">
+<div style="max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+<span>[ ДОСТАВКА СДЭК ПО&nbsp;РОССИИ&nbsp;· БЕСПЛАТНО ОТ&nbsp;5000&nbsp;₽ ]</span>
+<span class="hide-m">[ СКИДКА ДО&nbsp;20% НА&nbsp;НАБОРЫ ИЗ&nbsp;2–5&nbsp;МАСЕЛ ]</span>
+</div>
+</div>
+
+<header style="position: sticky; top: 0; z-index: 10; background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid #D6D2CB">
+<div class="px" style="max-width: 1280px; margin: 0 auto; padding: 16px 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px">
 <a href="/" aria-label="RUE DE MIRÓ, на главную" style="display: flex; align-items: center; min-height: 44px"><img src="/img/logo.svg" alt="RUE DE MIRÓ" style="height: 18px; width: auto; display: block"></a>
-<nav class="hide-m" aria-label="Основное меню" style="display: flex; gap: 28px; flex-wrap: wrap; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">
-<a href="/assort" style="text-decoration: none; padding: 12px 0">Ассортимент</a>
+<nav class="hide-m" aria-label="Основное меню" style="display: flex; gap: 28px; font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase">
+<a href="/#catalog" style="text-decoration: none; padding: 12px 0">Масла</a>
+<a href="/#sets" style="text-decoration: none; padding: 12px 0">Наборы</a>
 <a href="/quiz" style="text-decoration: none; padding: 12px 0">Подбор</a>
-<a href="/about-us" style="text-decoration: none; padding: 12px 0">О бренде</a>
-<a href="/where-to-buy" style="text-decoration: none; padding: 12px 0">Где купить</a>
-<a href="/collab" style="text-decoration: none; padding: 12px 0">Сотрудничество</a>
+<a href="/gift-card" style="text-decoration: none; padding: 12px 0">Сертификат</a>
+<a href="/about-us" style="text-decoration: none; padding: 12px 0">О&nbsp;бренде</a>
 </nav>
-<details class="mnav">
-<summary aria-label="Открыть меню" style="display: flex; align-items: center; min-height: 44px; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">Меню</summary>
-<nav aria-label="Мобильное меню" style="position: absolute; left: 0; right: 0; top: 100%; display: flex; flex-direction: column; padding: 8px 20px 24px; background: #F6F4F0; border-bottom: 1px solid #D6D2CB; font-size: 13px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">
-<a href="/assort" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Ассортимент</a>
-<a href="/quiz" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Подбор формулы</a>
-<a href="/about-us" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">О бренде</a>
-<a href="/where-to-buy" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Где купить</a>
-<a href="/collab" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Сотрудничество</a>
-<a href="/quiz" class="btn" style="display: flex; align-items: center; justify-content: center; min-height: 52px; margin-top: 20px; background: #1B1A19; color: #FFFFFF; text-decoration: none">Подобрать формулу</a>
-</nav>
-</details>
-<a href="/quiz" class="btn hide-m" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 24px; background: #1B1A19; color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">Подобрать формулу</a>
+<div style="display: flex; align-items: center; gap: 18px">
+<a href="/cart" style="display: inline-flex; align-items: center; min-height: 44px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.06em; text-decoration: none; white-space: nowrap">[ КОРЗИНА&nbsp;· {{cartCount}} ]</a>
+<details class="mnav"><summary aria-label="Открыть меню" style="display: flex; align-items: center; min-height: 44px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.06em; white-space: nowrap">[ МЕНЮ ]</summary>
+<nav aria-label="Мобильное меню" style="position: absolute; left: 0; right: 0; top: 100%; display: flex; flex-direction: column; padding: 4px 20px 20px; background: #FFFFFF; border-bottom: 1px solid #1B1A19; font-size: 13px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase">
+<a href="/#catalog" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Масла</a>
+<a href="/#sets" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Наборы</a>
+<a href="/quiz" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Подбор</a>
+<a href="/gift-card" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Сертификат</a>
+<a href="/about-us" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">О&nbsp;бренде</a>
+<a href="/nabor" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Собрать набор</a>
+<a href="/delivery" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Доставка и&nbsp;оплата</a>
+</nav></details>
+</div>
 </div>
 </header>
 
-<section style="position: relative; background: #ECE8E1">
-<div class="g hero" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); min-height: 860px">
-<div class="px py hero-txt" style="display: flex; flex-direction: column; justify-content: center; gap: 28px; padding: 96px 64px 96px max(40px, calc((100vw - 1280px) / 2 + 40px))">
-<div class="hero-lbl" style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Кожа отражает</div>
-<h1 style="margin: 0; font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: clamp(34px, 3.8vw, 54px); line-height: 1.1; letter-spacing: 0.04em; text-transform: uppercase">Сухое масло для&nbsp;тела под&nbsp;состояние вашей кожи</h1>
-<p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.25">Пять формул, один аромат. Впитывается без&nbsp;плёнки&nbsp;— через пять минут можно одеваться</p>
-<div style="display: flex; gap: 16px; flex-wrap: wrap">
-<a href="/quiz" class="btn" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 32px; background: #1B1A19; color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">Подобрать формулу за&nbsp;30&nbsp;секунд</a>
-<a href="/assort" class="btn-o" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 32px; border: 1px solid #1B1A19; color: #1B1A19; text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">Все формулы</a>
+<!-- 1. первый экран: текст слева, фото справа -->
+<section class="py hero-sec" style="padding: 40px 0 56px">
+<div class="px" style="max-width: 1280px; margin: 0 auto; padding: 0 40px; display: flex; flex-direction: column; gap: 32px">
+<div class="g" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 40px; align-items: center">
+<div class="hero-txt" style="grid-column: span 6; display: flex; flex-direction: column; gap: 22px">
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.06em; color: #4A4846">[ КОЖА ОТРАЖАЕТ ]</span>
+<h1 class="h1x" style="margin: 0; font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 56px; line-height: 1.04; letter-spacing: 0.03em">СУХИЕ МАСЛА ДЛЯ&nbsp;ТЕЛА&nbsp;—<br>5&nbsp;ФОРМУЛ ПОД&nbsp;СОСТОЯНИЕ КОЖИ</h1>
+<p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 25px; line-height: 1.3; max-width: 460px">Впитывается без&nbsp;плёнки&nbsp;— через пять минут можно одеваться. Один аромат на&nbsp;всё тело.</p>
+<div style="display: flex; gap: 10px; flex-wrap: wrap"><a href="/#catalog" class="btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 28px; background: #1B1A19; color: #FFFFFF; border: 0; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; cursor: pointer">Выбрать масло</a><a href="/quiz" class="btn-o" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 28px; background: transparent; color: #1B1A19; border: 1px solid #1B1A19; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; cursor: pointer">Подбор&nbsp;· 30&nbsp;сек</a></div>
+<div style="display: flex; gap: 12px 28px; flex-wrap: wrap; padding-top: 18px; border-top: 1px solid #1B1A19; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em"><span>2190&nbsp;₽&nbsp;· 100&nbsp;МЛ</span><span>ДО&nbsp;−20% В&nbsp;НАБОРАХ</span><span>СДЭК ОТ&nbsp;5000&nbsp;₽&nbsp;— 0&nbsp;₽</span></div>
 </div>
-</div>
-<div class="hero-img" style="position: relative; min-height: 560px; overflow: hidden; background: #E4E0D4"><video autoplay muted loop playsinline preload="auto" poster="/vid/texture-poster.jpg" aria-label="Текстура сухого масла RUE DE MIRÓ на коже" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"><source src="/vid/texture.webm" type="video/webm"><source src="/vid/texture.mp4" type="video/mp4"></video>
-</div>
-</div>
-</section>
-
-<section style="border-bottom: 1px solid #D6D2CB; background: #FFFFDC">
-<div class="px g2m" style="max-width: 1280px; margin: 0 auto; padding: 32px 40px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px">
-<div style="display: flex; align-items: center; gap: 14px"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#1B1A19" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M18 5c5 7 8 11.5 8 15.5a8 8 0 0 1-16 0C10 16.5 13 12 18 5z"/><path d="M14 22a4 4 0 0 0 4 4"/></svg><span style="font-size: 14px; font-weight: 500; line-height: 1.4">Без жирной плёнки</span></div>
-<div style="display: flex; align-items: center; gap: 14px"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#1B1A19" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M13 6l-6 4 3 5 3-1.5V30h10V13.5L26 15l3-5-6-4c-1 2-3 3-5 3s-4-1-5-3z"/></svg><span style="font-size: 14px; font-weight: 500; line-height: 1.4">Не&nbsp;пачкает одежду</span></div>
-<div style="display: flex; align-items: center; gap: 14px"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#1B1A19" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M8 14c3-3 6 3 9 0s6 3 9 0"/><path d="M8 20c3-3 6 3 9 0s6 3 9 0"/><path d="M8 26c3-3 6 3 9 0s6 3 9 0"/></svg><span style="font-size: 14px; font-weight: 500; line-height: 1.4">Один аромат на&nbsp;все формулы</span></div>
-<div style="display: flex; align-items: center; gap: 14px"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#1B1A19" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M15 5h6v4h-6z"/><path d="M14 9h8l1 4v16a2 2 0 0 1-2 2h-6a2 2 0 0 1-2-2V13z"/><path d="M13 19h10"/></svg><span style="font-size: 14px; font-weight: 500; line-height: 1.4">100&nbsp;мл&nbsp;· 2190&nbsp;₽</span></div>
-</div>
-</section>
-
-<section class="py" style="padding: 120px 0">
-<div class="px" style="max-width: 1280px; margin: 0 auto; padding: 0 40px; display: flex; flex-direction: column; gap: 56px">
-<div class="col-m" style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px">
-<div style="display: flex; flex-direction: column; gap: 16px; max-width: 640px">
-<div style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Пять формул</div>
-<h2 style="margin: 0; font-family: 'Forum', Georgia, serif; font-weight: 400; font-size: 40px; line-height: 1.1; letter-spacing: 0.04em; text-transform: uppercase">Какое состояние кожи вы чувствуете сегодня?</h2>
-</div>
-<a href="/assort" style="font-size: 14px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; padding: 12px 0">Весь ассортимент →</a>
-</div>
-<div class="g" style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px">
-<a href="/core" class="card" style="display: flex; flex-direction: column; gap: 16px; text-decoration: none; color: #1B1A19">
-<div style="position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: #EFEBE0"><img src="/img/core-1.jpg" alt="Масло CORE с цветком краспедии" style="width: 100%; height: 100%; object-fit: cover; display: block"><img class="alt" src="/img/core-2.jpg" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"></div>
-<div style="font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Сухость и стянутость</div>
-<div style="font-family: 'Forum', Georgia, serif; font-size: 24px; letter-spacing: 0.08em">CORE</div>
-<div style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 20px; line-height: 1.3">Восстановление и комфорт</div>
-<div style="font-size: 14px; font-weight: 500">Подробнее о CORE →</div>
-</a>
-<a href="/recharge" class="card" style="display: flex; flex-direction: column; gap: 16px; text-decoration: none; color: #1B1A19">
-<div style="position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: #EDC6CC"><img loading="lazy" decoding="async" src="/img/recharge-1.jpg" alt="Масло RECHARGE над декоративной капустой" style="width: 100%; height: 100%; object-fit: cover; display: block"><img loading="lazy" decoding="async" class="alt" src="/img/recharge-ingredients.jpg" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"></div>
-<div style="font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Потеря тонуса и гладкости</div>
-<div style="font-family: 'Forum', Georgia, serif; font-size: 24px; letter-spacing: 0.08em">RECHARGE</div>
-<div style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 20px; line-height: 1.3">Тонус и эластичность</div>
-<div style="font-size: 14px; font-weight: 500">Подробнее о RECHARGE →</div>
-</a>
-<a href="/escape" class="card" style="display: flex; flex-direction: column; gap: 16px; text-decoration: none; color: #1B1A19">
-<div style="position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: #DCCFC1"><img loading="lazy" decoding="async" src="/img/escape-1.jpg" alt="Масло ESCAPE на травертине рядом с корой" style="width: 100%; height: 100%; object-fit: cover; display: block"><img loading="lazy" decoding="async" class="alt" src="/img/escape-ingredients.jpg" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"></div>
-<div style="font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Неровная текстура</div>
-<div style="font-family: 'Forum', Georgia, serif; font-size: 24px; letter-spacing: 0.08em">ESCAPE</div>
-<div style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 20px; line-height: 1.3">Баланс и ровная текстура</div>
-<div style="font-size: 14px; font-weight: 500">Подробнее об ESCAPE →</div>
-</a>
-<a href="/weightless" class="card" style="display: flex; flex-direction: column; gap: 16px; text-decoration: none; color: #1B1A19">
-<div style="position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: #E4E0DA"><img loading="lazy" decoding="async" src="/img/weightless-1.jpg" alt="Масло WEIGHTLESS с синеголовником" style="width: 100%; height: 100%; object-fit: cover; display: block"><img loading="lazy" decoding="async" class="alt" src="/img/weightless-2.jpg" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"></div>
-<div style="font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Лёгкость и&nbsp;прохлада</div>
-<div style="font-family: 'Forum', Georgia, serif; font-size: 24px; letter-spacing: 0.08em">WEIGHTLESS</div>
-<div style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 20px; line-height: 1.3">Расслабление и лёгкость</div>
-<div style="font-size: 14px; font-weight: 500">Подробнее о WEIGHTLESS →</div>
-</a>
-<a href="/balance" class="card" style="display: flex; flex-direction: column; gap: 16px; text-decoration: none; color: #1B1A19">
-<div style="position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: #EEDC8C"><img loading="lazy" decoding="async" src="/img/balance-1.jpg" alt="Масло BALANCE на серебряном подносе с жемчугом" style="width: 100%; height: 100%; object-fit: cover; display: block"><img loading="lazy" decoding="async" class="alt" src="/img/balance-ingredients.jpg" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"></div>
-<div style="font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Тусклый и неровный вид</div>
-<div style="font-family: 'Forum', Georgia, serif; font-size: 24px; letter-spacing: 0.08em">BALANCE</div>
-<div style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 20px; line-height: 1.3">Ровный тон и сатиновый финиш</div>
-<div style="font-size: 12px; line-height: 1.5; letter-spacing: 0.04em; color: #4A4846">Содержит SPF 20</div>
-<div style="font-size: 14px; font-weight: 500">Подробнее о BALANCE →</div>
-</a>
+<figure class="hero-fig" style="grid-column: 7 / span 6; margin: 0; position: relative; aspect-ratio: 1 / 1; max-height: calc(100vh - 170px); min-height: 420px; width: 100%; overflow: hidden; background: #ECE8E1">
+<img src="/img/v2/hero-bottles.jpg" alt="Флаконы пяти масел RUE DE MIRÓ на белом столе в солнечном свете" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; display: block">
+</figure>
 </div>
 </div>
 </section>
 
-<section id="quiz" class="py qz" style="padding: 120px 0; background: #ECE8E1; border-top: 1px solid #D6D2CB">
-<div class="px" style="max-width: 880px; margin: 0 auto; padding: 0 40px; display: flex; flex-direction: column; gap: 40px">
-<div class="qz-head" style="display: flex; flex-direction: column; gap: 16px; align-items: center; text-align: center">
-<div style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Подбор за 30 секунд</div>
-<h2 style="margin: 0; font-family: 'Forum', Georgia, serif; font-weight: 400; font-size: 40px; line-height: 1.1; letter-spacing: 0.04em; text-transform: uppercase">Какое масло подойдёт именно вам</h2>
-<p style="margin: 0; max-width: 560px; font-size: 16px; line-height: 1.6; color: #4A4846">Пять коротких вопросов. В конце — основная формула и дополнительная, для другой зоны.</p>
-</div>
-
-<sc-if value="{{qInProgress}}" hint-placeholder-val="{{true}}">
-<div style="display: flex; flex-direction: column; gap: 24px">
-<div class="hide-m qstrip" aria-hidden="true" style="display: flex; gap: 12px"><div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 8px"><div style="aspect-ratio: 4 / 5; overflow: hidden; background: #EFEBE0"><img loading="lazy" decoding="async" src="/img/core-1.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block"></div><div style="font-family: 'Forum', Georgia, serif; font-size: 14px; letter-spacing: 0.08em; text-align: center">CORE</div></div><div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 8px"><div style="aspect-ratio: 4 / 5; overflow: hidden; background: #EDC6CC"><img loading="lazy" decoding="async" src="/img/recharge-1.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block"></div><div style="font-family: 'Forum', Georgia, serif; font-size: 14px; letter-spacing: 0.08em; text-align: center">RECHARGE</div></div><div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 8px"><div style="aspect-ratio: 4 / 5; overflow: hidden; background: #DCCFC1"><img loading="lazy" decoding="async" src="/img/escape-1.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block"></div><div style="font-family: 'Forum', Georgia, serif; font-size: 14px; letter-spacing: 0.08em; text-align: center">ESCAPE</div></div><div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 8px"><div style="aspect-ratio: 4 / 5; overflow: hidden; background: #E4E0DA"><img loading="lazy" decoding="async" src="/img/weightless-1.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block"></div><div style="font-family: 'Forum', Georgia, serif; font-size: 14px; letter-spacing: 0.08em; text-align: center">WEIGHTLESS</div></div><div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 8px"><div style="aspect-ratio: 4 / 5; overflow: hidden; background: #EEDC8C"><img loading="lazy" decoding="async" src="/img/balance-1.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block"></div><div style="font-family: 'Forum', Georgia, serif; font-size: 14px; letter-spacing: 0.08em; text-align: center">BALANCE</div></div></div>
-<div class="qz-card" style="display: flex; flex-direction: column; gap: 28px; padding: 48px; background: #FFFFFF; border: 1px solid #D6D2CB">
-<div style="display: flex; flex-direction: column; gap: 12px">
-<div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">
-<span>Вопрос {{qNum}} из {{qTotal}}</span>
-<sc-if value="{{qCanBack}}" hint-placeholder-val="{{false}}"><button type="button" data-dc-onclick="{{qBack}}" style="min-height: 44px; padding: 0; background: none; border: 0; font: inherit; letter-spacing: inherit; text-transform: inherit; color: #1B1A19; text-decoration: underline; text-underline-offset: 4px; cursor: pointer">← Назад</button></sc-if>
-</div>
-<div style="height: 2px; background: #ECE8E1"><div style="height: 2px; background: #1B1A19; width: {{qProgress}}; transition: width 400ms cubic-bezier(.25,.1,.25,1)"></div></div>
-</div>
-<h3 class="qz-q" style="margin: 0; font-family: 'Forum', Georgia, serif; font-weight: 400; font-size: 30px; line-height: 1.2; letter-spacing: 0.02em">{{qTitle}}</h3>
-<div style="display: flex; flex-direction: column; border-top: 1px solid #D6D2CB">
-<sc-for list="{{qOpts}}" as="o" hint-placeholder-count="5">
-<button type="button" class="qopt" data-dc-onclick="{{o.pick}}" style="display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 64px; padding: 16px 8px; background: transparent; border: 0; border-bottom: 1px solid #D6D2CB; font: inherit; font-size: 16px; line-height: 1.4; text-align: left; color: #1B1A19; cursor: pointer"><span>{{o.t}}</span><span aria-hidden="true" style="flex-shrink: 0">→</span></button>
-</sc-for>
-</div>
-</div>
-</div>
-</sc-if>
-
-<sc-if value="{{qDone}}" hint-placeholder-val="{{false}}">
-<div style="display: flex; flex-direction: column; gap: 16px">
-<div class="g" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); background: #FFFFFF; border: 1px solid #D6D2CB">
-<div class="qz-img" style="grid-column: span 5; min-height: 420px; overflow: hidden; background: {{res.color}}"><img data-dc-src="{{res.img}}" alt="Масло {{res.name}}" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
-<div class="qz-body" style="grid-column: span 7; padding: 40px; display: flex; flex-direction: column; gap: 16px">
-<div style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Ваша основная формула</div>
-<div class="qz-name" style="font-family: 'Forum', Georgia, serif; font-size: 44px; letter-spacing: 0.08em">{{res.name}}</div>
-<div style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 24px; line-height: 1.3">{{res.tagline}}</div>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4A4846">{{res.why}}</p>
-<sc-if value="{{res.spf}}" hint-placeholder-val="{{false}}"><div style="font-size: 12px; line-height: 1.5; letter-spacing: 0.04em; color: #4A4846">Содержит SPF 20</div></sc-if>
-<div style="font-size: 14px; line-height: 1.6"><span style="font-weight: 500">Зоны:</span> {{res.zones}}</div>
-<div style="display: flex; gap: 12px; flex-wrap: wrap; padding-top: 8px">
-<a data-dc-href="{{res.href}}" class="btn" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; background: #1B1A19; color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">Подробнее</a>
-<a href="/where-to-buy" class="btn-o" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border: 1px solid #1B1A19; color: #1B1A19; text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">Где купить</a>
-</div>
-</div>
-</div>
-<div class="qz-add" style="display: flex; align-items: center; gap: 24px; padding: 24px; background: #FFFFFF; border: 1px solid #D6D2CB">
-<div style="width: 96px; height: 120px; flex-shrink: 0; overflow: hidden; background: {{add.color}}"><img data-dc-src="{{add.img}}" alt="Масло {{add.name}}" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
-<div style="display: flex; flex-direction: column; gap: 8px; flex-grow: 1">
-<div style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Дополнительно</div>
-<div style="font-family: 'Forum', Georgia, serif; font-size: 26px; letter-spacing: 0.08em">{{add.name}}</div>
-<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A4846">{{add.note}}</p>
-</div>
-<a data-dc-href="{{add.href}}" style="flex-shrink: 0; font-size: 14px; font-weight: 500; text-underline-offset: 4px; padding: 12px 0">Подробнее →</a>
-</div>
-<p class="qz-note" style="margin: 0; text-align: center; font-family: \'Cormorant Garamond\', Georgia, serif; font-style: italic; font-size: 20px; color: #4A4846">Аромат у всех формул один, поэтому их легко сочетать по зонам.</p>
-<div style="display: flex; justify-content: center"><button type="button" class="qz-reset" data-dc-onclick="{{qReset}}" style="min-height: 44px; padding: 0; background: none; border: 0; font: inherit; font-size: 14px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; cursor: pointer; color: #1B1A19">Пройти заново</button></div>
-</div>
-</sc-if>
+<!-- 2. преимущества -->
+<section style="border-top: 1px solid #1B1A19; border-bottom: 1px solid #1B1A19; background: #F6F4F0">
+<div class="px adv" style="max-width: 1280px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr))">
+<div style="padding: 24px 20px 24px 0; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 44px; line-height: 1">5′</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em">БЕЗ&nbsp;ПЛЁНКИ: ЧЕРЕЗ ПЯТЬ МИНУТ МОЖНО ОДЕВАТЬСЯ</span></div>
+<div style="padding: 24px 20px; display: flex; flex-direction: column; gap: 6px; border-left: 1px solid #D6D2CB"><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 44px; line-height: 1">1</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em">АРОМАТ НА&nbsp;ВСЁ ТЕЛО&nbsp;— МАСЛА ЛЕГКО СОЧЕТАТЬ</span></div>
+<div style="padding: 24px 20px; display: flex; flex-direction: column; gap: 6px; border-left: 1px solid #D6D2CB"><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 44px; line-height: 1">5</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em">ФОРМУЛ ПОД&nbsp;СОСТОЯНИЕ, А&nbsp;НЕ&nbsp;ТИП КОЖИ</span></div>
+<div style="padding: 24px 0 24px 20px; display: flex; flex-direction: column; gap: 6px; border-left: 1px solid #D6D2CB"><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 44px; line-height: 1">−20%</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em">В&nbsp;НАБОРАХ ИЗ&nbsp;2–5&nbsp;МАСЕЛ</span></div>
 </div>
 </section>
 
-<section class="py" style="padding: 120px 0; background: #FFFFFF; border-top: 1px solid #D6D2CB; border-bottom: 1px solid #D6D2CB">
-<div class="px" style="max-width: 1280px; margin: 0 auto; padding: 0 40px; display: flex; flex-direction: column; gap: 56px">
-<div style="display: flex; flex-direction: column; gap: 16px; max-width: 720px">
-<div style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Как это работает</div>
-<h2 style="margin: 0; font-family: 'Forum', Georgia, serif; font-weight: 400; font-size: 40px; line-height: 1.1; letter-spacing: 0.04em; text-transform: uppercase">Как уход за лицом, только для тела</h2>
-</div>
-<div class="g" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px">
-<div style="display: flex; flex-direction: column; gap: 16px; padding-top: 24px; border-top: 1px solid #1B1A19">
-<div style="font-family: 'Forum', Georgia, serif; font-size: 34px">01</div>
-<h3 style="margin: 0; font-size: 16px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">Заметьте состояние</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4A4846">Сухость, тяжесть в ногах, неровный тон. Кожа показывает, как мы спали и где устали.</p>
-</div>
-<div style="display: flex; flex-direction: column; gap: 16px; padding-top: 24px; border-top: 1px solid #1B1A19">
-<div style="font-family: 'Forum', Georgia, serif; font-size: 34px">02</div>
-<h3 style="margin: 0; font-size: 16px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">Выберите формулу</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4A4846">Формулы можно сочетать по зонам тела. Аромат у всех один, поэтому они не спорят друг с другом.</p>
-</div>
-<div style="display: flex; flex-direction: column; gap: 16px; padding-top: 24px; border-top: 1px solid #1B1A19">
-<div style="font-family: 'Forum', Georgia, serif; font-size: 34px">03</div>
-<h3 style="margin: 0; font-size: 16px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">Тонким слоем</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4A4846">На влажную кожу после душа. Через пять минут можно одеваться.</p>
+<!-- 3. каталог с вкладками -->
+<section id="catalog" class="py" style="padding: 104px 0">
+<div class="px" style="max-width: 1280px; margin: 0 auto; padding: 0 40px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; padding-bottom: 16px; border-bottom: 1px solid #1B1A19">
+<div style="display: flex; flex-direction: column; gap: 12px"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.06em">[ КАТАЛОГ ]</span><h2 class="h2x" style="margin: 0; font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 44px; line-height: 1.05; letter-spacing: 0.04em">ВЫБЕРИТЕ СВОЁ</h2></div>
+<div role="tablist" aria-label="Разделы каталога" style="display: flex; gap: 0; border: 1px solid #1B1A19">
+<sc-for list="{{tabs}}" as="t" hint-placeholder-count="3"><button type="button" role="tab" data-dc-aria-selected="{{t.sel}}" data-dc-onclick="{{t.pick}}" style="min-height: 44px; padding: 0 20px; border: 0; background: {{t.bg}}; color: {{t.fg}}; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.06em; cursor: pointer">{{t.label}}</button></sc-for>
 </div>
 </div>
-<div><a href="#quiz" class="btn" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 32px; background: #1B1A19; color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">Подобрать по состоянию кожи</a></div>
+<sc-if value="{{showOils}}" hint-placeholder-val="{{true}}"><div class="c5" style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px"><article style="display: flex; flex-direction: column; gap: 12px; padding: 12px 12px 16px; background: #EFEBE0">
+<a href="/core" style="display: block; aspect-ratio: 3 / 4; background: #FFFFFF; overflow: hidden"><img src="/img/v2/core-pack-crop.jpg" alt="Масло CORE: флакон и коробка" style="width: 100%; height: 100%; object-fit: contain; display: block; padding: 10% 8%; box-sizing: border-box"></a>
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px">I</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.08em">RM/01</span></div>
+<div style="text-align: center; font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 21px; letter-spacing: 0.14em">CORE</div>
+<div style="text-align: center; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.45; letter-spacing: 0.04em; flex-grow: 1">СУХОСТЬ<br>БАРЬЕР</div>
+<div class="pr" style="display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid rgba(27, 26, 25, 0.35)"><span style="font-size: 15px; font-weight: 400">2190 ₽</span><button type="button" class="btn" data-dc-onclick="{{buy_core}}" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 28px; background: #1B1A19; color: #FFFFFF; border: 0; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; cursor: pointer; min-height: 40px; padding: 0 14px; font-size: 11px">В&nbsp;корзину</button></div>
+</article><article style="display: flex; flex-direction: column; gap: 12px; padding: 12px 12px 16px; background: #EDC6CC">
+<a href="/recharge" style="display: block; aspect-ratio: 3 / 4; background: #FFFFFF; overflow: hidden"><img loading="lazy" decoding="async" src="/img/v2/recharge-pack-crop.jpg" alt="Масло RECHARGE: флакон и коробка" style="width: 100%; height: 100%; object-fit: contain; display: block; padding: 10% 8%; box-sizing: border-box"></a>
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px">II</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.08em">RM/02</span></div>
+<div style="text-align: center; font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 21px; letter-spacing: 0.14em">RECHARGE</div>
+<div style="text-align: center; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.45; letter-spacing: 0.04em; flex-grow: 1">ТОНУС<br>УПРУГОСТЬ</div>
+<div class="pr" style="display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid rgba(27, 26, 25, 0.35)"><span style="font-size: 15px; font-weight: 400">2190 ₽</span><button type="button" class="btn" data-dc-onclick="{{buy_recharge}}" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 28px; background: #1B1A19; color: #FFFFFF; border: 0; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; cursor: pointer; min-height: 40px; padding: 0 14px; font-size: 11px">В&nbsp;корзину</button></div>
+</article><article style="display: flex; flex-direction: column; gap: 12px; padding: 12px 12px 16px; background: #DCCFC1">
+<a href="/escape" style="display: block; aspect-ratio: 3 / 4; background: #FFFFFF; overflow: hidden"><img loading="lazy" decoding="async" src="/img/v2/escape-pack-crop.jpg" alt="Масло ESCAPE: флакон и коробка" style="width: 100%; height: 100%; object-fit: contain; display: block; padding: 10% 8%; box-sizing: border-box"></a>
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px">III</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.08em">RM/03</span></div>
+<div style="text-align: center; font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 21px; letter-spacing: 0.14em">ESCAPE</div>
+<div style="text-align: center; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.45; letter-spacing: 0.04em; flex-grow: 1">ТЕКСТУРА<br>ОБНОВЛЕНИЕ</div>
+<div class="pr" style="display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid rgba(27, 26, 25, 0.35)"><span style="font-size: 15px; font-weight: 400">2190 ₽</span><button type="button" class="btn" data-dc-onclick="{{buy_escape}}" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 28px; background: #1B1A19; color: #FFFFFF; border: 0; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; cursor: pointer; min-height: 40px; padding: 0 14px; font-size: 11px">В&nbsp;корзину</button></div>
+</article><article style="display: flex; flex-direction: column; gap: 12px; padding: 12px 12px 16px; background: #E4E0DA">
+<a href="/weightless" style="display: block; aspect-ratio: 3 / 4; background: #FFFFFF; overflow: hidden"><img loading="lazy" decoding="async" src="/img/v2/weightless-pack-crop.jpg" alt="Масло WEIGHTLESS: флакон и коробка" style="width: 100%; height: 100%; object-fit: contain; display: block; padding: 10% 8%; box-sizing: border-box"></a>
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px">IV</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.08em">RM/04</span></div>
+<div style="text-align: center; font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 21px; letter-spacing: 0.14em">WEIGHTLESS</div>
+<div style="text-align: center; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.45; letter-spacing: 0.04em; flex-grow: 1">ЛЁГКОСТЬ<br>ПРОХЛАДА</div>
+<div class="pr" style="display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid rgba(27, 26, 25, 0.35)"><span style="font-size: 15px; font-weight: 400">2190 ₽</span><button type="button" class="btn" data-dc-onclick="{{buy_weightless}}" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 28px; background: #1B1A19; color: #FFFFFF; border: 0; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; cursor: pointer; min-height: 40px; padding: 0 14px; font-size: 11px">В&nbsp;корзину</button></div>
+</article><article style="display: flex; flex-direction: column; gap: 12px; padding: 12px 12px 16px; background: #EEDC8C">
+<a href="/balance" style="display: block; aspect-ratio: 3 / 4; background: #FFFFFF; overflow: hidden"><img loading="lazy" decoding="async" src="/img/v2/balance-pack-crop.jpg" alt="Масло BALANCE: флакон и коробка" style="width: 100%; height: 100%; object-fit: contain; display: block; padding: 10% 8%; box-sizing: border-box"></a>
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px">V</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.08em">RM/05</span></div>
+<div style="text-align: center; font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 21px; letter-spacing: 0.14em">BALANCE</div>
+<div style="text-align: center; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.45; letter-spacing: 0.04em; flex-grow: 1">РОВНЫЙ ТОН<br>СИЯНИЕ</div>
+<div class="pr" style="display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid rgba(27, 26, 25, 0.35)"><span style="font-size: 15px; font-weight: 400">2190 ₽</span><button type="button" class="btn" data-dc-onclick="{{buy_balance}}" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 28px; background: #1B1A19; color: #FFFFFF; border: 0; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; cursor: pointer; min-height: 40px; padding: 0 14px; font-size: 11px">В&nbsp;корзину</button></div>
+</article></div></sc-if>
+<sc-if value="{{showSets}}" hint-placeholder-val="{{false}}"><div class="c4" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px"><article style="display: flex; flex-direction: column; gap: 14px; padding: 20px; background: #F6F4F0; border: 1px solid #D6D2CB">
+<div style="position: relative; aspect-ratio: 5 / 4; overflow: hidden; background: #FFFFFF"><img src="/img/v2/set-petite.jpg" alt="Набор Petite Rue: масла CORE и RECHARGE" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; display: block"></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 28px; letter-spacing: 0.06em">Petite Rue</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em">[ 2 ]</span></div>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #4A4846">CORE + RECHARGE: от&nbsp;сухости и&nbsp;для&nbsp;тонуса&nbsp;— руки, колени, бёдра и&nbsp;живот.</p>
+<div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em">СКИДКА 10%</div>
+<div style="display: flex; align-items: baseline; gap: 10px; margin-top: auto"><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 30px">3942 ₽</span><s style="font-size: 15px; color: #8C8A86">4380 ₽</s><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; margin-left: auto">−438 ₽</span></div>
+<button type="button" class="btn" data-dc-onclick="{{buy_set_petite}}" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 28px; background: #1B1A19; color: #FFFFFF; border: 0; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; cursor: pointer">В&nbsp;корзину</button>
+</article><article style="display: flex; flex-direction: column; gap: 14px; padding: 20px; background: #F6F4F0; border: 1px solid #1B1A19">
+<div style="position: relative; aspect-ratio: 5 / 4; overflow: hidden; background: #FFFFFF"><img src="/img/v2/set-grande3.jpg" alt="Набор Grande Rue · 3: масла CORE, RECHARGE и BALANCE" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; display: block"></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 28px; letter-spacing: 0.06em">Grande Rue · 3</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em">[ 3 ]</span></div>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #4A4846">CORE + RECHARGE + BALANCE: питание, тонус и&nbsp;ровный тон с&nbsp;сиянием&nbsp;— каждой зоне своя формула.</p>
+<div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em">СКИДКА 15%&nbsp;· ДОСТАВКА 0&nbsp;₽</div>
+<div style="display: flex; align-items: baseline; gap: 10px; margin-top: auto"><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 30px">5585 ₽</span><s style="font-size: 15px; color: #8C8A86">6570 ₽</s><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; margin-left: auto">−985 ₽</span></div>
+<button type="button" class="btn" data-dc-onclick="{{buy_set_grande3}}" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 28px; background: #1B1A19; color: #FFFFFF; border: 0; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; cursor: pointer">В&nbsp;корзину</button>
+</article><article style="display: flex; flex-direction: column; gap: 14px; padding: 20px; background: #F6F4F0; border: 1px solid #D6D2CB">
+<div style="position: relative; aspect-ratio: 5 / 4; overflow: hidden; background: #FFFFFF"><img src="/img/v2/set-grande5.jpg" alt="Набор Grande Rue · 5: все пять масел RUE DE MIRÓ" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; display: block"></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 28px; letter-spacing: 0.06em">Grande Rue · 5</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em">[ 5 ]</span></div>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #4A4846">Все&nbsp;пять формул: каждой зоне своё масло, один аромат на&nbsp;всё тело.</p>
+<div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em">СКИДКА 20%&nbsp;· ДОСТАВКА 0&nbsp;₽</div>
+<div style="display: flex; align-items: baseline; gap: 10px; margin-top: auto"><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 30px">8760 ₽</span><s style="font-size: 15px; color: #8C8A86">10 950 ₽</s><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; margin-left: auto">−2190 ₽</span></div>
+<button type="button" class="btn" data-dc-onclick="{{buy_set_grande5}}" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 28px; background: #1B1A19; color: #FFFFFF; border: 0; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; cursor: pointer">В&nbsp;корзину</button>
+</article><a href="/nabor" style="display: flex; flex-direction: column; justify-content: space-between; gap: 20px; padding: 28px; border: 1px dashed #8C8A86; text-decoration: none; color: #1B1A19">
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.06em">[ СВОЙ НАБОР ]</span>
+<div style="display: flex; flex-direction: column; gap: 14px"><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 30px; line-height: 1.1; letter-spacing: 0.04em">СОБЕРИТЕ САМИ</span>
+<div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; line-height: 1.9; letter-spacing: 0.04em">2&nbsp;МАСЛА&nbsp;· −10%<br>3–4&nbsp;МАСЛА&nbsp;· −15%<br>5&nbsp;МАСЕЛ&nbsp;· −20%<br>ОТ&nbsp;5000&nbsp;₽&nbsp;· ДОСТАВКА 0&nbsp;₽</div></div>
+<span style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 28px; background: transparent; color: #1B1A19; border: 1px solid #1B1A19; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; cursor: pointer">Собрать набор →</span>
+</a></div></sc-if>
+
 </div>
 </section>
 
-<section>
-<div class="g" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; background: #ECE8E1">
-<div class="vrow" style="display: flex; justify-content: center; padding: 72px 40px">
-<div class="vbox" style="position: relative; overflow: hidden; flex-shrink: 0; width: 440px; max-width: 100%; aspect-ratio: 9 / 16; background: #D6D2CB">
-<video id="rdm-video" autoplay="" muted="" loop="" playsinline="" preload="metadata" poster="/vid/texture-poster.jpg" aria-label="Масло RUE DE MIRÓ капают из пипетки на ладонь и наносят на руку" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; display: block"><source src="/vid/texture.webm" type="video/webm"><source src="/vid/texture.mp4" type="video/mp4"></video>
-<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(27, 26, 25, 0.55), rgba(27, 26, 25, 0) 45%)"></div>
-<div style="position: absolute; left: 24px; right: 24px; bottom: 24px; display: flex; flex-direction: column; gap: 20px; color: #FFFFFF">
-<div aria-live="polite" style="position: relative; min-height: 84px">
-<sc-for list="{{caps}}" as="c" hint-placeholder-count="4">
-<p style="position: absolute; left: 0; right: 0; bottom: 0; margin: 0; max-width: 420px; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 26px; line-height: 1.2; opacity: {{c.op}}; transform: translateY({{c.y}}); transition: opacity 600ms cubic-bezier(.25,.1,.25,1), transform 600ms cubic-bezier(.25,.1,.25,1)">{{c.t}}</p>
-</sc-for>
+<!-- 4. наборы: открытка + калька -->
+<section id="gift" class="py" style="padding: 104px 0; background: #ECE8E1">
+<div class="px g" style="max-width: 1280px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 56px; align-items: center">
+<div style="grid-column: span 6; position: relative; max-width: 520px; width: 100%; justify-self: center">
+<div class="stack" style="position: relative; aspect-ratio: 105 / 148; overflow: hidden; background: #FFFFFF; box-shadow: 0 24px 48px rgba(27, 26, 25, 0.12)">
+<img loading="lazy" decoding="async" src="/img/v2/card-tishina.jpg" alt="Открытка «тишина» из серии «Из жизни»" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
+<div class="veil" style="position: absolute; inset: 0; background: rgba(238, 238, 235, 0.8); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid rgba(27, 26, 25, 0.18)"><img loading="lazy" decoding="async" src="/img/v2/kalka.svg" alt="Калька: Кожа отражает. RUE DE MIRÓ" style="width: 100%; height: 100%; display: block"></div>
 </div>
-<div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap">
-<a href="#quiz" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; background: #FFFFFF; color: #1B1A19; text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">Подобрать формулу</a>
-<button type="button" data-dc-onclick="{{vToggle}}" data-dc-aria-label="{{vLabel}}" style="min-height: 44px; min-width: 44px; padding: 0 12px; background: rgba(27, 26, 25, 0.35); border: 1px solid rgba(255, 255, 255, 0.6); color: #FFFFFF; font: inherit; font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer">{{vText}}</button>
+<img loading="lazy" decoding="async" src="/img/v2/stamp-core.svg" alt="Марка CORE для открытки" style="position: absolute; right: -6%; bottom: 7%; width: 24%; height: auto; transform: rotate(6deg); filter: drop-shadow(0 6px 10px rgba(27, 26, 25, 0.18))">
 </div>
-</div>
-</div>
-</div>
-<div class="px py" style="display: flex; flex-direction: column; justify-content: center; gap: 24px; padding: 96px 64px; background: #ECE8E1">
-<div style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Текстура</div>
-<h2 style="margin: 0; font-family: 'Forum', Georgia, serif; font-weight: 400; font-size: 40px; line-height: 1.1; letter-spacing: 0.04em; text-transform: uppercase">Сухое масло — как сыворотка для тела</h2>
-<p style="margin: 0; max-width: 480px; font-size: 16px; line-height: 1.6; color: #4A4846">Ощущается иначе, чем привычное масло: быстро впитывается и не оставляет жирной плёнки. Остаётся сатиновый финиш, без липкости и пятен на одежде.</p>
-<ul style="margin: 0; padding: 0; list-style: none; max-width: 480px; border-top: 1px solid #D6D2CB">
-<li style="display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 12px; padding: 14px 0; border-bottom: 1px solid #D6D2CB; font-size: 15px; line-height: 1.5"><span style="font-family: 'Forum', Georgia, serif; font-size: 18px">01</span><span><strong style="font-weight: 500">Эмоленты</strong> смягчают кожу, удерживают влагу внутри и восстанавливают липидный баланс</span></li>
-<li style="display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 12px; padding: 14px 0; border-bottom: 1px solid #D6D2CB; font-size: 15px; line-height: 1.5"><span style="font-family: 'Forum', Georgia, serif; font-size: 18px">02</span><span><strong style="font-weight: 500">Растительные масла</strong> питают кожу и делают её мягче на ощупь</span></li>
-<li style="display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 12px; padding: 14px 0; border-bottom: 1px solid #D6D2CB; font-size: 15px; line-height: 1.5"><span style="font-family: 'Forum', Georgia, serif; font-size: 18px">03</span><span><strong style="font-weight: 500">Функциональные компоненты</strong> работают с конкретным состоянием кожи</span></li>
-</ul>
-<p style="margin: 0; max-width: 480px; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 22px; line-height: 1.3">Проверить просто: нанесите, подождите пять минут, наденьте белую рубашку.</p>
+<div style="grid-column: 8 / span 5; display: flex; flex-direction: column; gap: 22px">
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.06em">[ В&nbsp;КАЖДОЙ ПОСЫЛКЕ ]</span>
+<h2 class="h2x" style="margin: 0; font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 44px; line-height: 1.05; letter-spacing: 0.04em">ПОДАРОК, КОТОРЫЙ ХОЧЕТСЯ ХРАНИТЬ</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #4A4846">Каждый заказ мы&nbsp;собираем вручную. Внутри&nbsp;— открытка из&nbsp;серии «Из&nbsp;жизни», калька и&nbsp;марка: подпишите открытку сами, если захотите подарить.</p>
+<ol style="margin: 0; padding: 0; list-style: none; border-top: 1px solid #1B1A19"><li style="display: grid; grid-template-columns: 44px minmax(0, 1fr); padding: 12px 0; border-bottom: 1px solid #D6D2CB"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px">I</span><span style="font-size: 16px">Один флакон&nbsp;— в&nbsp;серебряном зеркальном конверте, набор&nbsp;— в&nbsp;коробке</span></li><li style="display: grid; grid-template-columns: 44px minmax(0, 1fr); padding: 12px 0; border-bottom: 1px solid #D6D2CB"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px">II</span><span style="font-size: 16px">Флаконы сухого масла по&nbsp;100&nbsp;мл</span></li><li style="display: grid; grid-template-columns: 44px minmax(0, 1fr); padding: 12px 0; border-bottom: 1px solid #D6D2CB"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px">III</span><span style="font-size: 16px">Открытка из&nbsp;серии «Из&nbsp;жизни»</span></li><li style="display: grid; grid-template-columns: 44px minmax(0, 1fr); padding: 12px 0; border-bottom: 1px solid #D6D2CB"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px">IV</span><span style="font-size: 16px">Калька «Кожа отражает»</span></li><li style="display: grid; grid-template-columns: 44px minmax(0, 1fr); padding: 12px 0; border-bottom: 1px solid #D6D2CB"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px">V</span><span style="font-size: 16px">Калька-письмо от&nbsp;основательницы</span></li><li style="display: grid; grid-template-columns: 44px minmax(0, 1fr); padding: 12px 0; border-bottom: 1px solid #D6D2CB"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px">VI</span><span style="font-size: 16px">Марка для&nbsp;открытки</span></li></ol>
+<div style="display: flex; gap: 10px; flex-wrap: wrap"><a href="/#catalog" class="btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 28px; background: #1B1A19; color: #FFFFFF; border: 0; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; cursor: pointer">Выбрать набор</a><a href="/nabor" class="btn-o" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 28px; background: transparent; color: #1B1A19; border: 1px solid #1B1A19; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; cursor: pointer">Собрать свой</a></div>
 </div>
 </div>
 </section>
 
-<section class="py" style="padding: 120px 0">
+<!-- 6. что такое сухое масло -->
+<section class="py" style="padding: 104px 0; background: #F6F4F0; border-top: 1px solid #D6D2CB">
+<div class="px g" style="max-width: 1280px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 56px; align-items: center">
+<div style="grid-column: span 5; position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: #ECE8E1">
+<video autoplay muted loop playsinline preload="auto" poster="/vid/texture-poster.jpg" aria-label="Текстура сухого масла на коже" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"><source src="/vid/texture.webm" type="video/webm"><source src="/vid/texture.mp4" type="video/mp4"></video>
+<span style="position: absolute; left: 16px; bottom: 14px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; color: #FFFFFF">ТЕКСТУРА НА&nbsp;КОЖЕ&nbsp;· 5&nbsp;МИНУТ</span>
+</div>
+<div style="grid-column: 7 / span 6; display: flex; flex-direction: column; gap: 24px">
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.06em">[ ЧТО&nbsp;ТАКОЕ СУХОЕ МАСЛО ]</span>
+<h2 class="h2x" style="margin: 0; font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 44px; line-height: 1.05; letter-spacing: 0.04em">МАСЛО, КОТОРОЕ ВПИТЫВАЕТСЯ КАК&nbsp;СЫВОРОТКА</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #4A4846">Обычное масло для&nbsp;тела&nbsp;— это&nbsp;100% растительные масла. Кожа просто не&nbsp;может впитать столько масла целиком, поэтому излишек остаётся на&nbsp;поверхности жирной плёнкой и&nbsp;пачкает одежду.</p>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #4A4846">В&nbsp;сухом масле растительные масла соединены с&nbsp;лёгкими эмолентами&nbsp;— например, каприловыми триглицеридами и&nbsp;скваланом. Они быстро впитываются и&nbsp;уводят масло в&nbsp;кожу: она получает питание, а&nbsp;на&nbsp;поверхности остаётся только сатиновый финиш.</p>
+<div style="display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr); border-top: 1px solid #1B1A19; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.03em">
+<span style="padding: 12px 0; border-bottom: 1px solid #1B1A19; color: #4A4846"></span><span style="padding: 12px 0; border-bottom: 1px solid #1B1A19; color: #4A4846">ОБЫЧНОЕ МАСЛО</span><span style="padding: 12px 0; border-bottom: 1px solid #1B1A19">СУХОЕ МАСЛО</span>
+<span style="padding: 12px 0; border-bottom: 1px solid #D6D2CB">СОСТАВ</span><span style="padding: 12px 0; border-bottom: 1px solid #D6D2CB; color: #4A4846">100% МАСЛА</span><span style="padding: 12px 0; border-bottom: 1px solid #D6D2CB">МАСЛА + ЛЁГКИЕ ЭМОЛЕНТЫ</span>
+<span style="padding: 12px 0; border-bottom: 1px solid #D6D2CB">ВПИТЫВАЕТСЯ</span><span style="padding: 12px 0; border-bottom: 1px solid #D6D2CB; color: #4A4846">ЧАСТИЧНО</span><span style="padding: 12px 0; border-bottom: 1px solid #D6D2CB">ПОЛНОСТЬЮ</span>
+<span style="padding: 12px 0; border-bottom: 1px solid #D6D2CB">ПЛЁНКА НА&nbsp;КОЖЕ</span><span style="padding: 12px 0; border-bottom: 1px solid #D6D2CB; color: #4A4846">ЕСТЬ</span><span style="padding: 12px 0; border-bottom: 1px solid #D6D2CB">НЕТ</span>
+<span style="padding: 12px 0; border-bottom: 1px solid #D6D2CB">ОДЕЖДА</span><span style="padding: 12px 0; border-bottom: 1px solid #D6D2CB; color: #4A4846">ЖДАТЬ</span><span style="padding: 12px 0; border-bottom: 1px solid #D6D2CB">ЧЕРЕЗ 5&nbsp;МИНУТ</span>
+<span style="padding: 12px 0; border-bottom: 1px solid #D6D2CB">ФИНИШ</span><span style="padding: 12px 0; border-bottom: 1px solid #D6D2CB; color: #4A4846">БЛЕСК</span><span style="padding: 12px 0; border-bottom: 1px solid #D6D2CB">САТИН</span>
+</div>
+<div class="g" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px">I</span><span style="font-size: 15px; line-height: 1.5">Две-три капли на&nbsp;ладонь</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px">II</span><span style="font-size: 15px; line-height: 1.5">Тонким слоем на&nbsp;влажную кожу после душа</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px">III</span><span style="font-size: 15px; line-height: 1.5">Пять минут&nbsp;— и&nbsp;можно одеваться</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 7. тест -->
+<section class="py" style="padding: 104px 0">
+<div class="px g" style="max-width: 1280px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 48px; align-items: start">
+<div style="grid-column: span 5; display: flex; flex-direction: column; gap: 18px">
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.06em">[ ПОДБОР ФОРМУЛЫ ]</span>
+<h2 class="h2x" style="margin: 0; font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 44px; line-height: 1.05; letter-spacing: 0.04em">НЕ&nbsp;ЗНАЕТЕ, С&nbsp;ЧЕГО НАЧАТЬ?</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4A4846">Пять вопросов, 30&nbsp;секунд. В&nbsp;конце&nbsp;— основная формула, дополнительная для&nbsp;другой зоны и&nbsp;набор со&nbsp;скидкой.</p>
+</div>
+<div style="grid-column: 7 / span 6; border: 1px solid #1B1A19; padding: 28px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em"><span>[ ВОПРОС 01 / 05 ]</span><span>30&nbsp;СЕКУНД</span></div>
+<div style="height: 1px; background: #D6D2CB; position: relative"><div style="position: absolute; left: 0; top: -1px; height: 3px; width: 20%; background: #1B1A19"></div></div>
+<div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px; line-height: 1.2">Что&nbsp;сейчас больше всего беспокоит кожу тела?</div>
+<div style="display: flex; flex-direction: column; border-top: 1px solid #D6D2CB"><a href="/quiz" class="row" style="display: grid; grid-template-columns: 36px minmax(0, 1fr) auto; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none; color: #1B1A19; font-size: 16px"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px">a.</span><span>Сухость и&nbsp;стянутость после душа</span><span aria-hidden="true">→</span></a><a href="/quiz" class="row" style="display: grid; grid-template-columns: 36px minmax(0, 1fr) auto; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none; color: #1B1A19; font-size: 16px"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px">b.</span><span>Кожа стала менее упругой</span><span aria-hidden="true">→</span></a><a href="/quiz" class="row" style="display: grid; grid-template-columns: 36px minmax(0, 1fr) auto; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none; color: #1B1A19; font-size: 16px"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px">c.</span><span>Неровная текстура, хочется обновления</span><span aria-hidden="true">→</span></a><a href="/quiz" class="row" style="display: grid; grid-template-columns: 36px minmax(0, 1fr) auto; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none; color: #1B1A19; font-size: 16px"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px">d.</span><span>Хочется лёгкости и&nbsp;прохлады</span><span aria-hidden="true">→</span></a><a href="/quiz" class="row" style="display: grid; grid-template-columns: 36px minmax(0, 1fr) auto; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none; color: #1B1A19; font-size: 16px"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px">e.</span><span>Тусклый, неровный тон</span><span aria-hidden="true">→</span></a></div>
+</div>
+</div>
+</section>
+
+<!-- 8. отзывы по выгодам -->
+<section class="py" style="padding: 104px 0; background: #FFFFFF; border-top: 1px solid #D6D2CB">
 <div class="px" style="max-width: 1280px; margin: 0 auto; padding: 0 40px; display: flex; flex-direction: column; gap: 40px">
-<div class="col-m" style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px">
-<div style="display: flex; flex-direction: column; gap: 16px; max-width: 640px"><div style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Отзывы</div><h2 style="margin: 0; font-family: 'Forum', Georgia, serif; font-weight: 400; font-size: 40px; line-height: 1.1; letter-spacing: 0.04em; text-transform: uppercase">Что говорят после первого флакона</h2><p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4A4846">Настоящие отзывы покупателей с Ozon и «Золотого яблока». Мы только сократили их — без правок по смыслу.</p></div>
-<div style="display: flex; gap: 40px; text-align: left"><a href="https://www.ozon.ru/product/rue-de-miro-suhoe-maslo-dlya-tela-dlya-uprugosti-kozhi-amaranth-ginger-soybean-oil-2576469654/reviews/" target="_blank" rel="noopener" style="display: flex; flex-direction: column; gap: 4px; text-decoration: none"><span style="font-family: 'Forum', Georgia, serif; font-size: 44px; line-height: 1">4,9</span><span style="font-size: 13px; color: #4A4846">62 отзыва на Ozon</span></a><a href="https://goldapple.ru/review/product/99000151956" target="_blank" rel="noopener" style="display: flex; flex-direction: column; gap: 4px; text-decoration: none"><span style="font-family: 'Forum', Georgia, serif; font-size: 44px; line-height: 1">5,0</span><span style="font-size: 13px; color: #4A4846">12 оценок на «Золотом яблоке»</span></a></div>
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap">
+<div style="display: flex; flex-direction: column; gap: 12px"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.06em">[ ЧТО&nbsp;ГОВОРЯТ ПОКУПАТЕЛЬНИЦЫ ]</span><h2 class="h2x" style="margin: 0; font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 44px; line-height: 1.05; letter-spacing: 0.04em">ЗА&nbsp;ЧТО&nbsp;ВЫБИРАЮТ</h2></div>
+<div style="display: flex; align-items: baseline; gap: 14px"><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 48px; line-height: 1">4,8–4,9</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; line-height: 1.5; letter-spacing: 0.04em">ИЗ&nbsp;5&nbsp;· ЗОЛОТОЕ ЯБЛОКО,<br>OZON, ЯНДЕКС МАРКЕТ</span></div>
 </div>
-<div role="tablist" aria-label="Тема отзывов" style="display: flex; flex-wrap: wrap; gap: 8px">
-<sc-for list="{{rvTabs}}" as="t" hint-placeholder-count="5"><button type="button" role="tab" data-dc-aria-selected="{{t.sel}}" data-dc-onclick="{{t.pick}}" style="min-height: 44px; padding: 0 20px; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; background: {{t.bg}}; color: {{t.fg}}; border: 1px solid #1B1A19">{{t.label}}</button></sc-for>
+<div style="position: relative">
+<div id="rev-track" class="life" role="region" aria-label="Отзывы, листаются по горизонтали" tabindex="0" style="display: flex; gap: 2px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth"><div class="rv" style="flex: 0 0 calc(50% - 1px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); scroll-snap-align: start; min-height: 440px">
+<div style="position: relative; overflow: hidden; background: #ECE8E1"><img loading="lazy" decoding="async" src="/img/v2/life-core-1.jpg" alt="Масло CORE на коже плеча" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<figure style="margin: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 36px 28px; background: #ECE8E1; text-align: center">
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em; color: #4A4846">01 / 04</span>
+<figcaption style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 26px; line-height: 1.1; letter-spacing: 0.02em">БЕЗ&nbsp;ЖИРНОЙ ПЛЁНКИ</figcaption>
+<blockquote style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 21px; line-height: 1.4">«…Впитывается моментально, никакой липкости и&nbsp;жирной плёнки, как&nbsp;от&nbsp;обычных масел. …После него можно сразу одеваться, ничего не&nbsp;пачкается.»</blockquote>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846">— ТАТЬЯНА&nbsp;Ш.&nbsp;· OZON</span>
+</figure>
+</div><div class="rv" style="flex: 0 0 calc(50% - 1px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); scroll-snap-align: start; min-height: 440px">
+<div style="position: relative; overflow: hidden; background: #ECE8E1"><img loading="lazy" decoding="async" src="/img/v2/life-fur.jpg" alt="CORE и WEIGHTLESS у мехового пледа" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<figure style="margin: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 36px 28px; background: #ECE8E1; text-align: center">
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em; color: #4A4846">02 / 04</span>
+<figcaption style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 26px; line-height: 1.1; letter-spacing: 0.02em">АРОМАТ ВМЕСТО ПАРФЮМА</figcaption>
+<blockquote style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 21px; line-height: 1.4">«Масло отличное! Кожу увлажняет и&nbsp;питает. А&nbsp;запах&nbsp;— нежнейший и&nbsp;стойкий, можно не&nbsp;пользоваться парфюмом.»</blockquote>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846">— ЕЛЕНА&nbsp;Д.&nbsp;· OZON</span>
+</figure>
+</div><div class="rv" style="flex: 0 0 calc(50% - 1px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); scroll-snap-align: start; min-height: 440px">
+<div style="position: relative; overflow: hidden; background: #ECE8E1"><img loading="lazy" decoding="async" src="/img/v2/life-core-2.jpg" alt="Флакон CORE в руке" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<figure style="margin: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 36px 28px; background: #ECE8E1; text-align: center">
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em; color: #4A4846">03 / 04</span>
+<figcaption style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 26px; line-height: 1.1; letter-spacing: 0.02em">МЯГКАЯ, ГЛАДКАЯ КОЖА</figcaption>
+<blockquote style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 21px; line-height: 1.4">«Сделал кожу мягкой и&nbsp;гладкой. Очень приятно использовать после душа, уходит чувство стянутости кожи.»</blockquote>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846">— МАРИЯ&nbsp;Ш.&nbsp;· OZON</span>
+</figure>
+</div><div class="rv" style="flex: 0 0 calc(50% - 1px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); scroll-snap-align: start; min-height: 440px">
+<div style="position: relative; overflow: hidden; background: #ECE8E1"><img loading="lazy" decoding="async" src="/img/v2/life-balance.jpg" alt="Коробка BALANCE рядом с георгином" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<figure style="margin: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 36px 28px; background: #ECE8E1; text-align: center">
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em; color: #4A4846">04 / 04</span>
+<figcaption style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 26px; line-height: 1.1; letter-spacing: 0.02em">ВМЕСТО КРЕМА</figcaption>
+<blockquote style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 21px; line-height: 1.4">«…Моментально впитывается, стала наносить вместо крема и&nbsp;очень довольна результатом!»</blockquote>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846">— АЛЛА&nbsp;Е.&nbsp;· RM/05 BALANCE&nbsp;· ЗОЛОТОЕ ЯБЛОКО</span>
+</figure>
+</div></div>
+<div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px"><button type="button" class="qb rvb" aria-label="Предыдущие отзывы" data-dc-onclick="{{revPrev}}" style="width: 52px; height: 52px; border: 1px solid #1B1A19; background: transparent; font: inherit; font-size: 18px; cursor: pointer; color: #1B1A19">←</button><button type="button" class="qb rvb" aria-label="Следующие отзывы" data-dc-onclick="{{revNext}}" style="width: 52px; height: 52px; border: 1px solid #1B1A19; background: #1B1A19; font: inherit; font-size: 18px; cursor: pointer; color: #FFFFFF">→</button></div>
 </div>
-<div class="g" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start">
-<sc-for list="{{rvItems}}" as="r" hint-placeholder-count="6"><figure style="margin: 0; display: flex; flex-direction: column; gap: 20px; padding: 32px; background: #FFFFFF; border: 1px solid #D6D2CB"><div style="display: flex; justify-content: space-between; align-items: center; gap: 12px"><span style="font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">{{r.tag}}</span><span role="img" aria-label="Оценка 5 из 5" style="font-size: 14px; letter-spacing: 0.2em">★★★★★</span></div><blockquote style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 22px; line-height: 1.4">{{r.q}}</blockquote><figcaption style="display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; padding-top: 16px; border-top: 1px solid #D6D2CB; font-size: 14px"><span style="display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 500">{{r.name}}</span><span style="color: #4A4846">{{r.f}}{{r.src}}</span></span><a data-dc-href="{{r.url}}" target="_blank" rel="noopener" style="font-size: 13px; text-underline-offset: 4px; padding: 8px 0; white-space: nowrap">Источник →</a></figcaption></figure></sc-for>
-</div>
-<sc-if value="{{rvHasMore}}" hint-placeholder-val="{{true}}"><div style="display: flex; justify-content: center"><button type="button" data-dc-onclick="{{rvShowMore}}" class="btn-o" style="min-height: 52px; padding: 0 32px; background: transparent; border: 1px solid #1B1A19; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #1B1A19; cursor: pointer">Показать ещё отзывы</button></div></sc-if>
 </div>
 </section>
 
-<section class="py" style="padding: 120px 0">
-<div class="px g" style="max-width: 1280px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px; align-items: center">
-<div style="display: flex; flex-direction: column; gap: 24px">
-<div style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Аромат</div>
-<h2 style="margin: 0; font-family: 'Forum', Georgia, serif; font-weight: 400; font-size: 40px; line-height: 1.1; letter-spacing: 0.04em; text-transform: uppercase">След, а не облако</h2>
-<p style="margin: 0; max-width: 520px; font-size: 16px; line-height: 1.6; color: #4A4846">Один фирменный аромат для всех пяти формул. Тёплый, древесный, близкий к коже. Он не входит в комнату раньше вас.</p>
+<!-- 9. пресса -->
+<section class="py" style="padding: 104px 0">
+<div class="px g" style="max-width: 1280px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 48px; align-items: start">
+<div style="grid-column: span 4; display: flex; flex-direction: column; gap: 18px; position: sticky; top: 100px">
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.06em">[ О&nbsp;НАС&nbsp;ПИСАЛИ ]</span>
+<h2 class="h2x" style="margin: 0; font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 44px; line-height: 1.05; letter-spacing: 0.04em">В&nbsp;ПРЕССЕ</h2>
 </div>
-<div style="display: flex; flex-direction: column; border-top: 1px solid #D6D2CB"><div class="col-m" style="display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 8px 24px; padding: 24px 0; border-bottom: 1px solid #D6D2CB"><div style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846; padding-top: 8px">Верхние ноты</div><div style="display: flex; flex-direction: column; gap: 6px"><div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px; line-height: 1.2">Можжевельник · кориандр</div><div style="font-size: 14px; line-height: 1.5; color: #4A4846">Свежее, чуть пряное начало в первые минуты</div></div></div><div class="col-m" style="display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 8px 24px; padding: 24px 0; border-bottom: 1px solid #D6D2CB"><div style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846; padding-top: 8px">Сердце</div><div style="display: flex; flex-direction: column; gap: 6px"><div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px; line-height: 1.2">Мускатный орех</div><div style="font-size: 14px; line-height: 1.5; color: #4A4846">Тёплая пряность, которая раскрывается на коже</div></div></div><div class="col-m" style="display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 8px 24px; padding: 24px 0; border-bottom: 1px solid #D6D2CB"><div style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846; padding-top: 8px">База</div><div style="display: flex; flex-direction: column; gap: 6px"><div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px; line-height: 1.2">Ваниль · амбервуд · белый мускус</div><div style="font-size: 14px; line-height: 1.5; color: #4A4846">Мягкий древесный след, который остаётся рядом</div></div></div></div>
+<div class="g" style="grid-column: 6 / span 7; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; border-top: 1px solid #1B1A19; align-content: start">
+<a href="https://www.marieclaire.ru/krasota/byuti-nakhodki-nedeli-muss-dlya-plotnosti-volos-irrigator-shetka-i-parfyumirovannoe-sukhoe-maslo/" target="_blank" rel="noopener" class="row" style="display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; align-items: baseline; gap: 12px; padding: 14px 0; border-bottom: 1px solid #D6D2CB; text-decoration: none; color: #1B1A19"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px">01</span><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 24px; letter-spacing: 0.03em">Marie Claire</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846">ОНЛАЙН ↗</span></a><a href="https://www.buro247.ru/news/style/04-jul-2026-new-in-collections-of-beauty-brands.html" target="_blank" rel="noopener" class="row" style="display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; align-items: baseline; gap: 12px; padding: 14px 0; border-bottom: 1px solid #D6D2CB; text-decoration: none; color: #1B1A19"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px">02</span><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 24px; letter-spacing: 0.03em">BURO.</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846">ОНЛАЙН ↗</span></a><a href="https://www.timeout.ru/msk/feature/10-novyh-aromatnyh-sredstv-dlya-tela-kotorye-zamenyat-duhi" target="_blank" rel="noopener" class="row" style="display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; align-items: baseline; gap: 12px; padding: 14px 0; border-bottom: 1px solid #D6D2CB; text-decoration: none; color: #1B1A19"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px">03</span><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 24px; letter-spacing: 0.03em">Time Out</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846">ОНЛАЙН ↗</span></a><a href="https://theblueprint.ru/news/41060" target="_blank" rel="noopener" class="row" style="display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; align-items: baseline; gap: 12px; padding: 14px 0; border-bottom: 1px solid #D6D2CB; text-decoration: none; color: #1B1A19"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px">04</span><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 24px; letter-spacing: 0.03em">The Blueprint</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846">ОНЛАЙН ↗</span></a><a href="https://makeupmania.ru/sukhie-masla-rue-de-miro/" target="_blank" rel="noopener" class="row" style="display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; align-items: baseline; gap: 12px; padding: 14px 0; border-bottom: 1px solid #D6D2CB; text-decoration: none; color: #1B1A19"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px">05</span><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 24px; letter-spacing: 0.03em">Makeupmania</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846">ОНЛАЙН ↗</span></a><a href="https://dailymoscow.ru/beauty/letniy-byuti-minimum-uvlazhnenie-uhod-i-zashchita-ot-solnca" target="_blank" rel="noopener" class="row" style="display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; align-items: baseline; gap: 12px; padding: 14px 0; border-bottom: 1px solid #D6D2CB; text-decoration: none; color: #1B1A19"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px">06</span><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 24px; letter-spacing: 0.03em">Daily Moscow</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846">ОНЛАЙН ↗</span></a><a href="https://www.kiz.ru/content/krasota/novosti-beauty/s-bolshim-udovolstviem-3-kosmeticheskikh-brenda-o-kotorykh-stoit-uznat/" target="_blank" rel="noopener" class="row" style="display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; align-items: baseline; gap: 12px; padding: 14px 0; border-bottom: 1px solid #D6D2CB; text-decoration: none; color: #1B1A19"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px">07</span><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 24px; letter-spacing: 0.03em">Красота и&nbsp;здоровье</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846">ОНЛАЙН ↗</span></a><a href="https://www.gazetametro.ru/articles/pochemu-kozhe-nuzhno-maslo-i-kak-vybrat-pravilnoe-sredstvo-dlja-ljubogo-tipa-10-08-2026" target="_blank" rel="noopener" class="row" style="display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; align-items: baseline; gap: 12px; padding: 14px 0; border-bottom: 1px solid #D6D2CB; text-decoration: none; color: #1B1A19"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px">08</span><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 24px; letter-spacing: 0.03em">Metro</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846">ОНЛАЙН ↗</span></a><a href="https://new-magazine.ru/2026/07/13/bjuti-novinki-ijulja-2026/" target="_blank" rel="noopener" class="row" style="display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; align-items: baseline; gap: 12px; padding: 14px 0; border-bottom: 1px solid #D6D2CB; text-decoration: none; color: #1B1A19"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px">09</span><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 24px; letter-spacing: 0.03em">New Magazine</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846">ОНЛАЙН ↗</span></a><a href="https://i-gency.ru/krasota/uhod-za-nogami-v-otpuske/" target="_blank" rel="noopener" class="row" style="display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; align-items: baseline; gap: 12px; padding: 14px 0; border-bottom: 1px solid #D6D2CB; text-decoration: none; color: #1B1A19"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px">10</span><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 24px; letter-spacing: 0.03em">I-Gency</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846">ОНЛАЙН ↗</span></a><a href="https://nownownow.ru/man/beauty/glavnye-pravila-uhoda-za-nogami-v-otpuske/" target="_blank" rel="noopener" class="row" style="display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; align-items: baseline; gap: 12px; padding: 14px 0; border-bottom: 1px solid #D6D2CB; text-decoration: none; color: #1B1A19"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px">11</span><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 24px; letter-spacing: 0.03em">NowNowNow</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846">ОНЛАЙН ↗</span></a><div style="display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; align-items: baseline; gap: 12px; padding: 14px 0; border-bottom: 1px solid #D6D2CB"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px">12</span><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 24px; letter-spacing: 0.03em">Grazia</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846">В&nbsp;ПЕЧАТИ</span></div><div style="display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; align-items: baseline; gap: 12px; padding: 14px 0; border-bottom: 1px solid #D6D2CB"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px">13</span><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 24px; letter-spacing: 0.03em">Лиза</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846">В&nbsp;ПЕЧАТИ</span></div><div style="display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; align-items: baseline; gap: 12px; padding: 14px 0; border-bottom: 1px solid #D6D2CB"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px">14</span><span style="font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 24px; letter-spacing: 0.03em">The Voice</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846">В&nbsp;ПЕЧАТИ</span></div>
+</div>
 </div>
 </section>
 
-<section class="py" style="padding: 96px 0; background: #FFFFFF; border-top: 1px solid #D6D2CB">
-<div class="px" style="max-width: 1280px; margin: 0 auto; padding: 0 40px; display: flex; flex-direction: column; gap: 40px; align-items: center; text-align: center">
-<div style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">О нас писали</div>
-<div class="press" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; text-align: center; gap: 12px 48px; width: 100%; max-width: 1100px; font-family: 'Forum', Georgia, serif; font-size: 26px; line-height: 1.2; letter-spacing: 0.04em">
-<a href="https://www.marieclaire.ru/krasota/byuti-nakhodki-nedeli-muss-dlya-plotnosti-volos-irrigator-shetka-i-parfyumirovannoe-sukhoe-maslo/" target="_blank" rel="noopener" aria-label="Marie Claire: статья о RUE DE MIRÓ (откроется в новой вкладке)" style="text-decoration: none; border-bottom: 1px solid transparent; padding: 8px 0">Marie Claire</a><a href="https://www.buro247.ru/news/style/04-jul-2026-new-in-collections-of-beauty-brands.html" target="_blank" rel="noopener" aria-label="BURO.: публикация о RUE DE MIRÓ (откроется в новой вкладке)" style="text-decoration: none; padding: 8px 0">BURO.</a><a href="https://www.timeout.ru/msk/feature/10-novyh-aromatnyh-sredstv-dlya-tela-kotorye-zamenyat-duhi" target="_blank" rel="noopener" aria-label="Time Out: публикация о RUE DE MIRÓ (откроется в новой вкладке)" style="text-decoration: none; padding: 8px 0">Time Out</a><a href="https://theblueprint.ru/news/41060" target="_blank" rel="noopener" aria-label="The Blueprint: публикация о RUE DE MIRÓ (откроется в новой вкладке)" style="text-decoration: none; padding: 8px 0">The Blueprint</a><a href="https://makeupmania.ru/sukhie-masla-rue-de-miro/" target="_blank" rel="noopener" aria-label="Makeupmania: статья о сухих маслах RUE DE MIRÓ (откроется в новой вкладке)" style="text-decoration: none; padding: 8px 0">Makeupmania</a><a href="https://dailymoscow.ru/beauty/letniy-byuti-minimum-uvlazhnenie-uhod-i-zashchita-ot-solnca" target="_blank" rel="noopener" aria-label="Daily Moscow: публикация о RUE DE MIRÓ (откроется в новой вкладке)" style="text-decoration: none; padding: 8px 0">Daily Moscow</a><a href="https://www.kiz.ru/content/krasota/novosti-beauty/s-bolshim-udovolstviem-3-kosmeticheskikh-brenda-o-kotorykh-stoit-uznat/" target="_blank" rel="noopener" aria-label="Красота и здоровье: публикация о RUE DE MIRÓ (откроется в новой вкладке)" style="text-decoration: none; padding: 8px 0">Красота и здоровье</a><a href="https://i-gency.ru/krasota/uhod-za-nogami-v-otpuske/" target="_blank" rel="noopener" aria-label="I-Gency: публикация о RUE DE MIRÓ (откроется в новой вкладке)" style="text-decoration: none; padding: 8px 0">I-Gency</a><a href="https://www.gazetametro.ru/articles/pochemu-kozhe-nuzhno-maslo-i-kak-vybrat-pravilnoe-sredstvo-dlja-ljubogo-tipa-10-08-2026" target="_blank" rel="noopener" aria-label="Metro: статья о RUE DE MIRÓ (откроется в новой вкладке)" style="text-decoration: none; padding: 8px 0">Metro</a><a href="https://new-magazine.ru/2026/07/13/bjuti-novinki-ijulja-2026/" target="_blank" rel="noopener" aria-label="New Magazine: публикация о RUE DE MIRÓ (откроется в новой вкладке)" style="text-decoration: none; padding: 8px 0">New Magazine</a><a href="https://nownownow.ru/man/beauty/glavnye-pravila-uhoda-za-nogami-v-otpuske/" target="_blank" rel="noopener" aria-label="NowNowNow: публикация о RUE DE MIRÓ (откроется в новой вкладке)" style="text-decoration: none; padding: 8px 0">NowNowNow</a>
-</div>
-<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 48px; font-family: 'Forum', Georgia, serif; font-size: 22px; letter-spacing: 0.04em; color: #4A4846"><span style="display: inline-flex; align-items: baseline; gap: 10px">Лиза<span style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">в печати</span></span><span style="display: inline-flex; align-items: baseline; gap: 10px">The Voice<span style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">в печати</span></span><span style="display: inline-flex; align-items: baseline; gap: 10px">Grazia<span style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">в печати</span></span>
-</div>
-<p style="margin: 0; font-size: 14px; color: #4A4846">Рейтинг 4,8–4,9 из 5 на площадках</p>
+
+<!-- 10. из жизни -->
+<section class="py" style="padding: 88px 0; background: #F6F4F0; border-top: 1px solid #1B1A19">
+<div class="px" style="max-width: 1280px; margin: 0 auto; padding: 0 40px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.06em">[ ИЗ&nbsp;ЖИЗНИ ]</span><span style="display: flex; gap: 20px"><a href="https://t.me/ruedemiro" target="_blank" rel="noopener" style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em">TELEGRAM ↗</a><a href="https://www.instagram.com/ruedemiro/" target="_blank" rel="noopener" style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em">INSTAGRAM* ↗</a></span></div>
+<div class="life" style="display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 4px"><figure style="margin: 0; flex: 0 0 auto; width: clamp(200px, 19vw, 260px); display: flex; flex-direction: column; gap: 8px; scroll-snap-align: start"><div style="aspect-ratio: 9 / 16; overflow: hidden; background: #ECE8E1"><img loading="lazy" decoding="async" src="/img/v2/life-core-3.jpg" alt="Масло на плечи после душа" style="width: 100%; height: 100%; object-fit: cover; display: block"></div><figcaption style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846">RM · CORE</figcaption></figure><figure style="margin: 0; flex: 0 0 auto; width: clamp(200px, 19vw, 260px); display: flex; flex-direction: column; gap: 8px; scroll-snap-align: start"><div style="aspect-ratio: 9 / 16; overflow: hidden; background: #ECE8E1"><img loading="lazy" decoding="async" src="/img/v2/life-recharge.jpg" alt="RECHARGE на завтраке" style="width: 100%; height: 100%; object-fit: cover; display: block"></div><figcaption style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846">RM · RECHARGE</figcaption></figure><figure style="margin: 0; flex: 0 0 auto; width: clamp(200px, 19vw, 260px); display: flex; flex-direction: column; gap: 8px; scroll-snap-align: start"><div style="aspect-ratio: 9 / 16; overflow: hidden; background: #ECE8E1"><img loading="lazy" decoding="async" src="/img/v2/life-weightless.jpg" alt="CORE и WEIGHTLESS на столе" style="width: 100%; height: 100%; object-fit: cover; display: block"></div><figcaption style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846">RM · WEIGHTLESS</figcaption></figure><figure style="margin: 0; flex: 0 0 auto; width: clamp(200px, 19vw, 260px); display: flex; flex-direction: column; gap: 8px; scroll-snap-align: start"><div style="aspect-ratio: 9 / 16; overflow: hidden; background: #ECE8E1"><img loading="lazy" decoding="async" src="/img/v2/life-balance.jpg" alt="Коробка BALANCE с георгином" style="width: 100%; height: 100%; object-fit: cover; display: block"></div><figcaption style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846">RM · BALANCE</figcaption></figure><figure style="margin: 0; flex: 0 0 auto; width: clamp(200px, 19vw, 260px); display: flex; flex-direction: column; gap: 8px; scroll-snap-align: start"><div style="aspect-ratio: 9 / 16; overflow: hidden; background: #ECE8E1"><img loading="lazy" decoding="async" src="/img/v2/life-escape-boxes.jpg" alt="Коробки ESCAPE и RECHARGE у лампы" style="width: 100%; height: 100%; object-fit: cover; display: block"></div><figcaption style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846">RM · ESCAPE</figcaption></figure><figure style="margin: 0; flex: 0 0 auto; width: clamp(200px, 19vw, 260px); display: flex; flex-direction: column; gap: 8px; scroll-snap-align: start"><div style="aspect-ratio: 9 / 16; overflow: hidden; background: #ECE8E1"><img loading="lazy" decoding="async" src="/img/v2/life-bed.jpg" alt="Поднос с кофейником на постели" style="width: 100%; height: 100%; object-fit: cover; display: block"></div><figcaption style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846">RUE DE MIRÓ</figcaption></figure><figure style="margin: 0; flex: 0 0 auto; width: clamp(200px, 19vw, 260px); display: flex; flex-direction: column; gap: 8px; scroll-snap-align: start"><div style="aspect-ratio: 9 / 16; overflow: hidden; background: #ECE8E1"><img loading="lazy" decoding="async" src="/img/v2/life-grass.jpg" alt="Флакон в траве" style="width: 100%; height: 100%; object-fit: cover; display: block"></div><figcaption style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846">RM · CORE</figcaption></figure></div>
 </div>
 </section>
 
-<section style="background: #1B1A19; color: #FFFFFF">
-<div class="px py col-m" style="max-width: 1280px; margin: 0 auto; padding: 96px 40px; display: flex; justify-content: space-between; align-items: center; gap: 32px">
-<div style="display: flex; flex-direction: column; gap: 16px">
-<h2 style="margin: 0; font-family: 'Forum', Georgia, serif; font-weight: 400; font-size: 40px; line-height: 1.1; letter-spacing: 0.04em; text-transform: uppercase">Где купить</h2>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #D6D2CB">Золотое яблоко, Ozon, Яндекс Маркет, LIO store, MOODRĀ SHOP, салоны и&nbsp;бутики. 100&nbsp;мл&nbsp;· 2190&nbsp;₽</p>
-<p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 22px; line-height: 1.4; color: #FFFFFF">Можно приехать и&nbsp;купить в&nbsp;<a href="https://lenuar.ru" target="_blank" rel="noopener" style="color: #FFFFFF; text-underline-offset: 4px">LENUAR</a>&nbsp;— культурной гостиной в&nbsp;центре Москвы, Милютинский переулок,&nbsp;18А</p>
+<!-- 9. подвал -->
+<section class="py" aria-labelledby="sub-h" style="padding: 88px 0; background: #ECE8E1; border-top: 1px solid #1B1A19">
+<div class="px" style="max-width: 820px; margin: 0 auto; padding: 0 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center">
+<h2 id="sub-h" class="h2x" style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 48px; line-height: 1.1">Письма RUE DE MIRÓ.</h2>
+<p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 21px; line-height: 1.5; color: #4A4846">Новые формулы, наборы и&nbsp;предложения&nbsp;— первыми. И&nbsp;код −10% на&nbsp;первый заказ.</p>
+<form class="rdm-sub" novalidate style="width: 100%; display: flex; flex-direction: column; gap: 12px; margin-top: 8px">
+<div class="g" style="display: grid; grid-template-columns: minmax(0, 1fr) auto; border: 1px solid #1B1A19; background: #FFFFFF">
+<label for="sub-e" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Электронная почта</label>
+<input id="sub-e" type="email" autocomplete="email" inputmode="email" placeholder="ВАША ПОЧТА" style="font: inherit; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; letter-spacing: 0.06em; padding: 0 18px; min-height: 56px; border: 0; background: transparent; color: #1B1A19; min-width: 0">
+<button type="submit" class="btn sub-go" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 28px; background: #1B1A19; color: #FFFFFF; border: 0; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; cursor: pointer; min-height: 56px">Подписаться</button>
 </div>
-<a href="/where-to-buy" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 32px; border: 1px solid #FFFFFF; color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">Все магазины →</a>
+<label style="display: flex; gap: 10px; align-items: flex-start; text-align: left; font-size: 12px; line-height: 1.5; color: #4A4846; cursor: pointer"><input type="checkbox" style="width: 18px; height: 18px; margin: 1px 0 0; flex-shrink: 0; accent-color: #1B1A19"><span>Согласна получать письма RUE DE MIRÓ, отписаться можно в&nbsp;любой момент. <a href="/privacy">Политика обработки данных</a></span></label>
+<div class="sub-err" role="alert" style="min-height: 16px; font-size: 12px; color: #9B2C2C; text-align: left"></div>
+</form>
 </div>
 </section>
 
-<footer style="background: #F6F4F0; border-top: 1px solid #D6D2CB">
-<div class="px" style="max-width: 1280px; margin: 0 auto; padding: 72px 40px 40px; display: flex; flex-direction: column; gap: 56px">
-<div class="g" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px">
-<div style="display: flex; flex-direction: column; gap: 16px">
-<img loading="lazy" decoding="async" src="/img/logo.svg" alt="RUE DE MIRÓ" style="height: 24px; width: auto; align-self: flex-start">
-<div style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 22px">Кожа отражает</div>
+<footer style="border-top: 1px solid #1B1A19; background: #FFFFFF">
+<div class="px" style="max-width: 1280px; margin: 0 auto; padding: 64px 40px 32px; display: flex; flex-direction: column; gap: 40px">
+<div class="c4" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; font-size: 14px">
+<div style="display: flex; flex-direction: column; gap: 14px"><img loading="lazy" decoding="async" src="/img/logo.svg" alt="RUE DE MIRÓ" style="height: 22px; width: auto; align-self: flex-start"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 20px">Кожа отражает</span><svg class="seal" width="84" height="84" viewBox="0 0 100 100" role="img" aria-label="RUE DE MIRÓ · Кожа отражает" style="display: block; margin-top: 8px"><defs><path id="spf" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/></defs><circle cx="50" cy="50" r="50" fill="#1B1A19"/><text fill="#FFFFFF" font-family="IBM Plex Mono, monospace" font-size="6.4"><textPath href="#spf" textLength="230" lengthAdjust="spacing">RUE DE MIRÓ&nbsp;· КОЖА ОТРАЖАЕТ&nbsp;· RUE DE MIRÓ&nbsp;· КОЖА ОТРАЖАЕТ&nbsp;·</textPath></text><circle cx="50" cy="50" r="28" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="0.5"/><g fill="none" stroke="#FFFFFF" stroke-width="0.9"><circle cx="50" cy="46.5" r="6"/><circle cx="50" cy="53.5" r="6"/><path d="M50 34.5v6M50 59.5v6"/></g></svg></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.08em; color: #4A4846">[ МАГАЗИН ]</span><a href="/#catalog" style="text-decoration: none">Масла</a><a href="/#sets" style="text-decoration: none">Наборы</a><a href="/quiz" style="text-decoration: none">Подбор формулы</a><a href="/gift-card" style="text-decoration: none">Подарочный сертификат</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.08em; color: #4A4846">[ ПОКУПАТЕЛЯМ ]</span><a href="/delivery" style="text-decoration: none">Доставка и&nbsp;оплата</a><a href="/where-to-buy" style="text-decoration: none">Где ещё купить</a><a href="/collab" style="text-decoration: none">Сотрудничество</a><a href="/about-us" style="text-decoration: none">О&nbsp;бренде</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.08em; color: #4A4846">[ СВЯЗЬ ]</span><a href="tel:+79263777499" style="text-decoration: none; white-space: nowrap">+7 (926) 377-74-99</a><a href="https://t.me/+79263777499" target="_blank" rel="noopener" style="text-decoration: none">Написать в&nbsp;Telegram</a><a href="mailto:salut@ruedemiro.com" style="text-decoration: none">salut@ruedemiro.com</a><a href="https://t.me/ruedemiro" target="_blank" rel="noopener" style="text-decoration: none">Telegram-канал</a><a href="https://www.instagram.com/ruedemiro/" target="_blank" rel="noopener" style="text-decoration: none">Instagram*</a><a href="https://ru.pinterest.com/RUEDEMIRO/" style="text-decoration: none">Pinterest</a><a href="#subscribe" style="text-decoration: none">Подписка −10%</a><img loading="lazy" decoding="async" data-pop-src="/img/v2/life-core-1.jpg" src="/img/v2/life-core-1.jpg" alt="" style="display: none"></div>
 </div>
-<div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px">
-<div style="font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Уход</div>
-<a href="/assort" style="text-decoration: none">Ассортимент</a>
-<a href="/quiz" style="text-decoration: none">Подбор формулы</a>
-<a href="/where-to-buy" style="text-decoration: none">Где купить</a>
-</div>
-<div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px">
-<div style="font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Бренд</div>
-<a href="/about-us" style="text-decoration: none">О бренде</a>
-<a href="/collab" style="text-decoration: none">Сотрудничество</a>
-</div>
-<div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px">
-<div style="font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4846">Связь</div>
-<a href="mailto:salut@ruedemiro.com" style="text-decoration: none">salut@ruedemiro.com</a>
-<a href="https://t.me/ruedemiro" style="text-decoration: none">Telegram</a>
-<a href="https://ru.pinterest.com/RUEDEMIRO/" style="text-decoration: none">Pinterest</a>
-</div>
-</div>
-<div class="col-m" style="display: flex; justify-content: space-between; gap: 16px; padding-top: 24px; border-top: 1px solid #D6D2CB; font-size: 12px; color: #4A4846">
-<span>© 2026 RUE DE MIRÓ · ИП Мирошина Е. В.</span>
-<span style="display: flex; gap: 24px"><a href="/privacy" style="color: #4A4846">Политика конфиденциальности</a><a href="/terms" style="color: #4A4846">Условия покупки</a></span>
-</div>
+<div style="display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 18px; border-top: 1px solid #D6D2CB; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #4A4846"><span>©&nbsp;2026 RUE DE MIRÓ&nbsp;· ИП&nbsp;МИРОШИНА&nbsp;Е. В.<br><span style="font-size: 10px">* INSTAGRAM ПРИНАДЛЕЖИТ КОМПАНИИ META, ПРИЗНАННОЙ ЭКСТРЕМИСТСКОЙ ОРГАНИЗАЦИЕЙ И&nbsp;ЗАПРЕЩЁННОЙ В&nbsp;РФ</span></span><span><a href="/offer" style="color: #4A4846">ОФЕРТА</a> · <a href="/privacy" style="color: #4A4846">ПОЛИТИКА</a> · <a href="/consent" style="color: #4A4846">СОГЛАСИЕ НА&nbsp;ОБРАБОТКУ ПДН</a></span></div>
 </div>
 </footer>
 
 </div>
 </div>
 <script type="text/plain" id="dc-script">
+var RDM = (function () {
+  var K = 'rdm-cart', PRICE = 2190, FREE = 5000;
+  var P = {
+    core: { name: 'CORE', tagline: 'Восстановление и комфорт', img: '/img/v2/core-pack-crop.jpg', color: '#EFEBE0', href: '/core' },
+    recharge: { name: 'RECHARGE', tagline: 'Тонус и эластичность', img: '/img/v2/recharge-pack-crop.jpg', color: '#EDC6CC', href: '/recharge' },
+    escape: { name: 'ESCAPE', tagline: 'Ровная текстура и обновление', img: '/img/v2/escape-pack-crop.jpg', color: '#DCCFC1', href: '/escape' },
+    weightless: { name: 'WEIGHTLESS', tagline: 'Лёгкость и прохлада', img: '/img/v2/weightless-pack-crop.jpg', color: '#E4E0DA', href: '/weightless' },
+    balance: { name: 'BALANCE', tagline: 'Ровный тон и сияние · SPF 20', img: '/img/v2/balance-pack-crop.jpg', color: '#EEDC8C', href: '/balance' }
+  };
+  var TR = { place: { name: 'Поднос Place', tagline: 'Сталь · 20,4 × 15,6 см', img: '/img/v2/tray-place.jpg', price: 990 },
+             ruelle: { name: 'Поднос Ruelle', tagline: 'Сталь · 20 × 8,5 см', img: '/img/v2/tray-ruelle.jpg', price: 590 } };
+  var SETS = { set_petite: { name: 'Petite Rue', kit: 'core.recharge:ruelle' }, set_grande3: { name: 'Grande Rue · 3', kit: 'core.recharge.balance:ruelle' },
+               set_grande5: { name: 'Grande Rue · 5', kit: 'core.recharge.escape.weightless.balance:place' } };
+  var ORDER = ['core', 'recharge', 'escape', 'weightless', 'balance'];
+  function get() { try { var c = JSON.parse(localStorage.getItem(K) || '{}'); return (c && typeof c === 'object') ? c : {}; } catch (e) { return {}; } }
+  function save(c) { try { localStorage.setItem(K, JSON.stringify(c)); } catch (e) {} try { window.dispatchEvent(new Event('rdm-cart')); } catch (e) {} }
+  function count(c) { c = c || get(); var n = 0; for (var k in c) n += c[k] > 0 ? c[k] : 0; return n; }
+  function disc(n) { return n >= 5 ? 20 : n >= 3 ? 15 : n >= 2 ? 10 : 0; }
+  function rub(v) { var s = String(Math.round(v)); return (s.length > 4 ? s.replace(/\B(?=(\d{3})+(?!\d))/g, ' ') : s) + ' ₽'; }
+  function kitParse(key) { var m = /^kit:([a-z.]{3,80}):(none|ruelle|place)$/.exec(key || ''); if (!m) return null; var o = m[1].split('.'); if (o.length < 2 || o.length > 5) return null;
+    for (var i = 0; i < o.length; i++) if (!P[o[i]]) return null; o.sort(); return { oils: o, tray: m[2] }; }
+  function kitKey(oils, tray) { return 'kit:' + oils.slice().sort().join('.') + ':' + (tray || 'none'); }
+  function kitPrice(k) { var n = k.oils.length, d = disc(n), oils = Math.round(n * PRICE * (100 - d) / 100), tf = k.tray === 'none' ? 0 : TR[k.tray].price;
+    var tp = k.tray === 'none' ? 0 : n === 2 ? Math.round(tf / 2) : n === 3 ? (k.tray === 'ruelle' ? 0 : 400) : 0;
+    return { price: oils + tp, full: n * PRICE + tf, n: n, disc: d, trayPrice: tp }; }
+  function kitTitle(k) { var cnt = {}, out = []; k.oils.forEach(function (o) { cnt[o] = (cnt[o] || 0) + 1; });
+    Object.keys(cnt).forEach(function (o) { out.push(P[o].name + (cnt[o] > 1 ? ' ×' + cnt[o] : '')); }); return out.join(', ') + (k.tray === 'none' ? '' : ' + поднос ' + TR[k.tray].name.split(' ')[1]); }
+  // полный расчёт корзины (повторяет api/lib.php → price_order)
+  function order(c, promo) {
+    c = c || get(); var loose = [], looseN = 0, lines = [], full = 0, sum = 0, freeShip = false, units = 0;
+    var wp = promo && promo.type === 'welcome' ? promo.percent : 0;
+    Object.keys(c).forEach(function (id) { var q = Math.min(20, c[id] | 0); if (q > 0 && P[id]) { loose.push([id, q]); looseN += q; } });
+    var dv = disc(looseN), d = looseN ? Math.max(dv, wp) : 0, hasTray = false;
+    if (looseN) { var unitK = PRICE * (100 - d), target = Math.round(looseN * unitK / 100) * 100, diff = target - looseN * unitK;
+      ORDER.forEach(function (id) { var q = c[id] | 0; if (q <= 0) return; var amt = unitK * q + diff; diff = 0;
+        lines.push({ id: id, name: P[id].name, sub: P[id].tagline, img: P[id].img, color: P[id].color, href: P[id].href, qty: q, amount: amt / 100, full: PRICE * q }); });
+      // рубли по строкам без копеек, сумма строк = итог (метод наибольших остатков)
+      var ls = lines.slice(), fl = ls.map(function (l) { return Math.floor(l.amount); }), rest = target / 100 - fl.reduce(function (a, b) { return a + b; }, 0);
+      ls.map(function (l, i) { return [l.amount - fl[i], i]; }).sort(function (a, b) { return b[0] - a[0]; }).forEach(function (x) { fl[x[1]] += rest > 0 ? 1 : 0; rest--; });
+      ls.forEach(function (l, i) { l.amount = fl[i]; });
+      full += looseN * PRICE; sum += target / 100; units += looseN; }
+    Object.keys(c).forEach(function (id) { var q = Math.min(20, c[id] | 0); if (q <= 0) return; var m = /^tray_(place|ruelle)$/.exec(id), k = null, t;
+      if (m) { t = TR[m[1]]; var pr = Math.round(t.price * (100 - wp) / 100); hasTray = true;
+        lines.push({ id: id, name: t.name, sub: t.tagline, img: t.img, color: '#ECE8E1', href: 'Trays.dc.html', qty: q, amount: pr * q, full: t.price * q }); full += t.price * q; sum += pr * q; units += q; return; }
+      if (SETS[id]) k = kitParse('kit:' + SETS[id].kit); else if (id.indexOf('kit:') === 0) k = kitParse(id);
+      if (!k) return; var kp = kitPrice(k);
+      lines.push({ id: id, name: SETS[id] ? SETS[id].name : 'Свой набор', sub: kitTitle(k) + (k.tray === 'none' ? '' : ' · подарочная коробка'), img: k.tray === 'none' ? P[k.oils[0]].img : TR[k.tray].img,
+        color: '#ECE8E1', href: SETS[id] ? '/#sets' : '/nabor', qty: q, amount: kp.price * q, full: kp.full * q });
+      full += kp.full * q; sum += kp.price * q; units += (kp.n + (k.tray === 'none' ? 0 : 1)) * q; if (k.tray !== 'none') freeShip = true; });
+    sum = Math.round(sum);
+    return { lines: lines, sum: sum, full: full, save: full - sum, looseN: looseN, disc: looseN ? d : 0, units: Math.max(1, units), freeShip: freeShip || sum >= FREE,
+             promoApplied: wp > 0 && ((looseN > 0 && wp > dv) || hasTray), n: count(c) };
+  }
+  // совместимость: расчёт только по маслам поштучно
+  function totals(c) { c = c || get(); var n = 0; ORDER.forEach(function (id) { n += (c[id] | 0) > 0 ? c[id] | 0 : 0; }); var d = disc(n), full = n * PRICE, sum = Math.round(full * (100 - d) / 100);
+    return { n: n, disc: d, full: full, unit: n ? sum / n : PRICE, sum: sum, save: full - sum }; }
+  return {
+    P: P, TR: TR, SETS: SETS, ORDER: ORDER, PRICE: PRICE, FREE: FREE, get: get, count: count, disc: disc, rub: rub, totals: totals, order: order,
+    kitKey: kitKey, kitParse: kitParse, kitPrice: kitPrice, kitTitle: kitTitle,
+    add: function (id, q) { var c = get(); c[id] = (c[id] || 0) + (q || 1); save(c); },
+    set: function (id, q) { var c = get(); if (q > 0) c[id] = q; else delete c[id]; save(c); },
+    clear: function () { save({}); },
+    img: function (src) { try { var e = document.querySelector('img[data-rdm-src="' + src + '"]'); if (e && e.getAttribute('src')) return e.getAttribute('src'); } catch (x) {} return src; },
+    hint: function (n) { n = n == null ? totals().n : n; if (n >= 5) return 'Скидка 20% на масла применена'; if (n >= 3) return 'Ещё ' + (5 - n) + ' — и скидка на масла станет 20%'; if (n === 2) return 'Ещё одна формула — и скидка станет 15%'; if (n === 1) return 'Добавьте вторую формулу — скидка 10%'; return ''; },
+    buy: function (c, ids, q) { var self = this; return function () { [].concat(ids).forEach(function (i) { self.add(i, typeof q === 'function' ? q() : (q || 1)); }); c.setState({ justAdded: Date.now() }); clearTimeout(c._ja); c._ja = setTimeout(function () { c.setState({ justAdded: null }); }, 5000); }; },
+    watch: function (fn) { window.addEventListener('rdm-cart', fn); window.addEventListener('storage', fn); }
+  };
+})();
+if (!window.__rdmNav) { window.__rdmNav = 1; document.addEventListener('click', function (e) {
+  var a = e.target && e.target.closest ? e.target.closest('a[href*="/#"], a[href*="/#"], a[href^="#catalog"], a[href^="#sets"]') : null; if (!a) return;
+  var h = a.getAttribute('href'), k = h.slice(h.indexOf('#') + 1);
+  var d = a.closest('details'); if (d) d.open = false;
+  if (window.__rdmGo) { e.preventDefault(); window.__rdmGo(k); return; }
+  try { localStorage.setItem('rdm-go', JSON.stringify({ k: k, t: Date.now() })); } catch (x) {}
+}, true);
+  var __n = (function () { try { var c = JSON.parse(localStorage.getItem('rdm-cart') || '{}'), n = 0; for (var k in c) n += c[k] > 0 ? c[k] : 0; return n; } catch (x) { return 0; } })();
+  window.addEventListener('rdm-cart', function () {
+    var c = {}, n = 0; try { c = JSON.parse(localStorage.getItem('rdm-cart') || '{}'); } catch (x) {} for (var k in c) n += c[k] > 0 ? c[k] : 0;
+    var up = n > __n; __n = n; if (!up || document.querySelector('.ctoast')) return;
+    var t = document.getElementById('rdm-toast');
+    if (!t) { t = document.createElement('div'); t.id = 'rdm-toast'; t.setAttribute('role', 'status');
+      t.style.cssText = 'position:fixed;right:24px;top:96px;z-index:900;display:flex;align-items:center;gap:16px;padding:14px 18px;background:#1B1A19;color:#FFFFFF;font:12px/1.4 "IBM Plex Mono",monospace;letter-spacing:.06em;box-shadow:0 12px 30px rgba(27,26,25,.25);transition:opacity .3s';
+      document.body.appendChild(t); }
+    t.innerHTML = '<span>ДОБАВЛЕНО В КОРЗИНУ · ' + n + '</span><a href="/cart" style="color:#FFFFFF;text-underline-offset:3px">ОФОРМИТЬ →</a>';
+    t.style.opacity = '1'; clearTimeout(window.__rdmT); window.__rdmT = setTimeout(function () { t.style.opacity = '0'; setTimeout(function () { if (t.style.opacity === '0') t.remove(); }, 400); }, 4000);
+  });
+}
+/* Окно подписки «−10% на первый заказ». Вставляется в скрипт каждой страницы (v2.py).
+   Механика:
+   • показывается один раз за визит: через 25 секунд, при прокрутке 55% страницы или при попытке уйти (курсор к вкладкам, только компьютер);
+   • не показывается в корзине, на «Спасибо» и в документах (window.RDM_NOPOP);
+   • после закрытия молчит 30 дней, после подписки — больше никогда;
+   • открывается вручную ссылкой «Письма и код −10%» в подвале (href="#subscribe");
+   • двойное подтверждение: код приходит только после перехода по ссылке из письма. */
+(function () {
+  if (window.__rdmPop) return; window.__rdmPop = 1;
+  var LS = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+  var DAY = 864e5, shown = false, root = null;
+  function img() { var e = document.querySelector('img[data-pop-src]'); return e ? (e.getAttribute('src') || e.getAttribute('data-pop-src')) : '/img/v2/life-core-1.jpg'; }
+  function logo() { var e = document.querySelector('header img[alt="RUE DE MIRÓ"]') || document.querySelector('img[src*="logo"]'); return e ? e.getAttribute('src') : '/img/logo.svg'; }
+  function css() {
+    if (document.getElementById('rdm-pop-css')) return;
+    var s = document.createElement('style'); s.id = 'rdm-pop-css';
+    s.textContent = '.rp-bg{position:fixed;inset:0;z-index:1000;background:rgba(27,26,25,.42);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .35s}' +
+      '.rp-bg.on{opacity:1}.rp{position:relative;display:grid;grid-template-columns:1fr 1fr;width:min(880px,100%);max-height:calc(100vh - 40px);background:#FFFFFF;color:#1B1A19;box-shadow:0 30px 60px rgba(27,26,25,.25);transform:translateY(12px);transition:transform .45s cubic-bezier(.22,.61,.36,1);font-family:Montserrat,"Helvetica Neue",Arial,sans-serif;font-weight:300}' +
+      '.rp-bg.on .rp{transform:none}.rp-ph{position:relative;overflow:hidden;background:#ECE8E1;min-height:560px}.rp-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}' +
+      '.rp-k{position:absolute;left:0;right:0;bottom:0;padding:18px 20px;background:rgba(238,238,235,.82);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:22px;text-align:center}' +
+      '.rp-b{display:flex;flex-direction:column;justify-content:center;gap:18px;padding:64px 48px 40px;overflow:auto;background:#FBFAF8;text-align:center}.rp-logo{height:30px;width:auto;align-self:center;margin-bottom:10px}.rp-sr{position:absolute !important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.rp .rp-t{font-family:"Cormorant Garamond",Georgia,serif;font-size:22px;line-height:1.35;color:#1B1A19}.rp label.rp-c{text-align:left}.rp-m{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#4A4846}' +
+      '.rp h2{margin:0;font-family:Forum,Georgia,serif;font-weight:400;font-size:40px;line-height:1.05;letter-spacing:.03em}.rp p{margin:0;font-size:15px;line-height:1.6;color:#4A4846}' +
+      '.rp input[type=email]{font:inherit;font-size:16px;padding:14px;border:1px solid #1B1A19;border-radius:0;width:100%;box-sizing:border-box;background:#FFFFFF;color:#1B1A19}' +
+      '.rp label.rp-c{display:grid;grid-template-columns:20px 1fr;gap:10px;font-size:12px;line-height:1.5;color:#4A4846;cursor:pointer}.rp label.rp-c input{width:18px;height:18px;margin:1px 0 0;accent-color:#1B1A19}' +
+      '.rp .rp-go{min-height:52px;border:0;background:#1B1A19;color:#FFFFFF;font:inherit;font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;cursor:pointer}.rp .rp-go:hover{background:#4A4846}.rp .rp-go[disabled]{opacity:.5;cursor:default}' +
+      '.rp .rp-x{position:absolute;top:12px;right:12px;width:44px;height:44px;border:0;background:transparent;font-size:26px;line-height:1;cursor:pointer;color:#1B1A19}.rp .rp-no{align-self:center;border:0;background:none;font:inherit;font-size:12px;color:#8C8A86;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:8px}' +
+      '.rp .rp-err{min-height:18px;font-size:12px;color:#9B2C2C}.rp a{color:#1B1A19;text-underline-offset:3px}' +
+      '@media (max-width:760px){.rp-bg{align-items:flex-end;padding:0}.rp{grid-template-columns:1fr;max-height:92vh}.rp-ph{min-height:0;height:200px}.rp-k{font-size:18px;padding:10px}.rp-b{padding:28px 20px 20px;gap:14px}.rp h2{font-size:30px}}' +
+      '@media (prefers-reduced-motion:reduce){.rp-bg,.rp{transition:none}}';
+    document.head.appendChild(s);
+  }
+  function close(remember) {
+    if (!root) return; if (remember) LS.set('rdm-pop-until', String(Date.now() + 30 * DAY));
+    var r = root; root = null; r.classList.remove('on'); setTimeout(function () { r.remove(); }, 350);
+    document.removeEventListener('keydown', onKey, true);
+  }
+  function onKey(e) {
+    if (!root) return;
+    if (e.key === 'Escape') { close(true); return; }
+    if (e.key === 'Tab') { var f = root.querySelectorAll('button,input,a'); if (!f.length) return; var a = f[0], z = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); } else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); } }
+  }
+  function open(manual) {
+    if (root) return; if (!manual && (shown || window.RDM_NOPOP)) return; shown = true;
+    css();
+    root = document.createElement('div'); root.className = 'rp-bg';
+    root.innerHTML = '<div class="rp" role="dialog" aria-modal="true" aria-labelledby="rp-h">' +
+      '<div class="rp-ph"><img loading="lazy" decoding="async" alt="Масло CORE на коже плеча" src="' + img() + '"></div>' +
+      '<form class="rp-b" novalidate>' +
+      '<img loading="lazy" decoding="async" class="rp-logo" alt="" src="' + logo() + '"><h2 id="rp-h" class="rp-sr">Подписка RUE DE MIRÓ</h2>' +
+      '<p class="rp-t">Не&nbsp;пропустите новинки: подпишитесь на&nbsp;рассылку и&nbsp;узнавайте первой о&nbsp;новых формулах и&nbsp;предложениях.</p>' +
+      '<p class="rp-t">А&nbsp;ещё&nbsp;— код −10% на&nbsp;первый заказ.</p>' +
+      '<label for="rp-e" class="rp-sr">Электронная почта</label><input id="rp-e" type="email" autocomplete="email" inputmode="email" placeholder="Ваша электронная почта" required>' +
+      '<button type="submit" class="rp-go">Подписаться</button>' +
+      '<label class="rp-c"><input type="checkbox" id="rp-ok"><span>Согласна получать письма RUE DE MIRÓ, отписаться можно в&nbsp;любой момент. <a href="/privacy" target="_blank">Политика</a></span></label>' +
+      '<div class="rp-err" role="alert"></div>' +
+      '</form><button type="button" class="rp-x" aria-label="Закрыть">×</button></div>';
+    document.body.appendChild(root);
+    requestAnimationFrame(function () { root && root.classList.add('on'); });
+    var form = root.querySelector('form'), err = root.querySelector('.rp-err'), go = root.querySelector('.rp-go');
+    root.addEventListener('click', function (e) { if (e.target === root) close(true); });
+    root.querySelector('.rp-x').onclick = function () { close(true); };
+        document.addEventListener('keydown', onKey, true);
+    setTimeout(function () { var i = root && root.querySelector('#rp-e'); if (i) i.focus(); }, 60);
+    form.onsubmit = function (e) {
+      e.preventDefault();
+      var em = root.querySelector('#rp-e').value.trim(), ok = root.querySelector('#rp-ok').checked;
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) { err.textContent = 'Проверьте адрес почты.'; return; }
+      if (!ok) { err.textContent = 'Отметьте согласие на получение писем.'; return; }
+      err.textContent = ''; go.disabled = true; go.textContent = 'Отправляем…';
+      var done = function (note) {
+        LS.set('rdm-sub', '1');
+        form.innerHTML = '<img loading="lazy" decoding="async" class="rp-logo" alt="" src="' + logo() + '"><h2 id="rp-h" class="rp-sr">Почти готово</h2>' +
+          '<p class="rp-t">Спасибо! Мы отправили письмо на&nbsp;<b style="color:#1B1A19;font-weight:500">' + em.replace(/[<>&"]/g, '') + '</b>. Нажмите в&nbsp;нём «Подтвердить адрес» — и&nbsp;код −10% придёт следом.</p>' +
+          (note ? '<p class="rp-m" style="font-size:11px;text-align:center">' + note + '</p>' : '') + '<button type="button" class="rp-go">Продолжить покупки</button>';
+        form.querySelector('.rp-go').onclick = function () { close(false); };
+      };
+      fetch('/api/subscribe.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: em, consent: true, page: location.pathname }) })
+        .then(function (r) { return r.json(); })
+        .then(function (d) { if (d && d.ok) done(''); else { go.disabled = false; go.textContent = 'Подписаться'; err.textContent = (d && d.error) || 'Не получилось. Попробуйте ещё раз.'; } })
+        .catch(function () {
+          if (!/ruedemiro\.com$/.test(location.hostname)) { done('Превью: письмо здесь не отправляется. На сайте придёт настоящее.'); return; }
+          go.disabled = false; go.textContent = 'Подписаться'; err.textContent = 'Нет связи. Попробуйте ещё раз.';
+        });
+    };
+  }
+  window.RDM_POP = open;
+  // блок подписки на страницах: <form class="rdm-sub"> с полями [type=email], [type=checkbox], .sub-err, .sub-go
+  document.addEventListener('submit', function (e) {
+    var f = e.target; if (!f || !f.classList || !f.classList.contains('rdm-sub')) return; e.preventDefault();
+    var em = (f.querySelector('input[type=email]').value || '').trim(), ok = f.querySelector('input[type=checkbox]').checked, err = f.querySelector('.sub-err'), go = f.querySelector('.sub-go');
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) { err.textContent = 'Проверьте адрес почты.'; return; }
+    if (!ok) { err.textContent = 'Отметьте согласие на получение писем.'; return; }
+    err.textContent = ''; go.disabled = true; var t0 = go.textContent; go.textContent = 'Отправляем…';
+    var done = function (note) { LS.set('rdm-sub', '1'); f.innerHTML = '<p class="sub-done" style="margin:0;font-family:\'Cormorant Garamond\',Georgia,serif;font-style:italic;font-size:24px;line-height:1.4">Письмо отправлено на ' + em.replace(/[<>&"]/g, '') + '. Подтвердите адрес — и код −10% придёт следом.</p>' + (note ? '<p style="margin:8px 0 0;font-family:\'IBM Plex Mono\',monospace;font-size:11px;letter-spacing:.06em;color:#4A4846">' + note + '</p>' : ''); };
+    fetch('/api/subscribe.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: em, consent: true, page: location.pathname }) })
+      .then(function (r) { return r.json(); })
+      .then(function (d) { if (d && d.ok) done(''); else { go.disabled = false; go.textContent = t0; err.textContent = (d && d.error) || 'Не получилось. Попробуйте ещё раз.'; } })
+      .catch(function () { if (!/ruedemiro\.com$/.test(location.hostname)) { done('ПРЕВЬЮ: ПИСЬМО ЗДЕСЬ НЕ ОТПРАВЛЯЕТСЯ.'); return; } go.disabled = false; go.textContent = t0; err.textContent = 'Нет связи. Попробуйте ещё раз.'; });
+  }, true);
+  // ручное открытие из подвала
+  document.addEventListener('click', function (e) { var a = e.target && e.target.closest ? e.target.closest('a[href="#subscribe"]') : null; if (a) { e.preventDefault(); open(true); } }, true);
+  // автоматический показ
+  if (LS.get('rdm-sub') || Number(LS.get('rdm-pop-until') || 0) > Date.now()) return;
+  try { if (sessionStorage.getItem('rdm-pop-seen')) return; } catch (e) {}
+  function auto() { if (shown || window.RDM_NOPOP) return; try { sessionStorage.setItem('rdm-pop-seen', '1'); } catch (e) {} open(false); }
+  setTimeout(auto, 25000);
+  window.addEventListener('scroll', function onS() { var h = document.documentElement; if ((h.scrollTop + innerHeight) / h.scrollHeight > 0.55 && h.scrollHeight > innerHeight * 1.6) { window.removeEventListener('scroll', onS); auto(); } }, { passive: true });
+  if (matchMedia('(pointer:fine)').matches) document.addEventListener('mouseout', function (e) { if (!e.relatedTarget && e.clientY < 8) auto(); });
+})();
+
 class Component extends DCLogic {
-componentDidMount() {
-this._onScroll = () => { var s = window.scrollY > 8; if (!this.state || this.state.scrolled !== s) this.setState({ scrolled: s }); };
-window.addEventListener('scroll', this._onScroll, { passive: true });
-this._onScroll();
-this._initVideo();
-}
-_initVideo(tries) {
-var v = document.getElementById('rdm-video');
-if (!v) { if ((tries || 0) < 20) setTimeout(() => this._initVideo((tries || 0) + 1), 150); return; }
-this._v = v;
-v.muted = true;
-this._onTime = () => { var t = v.currentTime; var i = t < 2.3 ? 0 : t < 4.9 ? 1 : t < 7.5 ? 2 : 3; if (!this.state || this.state.cap !== i) this.setState({ cap: i }); };
-v.addEventListener('timeupdate', this._onTime);
-var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if (reduce) { v.pause(); this.setState({ vPaused: true }); }
-else { var p = v.play(); if (p && p.catch) p.catch(() => this.setState({ vPaused: true })); }
-}
-componentWillUnmount() {
-window.removeEventListener('scroll', this._onScroll);
-if (this._v && this._onTime) this._v.removeEventListener('timeupdate', this._onTime);
-}
-renderVals() {
-var self = this;
-var st = this.state || {};
-var F = {
-core: { href: '/core', name: 'CORE', tagline: 'Восстановление и комфорт', zones: 'голени · руки · локти · колени', img: '/img/core-1.jpg', color: '#EFEBE0', why: 'Ваша кожа просит комфорта: сквалан, миндальное масло и холестерин поддерживают защитный барьер и снимают ощущение стянутости.', use: 'на локти, колени и голени, где кожа суше всего' },
-recharge: { href: '/recharge', name: 'RECHARGE', tagline: 'Тонус и эластичность', zones: 'бёдра · ягодицы · живот · грудь · руки', img: '/img/recharge-1.jpg', color: '#EDC6CC', why: 'Вам важны упругость и тонус: амарант, имбирь и соевое масло питают кожу, и она визуально выглядит более гладкой.', use: 'на бёдра и живот, чтобы добавить ощущение тонуса' },
-escape: { href: '/escape', name: 'ESCAPE', tagline: 'Баланс и ровная текстура', zones: 'спина · плечи · руки · декольте', img: '/img/escape-1.jpg', color: '#DCCFC1', why: 'Коже нужен баланс: масло нима, кора ивы и гамамелис помогают ей выглядеть ровнее и чище.', use: 'на спину и плечи, чтобы кожа выглядела ровнее' },
-weightless: { href: '/weightless', name: 'WEIGHTLESS', tagline: 'Расслабление и лёгкость', zones: 'икры · ступни · трапеция', img: '/img/weightless-1.jpg', color: '#E4E0DA', why: 'Телу не хватает лёгкости: ментил лактат дарит мягкую прохладу, миндальное масло смягчает кожу, а экстракт василька её успокаивает.', use: 'на икры и ступни вечером, когда ноги устали' },
-balance: { href: '/balance', name: 'BALANCE', tagline: 'Ровный тон и сатиновый финиш', zones: 'руки · плечи · декольте · ноги', img: '/img/balance-1.jpg', color: '#EEDC8C', why: 'Коже не хватает сияния: экстракт сельдерея и жемчужная пудра визуально выравнивают тон и дают мягкое сияние с сатиновым финишем.', use: 'на руки, плечи и декольте — для мягкого сияния и ровного тона' }
-};
-var Q = [
-{ t: 'Что сейчас больше всего беспокоит кожу тела?', o: [
-{ t: 'Сухость и стянутость после душа', s: { core: 3 } },
-{ t: 'Кожа стала менее упругой', s: { recharge: 3 } },
-{ t: 'Неровная текстура, хочется обновления', s: { escape: 3 } },
-{ t: 'Хочется лёгкости и прохлады', s: { weightless: 3 } },
-{ t: 'Тусклый, неровный тон', s: { balance: 3 } }
-] },
-{ t: 'Какой зоне хочется уделить больше внимания?', o: [
-{ t: 'Руки, локти, колени', s: { core: 2 } },
-{ t: 'Бёдра, живот, ягодицы', s: { recharge: 2 } },
-{ t: 'Спина, плечи, декольте', s: { escape: 2, balance: 1 } },
-{ t: 'Икры, ступни, шея и плечи', s: { weightless: 2 } },
-{ t: 'Там, где хочется сияния: руки, плечи, декольте', s: { balance: 2 } }
-] },
-{ t: 'Когда вы обычно ухаживаете за телом?', o: [
-{ t: 'Утром, перед выходом из дома', s: { balance: 2, recharge: 1 } },
-{ t: 'Вечером, после душа', s: { core: 1, weightless: 1 } },
-{ t: 'После спорта или дня на ногах', s: { weightless: 2, recharge: 1 } },
-{ t: 'Когда вспомню, без режима', s: { core: 1, escape: 1 } }
-] },
-{ t: 'Какое ощущение хочется после нанесения?', o: [
-{ t: 'Мягкость и комфорт', s: { core: 2 } },
-{ t: 'Упругость и бодрость', s: { recharge: 2 } },
-{ t: 'Чистота и лёгкость', s: { escape: 2 } },
-{ t: 'Прохлада и расслабление', s: { weightless: 2 } },
-{ t: 'Сияние и ровный тон', s: { balance: 2 } }
-] },
-{ t: 'Что ближе к вашему ритму жизни?', o: [
-{ t: 'Офис, сухой воздух, кондиционер', s: { core: 2 } },
-{ t: 'Регулярные тренировки', s: { recharge: 1, escape: 1 } },
-{ t: 'Много хожу, весь день на ногах', s: { weightless: 2 } },
-{ t: 'Хочу, чтобы кожа выглядела отдохнувшей, даже если не выспалась', s: { balance: 2 } },
-{ t: 'Стресс, мало сна', s: { escape: 1, weightless: 1 } }
-] }
-];
-var step = st.qStep || 0;
-var ans = st.qAns || [];
-var done = step >= Q.length;
-var cur = done ? Q[Q.length - 1] : Q[step];
-var opts = cur.o.map(function (o, i) {
-return { t: o.t, pick: function () { self.setState({ qAns: ans.slice(0, step).concat([i]), qStep: step + 1 }); } };
-});
-var order = ['core', 'recharge', 'escape', 'weightless', 'balance'];
-var score = { core: 0, recharge: 0, escape: 0, weightless: 0, balance: 0 };
-ans.forEach(function (a, qi) { var s = Q[qi].o[a].s; for (var k in s) score[k] += s[k]; });
-var first = ans.length ? Object.keys(Q[0].o[ans[0]].s)[0] : 'core';
-var ranked = order.slice().sort(function (a, b) {
-if (score[b] !== score[a]) return score[b] - score[a];
-if (a === first) return -1;
-if (b === first) return 1;
-return order.indexOf(a) - order.indexOf(b);
-});
-var m = F[ranked[0]], a2 = F[ranked[1]];
-var RV = [{"cat": "texture", "tag": "Текстура", "q": "«…Впитывается моментально, никакой липкости и жирной плёнки, как от обычных масел. …После него можно сразу одеваться, ничего не пачкается.»", "name": "Татьяна Ш.", "f": "", "src": "Ozon", "url": "https://www.ozon.ru/product/rue-de-miro-suhoe-maslo-dlya-tela-dlya-uprugosti-kozhi-amaranth-ginger-soybean-oil-2576469654/reviews/"}, {"cat": "texture", "tag": "Текстура", "q": "«Быстро впитывается в кожу, не оставляет масляных пятен на одежде, приятный запах. Хорошо питает и увлажняет кожу.»", "name": "Арина К.", "f": "RECHARGE · ", "url": "https://goldapple.ru/review/product/99000151956", "src": "Золотое яблоко"}, {"cat": "system", "tag": "Система", "q": "«…кожа мягкая, напитанная… трогать приятно, не как жирную сковородку гладить. …Хочется попробовать другие бутылочки, благо, что аромат везде одинаковый — можно наносить на разные зоны тела, и запах будет единый.»", "name": "Елизавета З.", "f": "RECHARGE · ", "url": "https://goldapple.ru/review/product/99000151956", "src": "Золотое яблоко"}, {"cat": "scent", "tag": "Аромат", "q": "«Масло отличное! Кожу увлажняет и питает. А запах — нежнейший и стойкий, можно не пользоваться парфюмом.»", "name": "Елена Д.", "f": "", "src": "Ozon", "url": "https://www.ozon.ru/product/rue-de-miro-suhoe-maslo-dlya-tela-dlya-uprugosti-kozhi-amaranth-ginger-soybean-oil-2576469654/reviews/"}, {"cat": "feel", "tag": "Ощущения", "q": "«…по ощущениям будто тончайшая вуаль на коже… впитывается за 30 секунд, нет жирности как от обычного масла. …Кожа стала гладкой.»", "name": "Елена М.", "f": "ESCAPE · ", "url": "https://goldapple.ru/review/product/99000151957", "src": "Золотое яблоко"}, {"cat": "feel", "tag": "Ощущения", "q": "«После спорта теперь всегда пользуюсь данным маслом! …Не оставляет жирных следов и имеет приятный аромат, сохраняющийся на весь день.»", "name": "Владимир Г.", "f": "", "src": "Ozon", "url": "https://www.ozon.ru/product/rue-de-miro-suhoe-maslo-dlya-tela-dlya-uprugosti-kozhi-amaranth-ginger-soybean-oil-2576469654/reviews/"}, {"cat": "scent", "tag": "Аромат", "q": "«…впитывается безумно быстро и не пачкает одежду. Очень приятный ритуал нанесения… часто спрашивают про аромат, который долго остаётся на коже.»", "name": "Алла Е.", "f": "ESCAPE · ", "url": "https://goldapple.ru/review/product/99000151957", "src": "Золотое яблоко"}, {"cat": "feel", "tag": "Ощущения", "q": "«Сделал кожу мягкой и гладкой. Очень приятно использовать после душа, уходит чувство стянутости кожи. Тело выглядит ухоженно!»", "name": "Мария Ш.", "f": "", "src": "Ozon", "url": "https://www.ozon.ru/product/rue-de-miro-suhoe-maslo-dlya-tela-dlya-uprugosti-kozhi-amaranth-ginger-soybean-oil-2576469654/reviews/"}, {"cat": "feel", "tag": "Ощущения", "q": "«…Моментально впитывается, стала наносить вместо крема и очень довольна результатом! Кожа другая, не знаю как объяснить, но очень притягательная… хочется потрогать.»", "name": "Алла Е.", "f": "BALANCE · ", "url": "https://goldapple.ru/review/product/99000151959", "src": "Золотое яблоко"}, {"cat": "system", "tag": "Система", "q": "«…Впитывается практически сразу, ощущение бархатистости без липкости и плёнки. Аромат нежный и ненавязчивый… Теперь хочу попробовать остальные варианты тоже.»", "name": "Елена Т.", "f": "", "src": "Ozon", "url": "https://www.ozon.ru/product/rue-de-miro-suhoe-maslo-dlya-tela-dlya-uprugosti-kozhi-amaranth-ginger-soybean-oil-2576469654/reviews/"}, {"cat": "texture", "tag": "Текстура", "q": "«Очень быстро впитывается, не оставляет жирного блеска.»", "name": "Олеся С.", "f": "CORE · ", "url": "https://goldapple.ru/review/product/99000151958", "src": "Золотое яблоко"}, {"cat": "scent", "tag": "Аромат", "q": "«Запах потрясающий… впитывается мгновенно… оставляет чувство полного комфорта… при этом отлично питает.»", "name": "Алёна Ч.", "f": "RECHARGE · ", "url": "https://goldapple.ru/review/product/99000151956", "src": "Золотое яблоко"}, {"cat": "system", "tag": "Система", "q": "«Очень понравилось масло. Хорошее увлажнение, не оставляет следов. Заказала всю серию.»", "name": "Ольга В.", "f": "", "src": "Ozon", "url": "https://www.ozon.ru/product/rue-de-miro-suhoe-maslo-dlya-tela-dlya-uprugosti-kozhi-amaranth-ginger-soybean-oil-2576469654/reviews/"}, {"cat": "scent", "tag": "Аромат", "q": "«Очень приятный, нежный шлейфовый аромат и хорошее увлажнение.»", "name": "Julia K.", "f": "WEIGHTLESS · ", "url": "https://goldapple.ru/review/product/99000151976", "src": "Золотое яблоко"}, {"cat": "texture", "tag": "Текстура", "q": "«Очень приятный запах, быстро впитывается, не оставляет липких следов.»", "name": "Александра С.", "f": "RECHARGE · ", "url": "https://goldapple.ru/review/product/99000151956", "src": "Золотое яблоко"}];
-var rvCat = st.rvCat || 'all';
-var rvTabs = [['all', 'Все'], ['texture', 'Текстура'], ['scent', 'Аромат'], ['feel', 'Ощущения'], ['system', 'Система']].map(function (p) {
-var on = rvCat === p[0];
-return { label: p[1], sel: on ? 'true' : 'false', bg: on ? '#1B1A19' : 'transparent', fg: on ? '#FFFFFF' : '#1B1A19', pick: function () { self.setState({ rvCat: p[0], rvMore: false }); } };
-});
-var rvAll = RV.filter(function (r) { return rvCat === 'all' || r.cat === rvCat; });
-var rvMore = !!st.rvMore;
-var rvItems = rvMore ? rvAll : rvAll.slice(0, 6);
-var cap = st.cap || 0;
-var CAPS = ['Две-три капли', 'Тонким слоем на влажную кожу', 'Впитывается, как сыворотка', 'Без плёнки. Через пять минут можно одеваться'];
-var caps = CAPS.map(function (t, k) { return { t: t, op: k === cap ? '1' : '0', y: k === cap ? '0' : '8px' }; });
-return {
-rvHasMore: !rvMore && rvAll.length > 6,
-rvShowMore: function () { self.setState({ rvMore: true }); },
-rvTabs: rvTabs,
-rvItems: rvItems,
-caps: caps,
-vText: st.vPaused ? 'Смотреть' : 'Пауза',
-vLabel: st.vPaused ? 'Воспроизвести видео' : 'Поставить видео на паузу',
-vToggle: function () { var v = self._v; if (!v) return; if (v.paused) { v.play(); self.setState({ vPaused: false }); } else { v.pause(); self.setState({ vPaused: true }); } },
-hdrBg: st.scrolled ? '#F6F4F0' : 'rgba(246, 244, 240, 0.35)',
-hdrLine: st.scrolled ? '#D6D2CB' : 'rgba(214, 210, 203, 0)',
-qInProgress: !done,
-qDone: done,
-qNum: Math.min(step + 1, Q.length),
-qTotal: Q.length,
-qTitle: cur.t,
-qOpts: opts,
-qProgress: Math.round((Math.min(step, Q.length) / Q.length) * 100) + '%',
-qCanBack: step > 0 && !done,
-qBack: function () { self.setState({ qStep: Math.max(0, step - 1) }); },
-qReset: function () { self.setState({ qStep: 0, qAns: [] }); },
-res: { href: m.href, spf: ranked[0] === 'balance', name: m.name, tagline: m.tagline, zones: m.zones, img: m.img, color: m.color, why: m.why },
-add: { href: a2.href, name: a2.name, img: a2.img, color: a2.color, note: 'Добавьте ' + a2.use + '.' + (ranked[1] === 'balance' ? ' Содержит SPF 20.' : '') }
-};
-}
+  componentDidMount() { var s = this; RDM.watch(function () { s.setState({ cartTick: Date.now() }); }); this.setState({ cartTick: 1 }); var me = this; window.__rdmGo = function (k) { if (k !== 'catalog' && k !== 'sets' && k !== 'trays') return; me.setState({ tab: k === 'sets' ? 'sets' : k === 'trays' ? 'trays' : 'oils' }); setTimeout(function () { var el = document.getElementById('catalog'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 40); };
+  var g = null; try { g = JSON.parse(localStorage.getItem('rdm-go') || 'null'); localStorage.removeItem('rdm-go'); } catch (x) {}
+  var hk = String(location.hash || '').slice(1);
+  if (g && Date.now() - g.t < 20000) setTimeout(function () { window.__rdmGo(g.k); }, 300); else if (hk) setTimeout(function () { window.__rdmGo(hk); }, 300); }
+  renderVals() { var self = this; return Object.assign({}, this._rv(), { cartCount: RDM.count(), buy_core: RDM.buy(self, 'core'), buy_recharge: RDM.buy(self, 'recharge'), buy_escape: RDM.buy(self, 'escape'), buy_weightless: RDM.buy(self, 'weightless'), buy_balance: RDM.buy(self, 'balance'), buy_set_petite: RDM.buy(self, ['core', 'recharge']), buy_set_grande3: RDM.buy(self, ['core', 'recharge', 'balance']), buy_set_grande5: RDM.buy(self, ['core', 'recharge', 'escape', 'weightless', 'balance']) }); }
+  _rv() {
+    var self = this, tab = (this.state && this.state.tab) || 'oils';
+    var T = [['oils', 'МАСЛА · 5'], ['sets', 'НАБОРЫ · 3']];
+    return {
+      tabs: T.map(function (t) { var on = t[0] === tab; return { label: t[1], sel: on ? 'true' : 'false', bg: on ? '#1B1A19' : 'transparent', fg: on ? '#FFFFFF' : '#1B1A19', pick: function () { self.setState({ tab: t[0] }); } }; }),
+      showOils: tab === 'oils', showSets: tab === 'sets', showTrays: tab === 'trays',
+      revPrev: function () { var t = document.getElementById('rev-track'); if (t) t.scrollBy({ left: -t.clientWidth, behavior: 'smooth' }); },
+      revNext: function () { var t = document.getElementById('rev-track'); if (t) { var end = t.scrollLeft + t.clientWidth >= t.scrollWidth - 4; t.scrollBy({ left: end ? -t.scrollWidth : t.clientWidth, behavior: 'smooth' }); } }
+    };
+  }
 }
 </script>
 <script src="/js/dc-lite.js"></script>
+<script src="/js/rdm-goals.js"></script>
 <div id="ck" role="dialog" aria-live="polite" aria-label="Cookie" hidden style="position:fixed;left:16px;right:16px;bottom:16px;z-index:50;max-width:560px;margin:0 auto;background:#F6F4F0;border:1px solid #1B1A19;padding:20px 24px;display:none;flex-direction:column;gap:16px;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-weight:300;font-size:14px;line-height:1.6;color:#1B1A19">
 <p style="margin:0">Мы&nbsp;используем cookie и&nbsp;Яндекс Метрику с&nbsp;Вебвизором, чтобы понимать, как&nbsp;работает сайт. Подробнее&nbsp;— в&nbsp;<a href="/privacy" style="color:#1B1A19;text-underline-offset:3px">политике конфиденциальности</a>.</p>
 <div style="display:flex;gap:12px;flex-wrap:wrap">
