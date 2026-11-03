@@ -11,6 +11,10 @@ function cfg(): array {
         if (is_file($local)) $c = array_replace_recursive($c, require $local);
         // значения по умолчанию для настроек, которых может не быть в старом config.php на хостинге
         $c += ['welcome' => ['percent' => 10, 'days' => 60]];
+        // доставка: с какой суммы товаров бесплатно (0 — всегда бесплатно)
+        $c += ['ship' => ['pvz_free' => 0, 'courier_free' => 5000, 'far_pvz_free' => 3500, 'far_courier_free' => 7000,
+            'far_regions' => ['Камчат', 'Магадан', 'Сахалин', 'Чукот', 'Саха', 'Якут', 'Амурск', 'Еврейск', 'Хабаровск', 'Приморск', 'Калининград'],
+            'far_cities' => ['Норильск']]];
         $c += ['promo_codes' => ['SALUT10' => ['percent' => 10, 'until' => '2027-12-31']]];
         $c += ['smtp' => ['host' => '', 'port' => 465, 'user' => '', 'pass' => '']];
         $c += ['trays' => [
@@ -239,9 +243,27 @@ function cdek_price(int $city_code, int $tariff, int $n): ?array {
 }
 
 // цена доставки, которую считаем на сервере (клиентской не доверяем)
-function delivery_price(string $method, array $city, bool $free, int $n): int {
+// дальний регион: по городу и региону из СДЭК (без связи со СДЭК — по названию города)
+function ship_far(array $city): bool {
+    static $cache = [];
+    $s = cfg()['ship']; $name = (string)($city['name'] ?? ''); $region = (string)($city['region'] ?? '');
+    $code = (int)($city['code'] ?? 0);
+    if ($code && $region === '' && cdek_base()) {
+        if (!isset($cache[$code])) { $r = cdek_get('/location/cities', ['code' => $code, 'size' => 1]); $cache[$code] = $r[0] ?? []; }
+        $region = (string)($cache[$code]['region'] ?? ''); if (!empty($cache[$code]['city'])) $name = (string)$cache[$code]['city'];
+    }
+    foreach ($s['far_cities'] as $fc) if ($name !== '' && mb_strtolower(trim($name)) === mb_strtolower($fc)) return true;
+    foreach ($s['far_regions'] as $fr) if (($region !== '' && mb_stripos($region, $fr) !== false)) return true;
+    return false;
+}
+function ship_free_from(string $method, bool $far): int {
+    $s = cfg()['ship'];
+    if ($method === 'cdek_courier') return (int)($far ? $s['far_courier_free'] : $s['courier_free']);
+    return (int)($far ? $s['far_pvz_free'] : $s['pvz_free']);
+}
+function delivery_price(string $method, array $city, int $goods, int $n): int {
     $c = cfg();
-    if ($method === 'pickup' || $free) return 0;
+    if ($method === 'pickup' || $goods >= ship_free_from($method, ship_far($city))) return 0;
     if (($method === 'cdek_pvz' || $method === 'cdek_courier') && !empty($city['code']) && cdek_base()) {
         $p = cdek_price((int)$city['code'], (int)$c['cdek'][$method === 'cdek_pvz' ? 'tariff_pvz' : 'tariff_courier'], $n);
         if ($p) return $p['price'];
@@ -392,7 +414,7 @@ function mail_order(array $o, bool $paid): void {
         $hello = 'Здравствуйте, ' . $o['customer']['name'] . "!\n\n"
             . ($paid ? "Спасибо за заказ {$o['id']} — оплата получена. Мы соберём его и передадим в доставку в течение 1–3 рабочих дней, а затем пришлём номер для отслеживания. Кассовый чек придёт отдельным письмом.\n\n"
                      : "Спасибо за заказ {$o['id']}! Мы свяжемся с вами, чтобы подтвердить состав и доставку, и пришлём ссылку на оплату.\n\n");
-        mail_send($o['customer']['email'], "RUE DE MIRÓ — заказ {$o['id']}", $hello . $t . "\nВопросы — ответьте на это письмо, позвоните или напишите в Telegram: +7 (926) 377-74-99 (https://t.me/+79263777499)\n\nRUE DE MIRÓ\n" . $c['site'], $c['shop_email']);
+        mail_send($o['customer']['email'], "RUE DE MIRÓ — заказ {$o['id']}", $hello . $t . "\nВопросы — ответьте на это письмо, напишите в Telegram: @ruedemiro_salut (https://t.me/ruedemiro_salut)\n\nRUE DE MIRÓ\n" . $c['site'], $c['shop_email']);
     }
 }
 
@@ -560,7 +582,7 @@ function mail_tpl(array $o): string {
       . '<a href="' . $site . '/"><img src="' . $img . 'logo.png" width="190" alt="RUE DE MIRÓ" style="display:inline-block;width:190px;height:auto;border:0"></a>'
       . '<p style="margin:22px 0 0;font-family:' . $mono . ';font-size:11px;letter-spacing:1.5px;text-transform:uppercase">' . $nav . '</p>'
       . '<p style="margin:22px 0 0">Вопросы? Ответьте на это письмо или напишите нам<br>'
-      . '<a href="tel:+79263777499" style="' . $a . '">+7 (926) 377-74-99</a>&nbsp;· <a href="https://t.me/+79263777499" style="' . $a . '">Telegram</a>&nbsp;· <a href="mailto:salut@ruedemiro.com" style="' . $a . '">salut@ruedemiro.com</a></p>'
+      . '<a href="https://t.me/ruedemiro_salut" style="' . $a . '">Telegram @ruedemiro_salut</a>&nbsp;· <a href="mailto:salut@ruedemiro.com" style="' . $a . '">salut@ruedemiro.com</a></p>'
       . '<p style="margin:14px 0 0"><a href="https://t.me/ruedemiro" style="' . $a . '">Telegram-канал</a>&nbsp;· <a href="https://instagram.com/ruedemiro/" style="' . $a . '">Instagram*</a>&nbsp;· <a href="https://ru.pinterest.com/RUEDEMIRO/" style="' . $a . '">Pinterest</a></p>'
       . '<p style="margin:22px 0 0;font-size:11px;line-height:1.5;color:#8C8A87">* Instagram принадлежит компании Meta, признанной экстремистской организацией и запрещённой в РФ.</p>'
       . (!empty($o['unsub']) ? '<p style="margin:10px 0 0;font-size:11px;color:#8C8A87">Вы получили это письмо, потому что подписались на рассылку на сайте ruedemiro.com. <a href="' . $o['unsub'] . '" style="color:#8C8A87;text-decoration:underline">Отписаться</a></p>' : '')

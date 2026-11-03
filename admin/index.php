@@ -68,7 +68,7 @@ $subs = [];
 foreach (jread($dir . '/subscribers.json') as $em => $s) {
     $st = !empty($s['unsub_at']) ? 'отписался' : (!empty($s['confirmed_at']) ? 'подтверждён' : 'не подтвердил адрес');
     $subs[] = [
-        'Почта' => $s['email'] ?? $em, 'Статус' => $st, 'Подписался' => dt($s['consent_at'] ?? ($s['created_at'] ?? '')),
+        'Почта' => $s['email'] ?? $em, 'Имя' => $s['name'] ?? '', 'Статус' => $st, 'Подписался' => dt($s['consent_at'] ?? ($s['created_at'] ?? '')),
         'Подтвердил' => dt($s['confirmed_at'] ?? ''), 'Код −10%' => $s['code'] ?? '', 'Код до' => d($s['code_until'] ?? ''),
         'Код использован' => is_array($s['code_used'] ?? null) ? trim(($s['code_used']['order'] ?? '') . ' ' . dt($s['code_used']['at'] ?? '')) : (string)($s['code_used'] ?? ''),
         'Отписался' => dt($s['unsub_at'] ?? ''), 'Страница' => $s['page'] ?? '', 'created' => $s['created_at'] ?? '',

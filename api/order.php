@@ -47,7 +47,7 @@ if (mb_strlen($city['name']) < 2) out(['ok' => false, 'error' => 'Укажите
 if ($method === 'cdek_pvz' && !$pvz && mb_strlen($pvzManual) < 3) out(['ok' => false, 'error' => 'Выберите пункт выдачи.']);
 if ($method === 'cdek_courier' && mb_strlen($address) < 5) out(['ok' => false, 'error' => 'Укажите адрес доставки.']);
 
-$dprice = delivery_price($method, $city, $t['free_ship'], $t['units']);
+$dprice = delivery_price($method, $city, (int)$t['sum'], $t['units']);
 $total = $t['sum'] + $dprice;
 $certAmt = $cert ? min($cert['balance'], $total) : 0;
 $id = 'RDM-' . date('ymd') . '-' . str_pad((string)random_int(0, 9999), 4, '0', STR_PAD_LEFT);

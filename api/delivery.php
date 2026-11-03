@@ -28,4 +28,6 @@ if ($method === 'cdek_pvz' || $method === '') {
     }
     usort($points, fn($a, $b) => strcmp($a['address'], $b['address']));
 }
-out(['ok' => true, 'city' => ['code' => $c['code'], 'name' => $c['city'], 'region' => $c['region'] ?? ''], 'prices' => $prices, 'points' => $points]);
+$far = ship_far(['code' => $c['code'], 'name' => $c['city'], 'region' => $c['region'] ?? '']);
+out(['ok' => true, 'city' => ['code' => $c['code'], 'name' => $c['city'], 'region' => $c['region'] ?? '', 'far' => $far,
+     'free' => ['cdek_pvz' => ship_free_from('cdek_pvz', $far), 'cdek_courier' => ship_free_from('cdek_courier', $far)]], 'prices' => $prices, 'points' => $points]);
