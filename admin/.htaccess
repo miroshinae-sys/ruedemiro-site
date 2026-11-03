@@ -1,0 +1,15 @@
+# Страница заказов: только по логину и паролю и только по HTTPS (HTTPS на nic.ru завершается на прокси).
+# Файл паролей лежит вне папки сайта; создать или сменить пароль:
+#   ssh -t rdm 'htpasswd -B -c ~/.htpasswd-ruedemiro admin && chmod 644 ~/.htpasswd-ruedemiro'
+AuthType Basic
+AuthName "RUE DE MIRO"
+AuthUserFile /home/rue7967939/.htpasswd-ruedemiro
+<RequireAll>
+  Require expr %{HTTP:X-Forwarded-Proto} == 'https'
+  Require valid-user
+</RequireAll>
+DirectoryIndex index.php
+Options -Indexes
+<IfModule mod_headers.c>
+Header always set X-Robots-Tag "noindex, nofollow"
+</IfModule>
