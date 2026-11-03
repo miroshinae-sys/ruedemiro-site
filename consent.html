@@ -256,8 +256,8 @@ var RDM = (function () {
   };
   var TR = { place: { name: 'Поднос Place', tagline: 'Сталь · 20,4 × 15,6 см', img: '/img/v2/tray-place.jpg', price: 990 },
              ruelle: { name: 'Поднос Ruelle', tagline: 'Сталь · 20 × 8,5 см', img: '/img/v2/tray-ruelle.jpg', price: 590 } };
-  var SETS = { set_petite: { name: 'Petite Rue', kit: 'core.recharge:ruelle' }, set_grande3: { name: 'Grande Rue · 3', kit: 'core.recharge.balance:ruelle' },
-               set_grande5: { name: 'Grande Rue · 5', kit: 'core.recharge.escape.weightless.balance:place' } };
+  var SETS = { set_petite: { name: 'Petite Rue', kit: 'core.recharge:none' }, set_grande3: { name: 'Grande Rue · 3', kit: 'core.recharge.balance:none' },
+               set_grande5: { name: 'Grande Rue · 5', kit: 'core.recharge.escape.weightless.balance:none' } };
   var ORDER = ['core', 'recharge', 'escape', 'weightless', 'balance'];
   function get() { try { var c = JSON.parse(localStorage.getItem(K) || '{}'); return (c && typeof c === 'object') ? c : {}; } catch (e) { return {}; } }
   function save(c) { try { localStorage.setItem(K, JSON.stringify(c)); } catch (e) {} try { window.dispatchEvent(new Event('rdm-cart')); } catch (e) {} }

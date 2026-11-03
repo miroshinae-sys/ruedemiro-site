@@ -22,10 +22,12 @@ function cfg(): array {
             'ruelle' => ['name' => 'Поднос Ruelle RUE DE MIRÓ, нержавеющая сталь, 20 × 8,5 см', 'price' => 590],
         ]];
         $c += ['sets' => [   // готовые наборы = наборы конструктора с названием
-            'set_petite'  => ['name' => 'Petite Rue',     'kit' => 'core.recharge:ruelle'],
-            'set_grande3' => ['name' => 'Grande Rue · 3', 'kit' => 'core.recharge.balance:ruelle'],
-            'set_grande5' => ['name' => 'Grande Rue · 5', 'kit' => 'core.recharge.escape.weightless.balance:place'],
+            'set_petite'  => ['name' => 'Petite Rue',     'kit' => 'core.recharge:none'],
+            'set_grande3' => ['name' => 'Grande Rue · 3', 'kit' => 'core.recharge.balance:none'],
+            'set_grande5' => ['name' => 'Grande Rue · 5', 'kit' => 'core.recharge.escape.weightless.balance:none'],
         ]];
+        // подносы временно не продаются: готовые наборы — без подноса (поставьте 'trays_off' => false в config.php, чтобы вернуть)
+        if ($c['trays_off'] ?? true) foreach ($c['sets'] as $k => $st) $c['sets'][$k]['kit'] = preg_replace('/:(ruelle|place)$/', ':none', $st['kit']);
         $c += ['cert' => [
             'max' => 50000, 'months' => 12,
             'payment_method' => 3,   // признак способа расчёта при продаже сертификата: 3 — аванс (уточните у бухгалтера)

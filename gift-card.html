@@ -286,8 +286,8 @@ var RDM = (function () {
   };
   var TR = { place: { name: 'Поднос Place', tagline: 'Сталь · 20,4 × 15,6 см', img: '/img/v2/tray-place.jpg', price: 990 },
              ruelle: { name: 'Поднос Ruelle', tagline: 'Сталь · 20 × 8,5 см', img: '/img/v2/tray-ruelle.jpg', price: 590 } };
-  var SETS = { set_petite: { name: 'Petite Rue', kit: 'core.recharge:ruelle' }, set_grande3: { name: 'Grande Rue · 3', kit: 'core.recharge.balance:ruelle' },
-               set_grande5: { name: 'Grande Rue · 5', kit: 'core.recharge.escape.weightless.balance:place' } };
+  var SETS = { set_petite: { name: 'Petite Rue', kit: 'core.recharge:none' }, set_grande3: { name: 'Grande Rue · 3', kit: 'core.recharge.balance:none' },
+               set_grande5: { name: 'Grande Rue · 5', kit: 'core.recharge.escape.weightless.balance:none' } };
   var ORDER = ['core', 'recharge', 'escape', 'weightless', 'balance'];
   function get() { try { var c = JSON.parse(localStorage.getItem(K) || '{}'); return (c && typeof c === 'object') ? c : {}; } catch (e) { return {}; } }
   function save(c) { try { localStorage.setItem(K, JSON.stringify(c)); } catch (e) {} try { window.dispatchEvent(new Event('rdm-cart')); } catch (e) {} }
@@ -485,7 +485,7 @@ class Component extends DCLogic {
     var rub = function (x) { var s = String(Math.round(x)); return (s.length > 4 ? s.replace(/\B(?=(\d{3})+(?!\d))/g, ' ') : s) + ' ₽'; };
     var cv = parseInt(custom, 10), customOk = /^\d+$/.test(String(custom).trim()) && cv >= 1 && cv <= 50000;
     var a = custom ? (customOk ? cv : 0) : amt;
-    var NOMS = [[3000, 'МАСЛО + ПОДНОС'], [5000, 'ДВА МАСЛА В НАБОРЕ'], [7000, 'GRANDE RUE · 3'], [10000, 'GRANDE RUE · 5']];
+    var NOMS = [[3000, 'ОДНО МАСЛО'], [5000, 'ДВА МАСЛА В НАБОРЕ'], [7000, 'GRANDE RUE · 3'], [10000, 'GRANDE RUE · 5']];
     var p2 = function (n) { return (n < 10 ? '0' : '') + n; };
     var base = when === 'later' && date ? new Date(date + 'T12:00:00') : new Date();
     var exp = new Date(base.getTime()); exp.setFullYear(exp.getFullYear() + 1);

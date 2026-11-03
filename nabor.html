@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Собрать набор сухих масел для тела — скидка до 20% и поднос в подарок | RUE DE MIRÓ</title>
-<meta name="description" content="Соберите набор из 2–5 сухих масел RUE DE MIRÓ: скидка 10%, 15% или 20%, стальной поднос со скидкой или в подарок, подарочная коробка. Доставка по России.">
+<title>Собрать набор сухих масел для тела — скидка до 20% | RUE DE MIRÓ</title>
+<meta name="description" content="Соберите набор из 2–5 сухих масел RUE DE MIRÓ: скидка 10%, 15% или 20%, открытка в каждой посылке. Доставка по России.">
 <link rel="canonical" href="https://ruedemiro.com/nabor">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="RUE DE MIRÓ">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:url" content="https://ruedemiro.com/nabor">
-<meta property="og:title" content="Собрать набор сухих масел для тела — скидка до 20% и поднос в подарок | RUE DE MIRÓ">
-<meta property="og:description" content="Соберите набор из 2–5 сухих масел RUE DE MIRÓ: скидка 10%, 15% или 20%, стальной поднос со скидкой или в подарок, подарочная коробка. Доставка по России.">
-<meta property="og:image" content="https://ruedemiro.com/img/v2/tray-ruelle.jpg">
+<meta property="og:title" content="Собрать набор сухих масел для тела — скидка до 20% | RUE DE MIRÓ">
+<meta property="og:description" content="Соберите набор из 2–5 сухих масел RUE DE MIRÓ: скидка 10%, 15% или 20%, открытка в каждой посылке. Доставка по России.">
+<meta property="og:image" content="https://ruedemiro.com/img/v2/hero-bottles.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F6F4F0">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "RUE DE MIRÓ", "url": "https://ruedemiro.com/", "logo": "https://ruedemiro.com/img/logo.svg", "email": "salut@ruedemiro.com", "sameAs": ["https://t.me/ruedemiro", "https://ru.pinterest.com/RUEDEMIRO/", "https://www.instagram.com/ruedemiro/"]}</script>
@@ -227,8 +227,8 @@ var RDM = (function () {
   };
   var TR = { place: { name: 'Поднос Place', tagline: 'Сталь · 20,4 × 15,6 см', img: '/img/v2/tray-place.jpg', price: 990 },
              ruelle: { name: 'Поднос Ruelle', tagline: 'Сталь · 20 × 8,5 см', img: '/img/v2/tray-ruelle.jpg', price: 590 } };
-  var SETS = { set_petite: { name: 'Petite Rue', kit: 'core.recharge:ruelle' }, set_grande3: { name: 'Grande Rue · 3', kit: 'core.recharge.balance:ruelle' },
-               set_grande5: { name: 'Grande Rue · 5', kit: 'core.recharge.escape.weightless.balance:place' } };
+  var SETS = { set_petite: { name: 'Petite Rue', kit: 'core.recharge:none' }, set_grande3: { name: 'Grande Rue · 3', kit: 'core.recharge.balance:none' },
+               set_grande5: { name: 'Grande Rue · 5', kit: 'core.recharge.escape.weightless.balance:none' } };
   var ORDER = ['core', 'recharge', 'escape', 'weightless', 'balance'];
   function get() { try { var c = JSON.parse(localStorage.getItem(K) || '{}'); return (c && typeof c === 'object') ? c : {}; } catch (e) { return {}; } }
   function save(c) { try { localStorage.setItem(K, JSON.stringify(c)); } catch (e) {} try { window.dispatchEvent(new Event('rdm-cart')); } catch (e) {} }
@@ -437,9 +437,9 @@ class Component extends DCLogic {
     var trayFull = hasTray ? full[tr] : 0;
     var total = oilsSum + (hasTray ? trayPrice : 0);
     var ship = 0;
-    vals.tiers = [['2 МАСЛА', '−10%', '', n === 2], ['3–4 МАСЛА', '−15%', 'ДОСТАВКА 0 ₽', n === 3 || n === 4], ['5 МАСЕЛ', '−20%', 'ДОСТАВКА 0 ₽', n === 5]].map(function (t) { return { n: t[0], d: t[1], tray: t[2], bg: t[3] ? '#1B1A19' : 'transparent', fg: t[3] ? '#FFFFFF' : '#1B1A19' }; });
+    vals.tiers = [['2 МАСЛА', '−10%', '', n === 2], ['3–4 МАСЛА', '−15%', '', n === 3 || n === 4], ['5 МАСЕЛ', '−20%', '', n === 5]].map(function (t) { return { n: t[0], d: t[1], tray: t[2], bg: t[3] ? '#1B1A19' : 'transparent', fg: t[3] ? '#FFFFFF' : '#1B1A19' }; });
     vals.counter = n + ' ИЗ 5' + (d ? ' · −' + d + '%' : '');
-    vals.hint = n < 2 ? 'ДОБАВЬТЕ ЕЩЁ ' + (2 - n) + ' — НАБОР НАЧИНАЕТСЯ С ДВУХ МАСЕЛ' : n === 2 ? 'ЕЩЁ ОДНО МАСЛО — СКИДКА 15% И БЕСПЛАТНАЯ ДОСТАВКА' : n === 3 ? 'ЕЩЁ ДВА — И СКИДКА 20%' : n === 4 ? 'ЕЩЁ ОДНО — СКИДКА 20%' : 'МАКСИМАЛЬНАЯ СКИДКА 20%';
+    vals.hint = n < 2 ? 'ДОБАВЬТЕ ЕЩЁ ' + (2 - n) + ' — НАБОР НАЧИНАЕТСЯ С ДВУХ МАСЕЛ' : n === 2 ? 'ЕЩЁ ОДНО МАСЛО — СКИДКА 15%' : n === 3 ? 'ЕЩЁ ДВА — И СКИДКА 20%' : n === 4 ? 'ЕЩЁ ОДНО — СКИДКА 20%' : 'МАКСИМАЛЬНАЯ СКИДКА 20%';
     vals.trays = [['none', 'Без подноса', ''], ['ruelle', 'Поднос Ruelle', '20 × 8,5 СМ · ТРИ ФЛАКОНА В РЯД'], ['place', 'Поднос Place', '20,4 × 15,6 СМ · ДО ПЯТИ ФЛАКОНОВ']].map(function (t) {
       var on = t[0] === tr, p = t[0] === 'none' ? null : tp(t[0]);
       return { name: t[1], size: t[2], on: on ? 'true' : 'false', bg: on ? '#FFFFFF' : 'transparent', border: on ? '2px solid #1B1A19' : '1px solid #D6D2CB', op: n < 2 && t[0] !== 'none' ? '0.5' : '1',
@@ -457,7 +457,7 @@ class Component extends DCLogic {
     vals.trayLine = hasTray ? (tr === 'ruelle' ? 'Поднос Ruelle' : 'Поднос Place') : 'Поднос';
     vals.trayRub = hasTray ? (trayPrice === 0 ? 'в подарок' : rub(trayPrice)) : '—';
     vals.packLine = 'Открытка, калька, марка';
-    vals.ship = ship === 0 ? 'бесплатно' : 'от 350 ₽';
+    vals.ship = 'в пункт выдачи — 0 ₽';
     vals.total = rub(total);
     var save = oilsFull + trayFull - total;
     vals.saveText = save > 0 ? 'ЭКОНОМИЯ ' + rub(save).toUpperCase() : '';
