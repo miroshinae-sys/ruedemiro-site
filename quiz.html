@@ -462,13 +462,13 @@ if (!window.__rdmNav) { window.__rdmNav = 1; document.addEventListener('click', 
       '<label for="rp-e" class="rp-sr">Электронная почта</label><input id="rp-e" type="email" autocomplete="email" inputmode="email" placeholder="Электронная почта" required>' +
       '<label class="rp-c"><input type="checkbox" id="rp-pd"><span>Даю <a href="/consent" target="_blank">согласие на&nbsp;обработку персональных данных</a> и&nbsp;подтверждаю, что&nbsp;ознакомлена с&nbsp;<a href="/privacy" target="_blank">Политикой конфиденциальности</a></span></label>' +
       '<label class="rp-c"><input type="checkbox" id="rp-ok"><span>Согласна получать рекламные и&nbsp;информационные письма RUE DE MIRÓ. Отписаться можно в&nbsp;любом письме</span></label>' +
-      '<button type="submit" class="rp-go" disabled>Получить промокод</button>' +
+      '<button type="submit" class="rp-go">Получить промокод</button>' +
       '<div class="rp-err" role="alert"></div>' +
       '</form><button type="button" class="rp-x" aria-label="Закрыть">×</button></div>';
     document.body.appendChild(root);
     requestAnimationFrame(function () { root && root.classList.add('on'); });
     var form = root.querySelector('form'), err = root.querySelector('.rp-err'), go = root.querySelector('.rp-go');
-    var upd = function () { go.disabled = !(root.querySelector('#rp-pd').checked && root.querySelector('#rp-ok').checked); }; root.querySelector('#rp-pd').onchange = upd; root.querySelector('#rp-ok').onchange = upd;
+    var upd = function () { err.textContent = ''; root.querySelectorAll('label.rp-c').forEach(function (l) { l.style.outline = ''; }); }; root.querySelector('#rp-pd').onchange = upd; root.querySelector('#rp-ok').onchange = upd;
     root.addEventListener('click', function (e) { if (e.target === root) close(true); });
     root.querySelector('.rp-x').onclick = function () { close(true); };
         document.addEventListener('keydown', onKey, true);
@@ -477,7 +477,7 @@ if (!window.__rdmNav) { window.__rdmNav = 1; document.addEventListener('click', 
       e.preventDefault();
       var em = root.querySelector('#rp-e').value.trim(), nm = root.querySelector('#rp-n').value.trim(), ok = root.querySelector('#rp-ok').checked && root.querySelector('#rp-pd').checked;
       if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) { err.textContent = 'Проверьте адрес почты.'; return; }
-      if (!ok) { err.textContent = 'Отметьте согласие на получение писем.'; return; }
+      if (!ok) { err.textContent = 'Отметьте согласие на обработку данных и на получение писем — это нужно, чтобы прислать код.'; [].forEach.call((err.closest('form') || document).querySelectorAll('input[type=checkbox]'), function (x) { var l = x.closest('label'); if (!l) return; l.style.outline = x.checked ? '' : '1px solid #9B2C2C'; l.style.outlineOffset = '4px'; x.onchange = function () { l.style.outline = ''; err.textContent = ''; }; }); return; }
       err.textContent = ''; go.disabled = true; go.textContent = 'Отправляем…';
       var done = function (note) {
         LS.set('rdm-sub', '1');
@@ -501,7 +501,7 @@ if (!window.__rdmNav) { window.__rdmNav = 1; document.addEventListener('click', 
     var f = e.target; if (!f || !f.classList || !f.classList.contains('rdm-sub')) return; e.preventDefault();
     var em = (f.querySelector('input[type=email]').value || '').trim(), ok = [].every.call(f.querySelectorAll('input[type=checkbox]'), function (x) { return x.checked; }), err = f.querySelector('.sub-err'), go = f.querySelector('.sub-go');
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) { err.textContent = 'Проверьте адрес почты.'; return; }
-    if (!ok) { err.textContent = 'Отметьте согласие на получение писем.'; return; }
+    if (!ok) { err.textContent = 'Отметьте согласие на обработку данных и на получение писем — это нужно, чтобы прислать код.'; [].forEach.call((err.closest('form') || document).querySelectorAll('input[type=checkbox]'), function (x) { var l = x.closest('label'); if (!l) return; l.style.outline = x.checked ? '' : '1px solid #9B2C2C'; l.style.outlineOffset = '4px'; x.onchange = function () { l.style.outline = ''; err.textContent = ''; }; }); return; }
     err.textContent = ''; go.disabled = true; var t0 = go.textContent; go.textContent = 'Отправляем…';
     var done = function (note) { LS.set('rdm-sub', '1'); f.innerHTML = '<p class="sub-done" style="margin:0;font-family:\'Cormorant Garamond\',Georgia,serif;font-style:italic;font-size:24px;line-height:1.4">Письмо отправлено на ' + em.replace(/[<>&"]/g, '') + '. Подтвердите адрес — и код −10% придёт следом.</p>' + (note ? '<p style="margin:8px 0 0;font-family:\'IBM Plex Mono\',monospace;font-size:11px;letter-spacing:.06em;color:#4A4846">' + note + '</p>' : ''); };
     fetch('/api/subscribe.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: em, name: (typeof nm === 'string' ? nm : ''), consent: true, consent_pd: true, page: location.pathname }) })
