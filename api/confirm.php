@@ -41,7 +41,7 @@ if ($r['fresh']) {
         'hero' => 'hero-welcome.jpg', 'preheader' => "Ваш код −{$pc}% на первый заказ: {$s['code']}",
         'kicker' => 'ДОБРО ПОЖАЛОВАТЬ', 'title' => 'Спасибо, что вы с нами',
         'html' => '<p style="margin:0 0 14px">Адрес подтверждён. Теперь раз в месяц мы будем присылать письмо о бьюти-рутине: как наносить масла и сочетать формулы, о новинках и закрытых предложениях для подписчиков.</p>'
-            . '<p style="margin:0">RUE DE MIRÓ — пять масел для тела с ароматом: Core, Balance, Escape, Recharge и Weightless. Чтобы знакомство было приятным, дарим скидку на первый заказ.</p>',
+            . '<p style="margin:0">RUE DE MIRÓ — пять формул сухого масла для тела: CORE, RECHARGE, ESCAPE, WEIGHTLESS и BALANCE. Аромат у них один, а формулы разные — для разных состояний кожи. Кожа на разных зонах тела ведёт себя по-разному и меняется со временем: в холод, в стресс, после отпуска. Поэтому масло подбирают под то, что нужно коже сейчас, и формулы можно сочетать. Чтобы знакомство было приятным, дарим скидку на первый заказ.</p>',
         'box' => '<p style="margin:0 0 6px;font-family:\'IBM Plex Mono\',\'Courier New\',monospace;font-size:11px;letter-spacing:2px;color:#4A4846">ВАШ КОД НА ПЕРВЫЙ ЗАКАЗ</p>'
             . '<p style="margin:0 0 10px;font-family:Forum,Georgia,serif;font-size:44px;line-height:1.1;color:#1B1A19">−' . $pc . '%</p>'
             . '<p style="margin:0 0 14px"><span style="display:inline-block;padding:10px 18px;border:1px solid #1B1A19;background:#FFFFFF;font-family:\'IBM Plex Mono\',\'Courier New\',monospace;font-size:20px;letter-spacing:4px;color:#1B1A19">' . $e($s['code']) . '</span></p>'

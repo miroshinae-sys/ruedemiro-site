@@ -7,6 +7,7 @@ $email = mb_strtolower(trim((string)($in['email'] ?? '')));
 if (!filter_var($email, FILTER_VALIDATE_EMAIL) || mb_strlen($email) > 120) out(['ok' => false, 'error' => 'Проверьте адрес почты.'], 400);
 if (empty($in['consent']) || empty($in['consent_pd'])) out(['ok' => false, 'error' => 'Нужно согласие на обработку персональных данных и на получение писем.'], 400);
 $name = mb_substr(trim(strip_tags((string)($in['name'] ?? ''))), 0, 40);
+if (!preg_match('/\p{L}{2,}/u', $name)) $name = '';   // «1», «..» и т.п. — не имя
 $ip = $_SERVER['REMOTE_ADDR'] ?? '0';
 
 // защита от ботов: ловушка, слишком быстрое заполнение, gmail с 3+ точками.

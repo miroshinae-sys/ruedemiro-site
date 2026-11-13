@@ -411,7 +411,7 @@ var RDM = (function () {
         lines.push({ id: id, name: t.name, sub: t.tagline, img: t.img, color: '#ECE8E1', href: '/#trays', qty: q, amount: pr * q, full: t.price * q }); full += t.price * q; sum += pr * q; units += q; return; }
       if (SETS[id]) k = kitParse('kit:' + SETS[id].kit); else if (id.indexOf('kit:') === 0) k = kitParse(id);
       if (!k) return; var kp = kitPrice(k);
-      lines.push({ id: id, name: SETS[id] ? SETS[id].name : kitName(k), sub: kitTitle(k) + (k.tray === 'none' ? '' : ' · подарочная коробка'), img: k.tray === 'none' ? P[k.oils[0]].img : k.tray === 'both' ? '/img/v2/set-collection.jpg' : TR[k.tray].img,
+      lines.push({ id: id, name: SETS[id] ? SETS[id].name : kitName(k), sub: kitTitle(k) + (k.tray === 'none' ? '' : ' · подарочная коробка'), img: k.tray === 'none' ? P[k.oils[0]].img : k.tray === 'both' ? '/img/v2/set-collection.jpg' : k.tray === 'place' ? '/img/v2/set-trio.jpg' : '/img/v2/set-duet.jpg',
         color: '#ECE8E1', href: SETS[id] ? '/#sets' : '/nabor', qty: q, amount: kp.price * q, full: kp.full * q });
       full += kp.full * q; sum += kp.price * q; units += (kp.n + (k.tray === 'none' ? 0 : 1)) * q; if (k.tray !== 'none') freeShip = true; });
     sum = Math.round(sum);
