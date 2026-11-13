@@ -134,7 +134,7 @@ h2{font-size:26px !important}
 <div class="px" style="border-bottom: 1px solid #1B1A19; padding: 10px 40px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap">
 <span>[ БЕСПЛАТНАЯ ДОСТАВКА В&nbsp;ПВЗ СДЭК ]</span>
-<span class="hide-m">[ СКИДКА ДО&nbsp;20% НА&nbsp;НАБОРЫ ИЗ&nbsp;2–5&nbsp;МАСЕЛ ]</span>
+<span class="hide-m">[ НАБОРЫ СО&nbsp;СТАЛЬНЫМ ПОДНОСОМ&nbsp;— ОТ&nbsp;3990&nbsp;₽ ]</span>
 </div>
 </div>
 
@@ -146,6 +146,7 @@ h2{font-size:26px !important}
 <a href="/#sets" style="text-decoration: none; padding: 12px 0">Наборы</a>
 <a href="/quiz" style="text-decoration: none; padding: 12px 0">Подбор</a>
 <a href="/gift-card" style="text-decoration: none; padding: 12px 0">Сертификат</a>
+<a href="/where-to-buy" style="text-decoration: none; padding: 12px 0">Где купить</a>
 <a href="/about-us" style="text-decoration: none; padding: 12px 0">О&nbsp;бренде</a>
 </nav>
 <div style="display: flex; align-items: center; gap: 18px">
@@ -156,6 +157,7 @@ h2{font-size:26px !important}
 <a href="/#sets" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Наборы</a>
 <a href="/quiz" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Подбор</a>
 <a href="/gift-card" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Сертификат</a>
+<a href="/where-to-buy" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Где купить</a>
 <a href="/about-us" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">О&nbsp;бренде</a>
 <a href="/nabor" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Собрать набор</a>
 <a href="/delivery" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Доставка и&nbsp;оплата</a><a href="/faq" style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #D6D2CB; text-decoration: none">Вопросы и&nbsp;ответы</a>
@@ -211,16 +213,19 @@ var RDM = (function () {
   function get() { try { var c = JSON.parse(localStorage.getItem(K) || '{}'); return (c && typeof c === 'object') ? c : {}; } catch (e) { return {}; } }
   function save(c) { try { localStorage.setItem(K, JSON.stringify(c)); } catch (e) {} try { window.dispatchEvent(new Event('rdm-cart')); } catch (e) {} }
   function count(c) { c = c || get(); var n = 0; for (var k in c) n += c[k] > 0 ? c[k] : 0; return n; }
-  function disc(n) { return n >= 5 ? 20 : n >= 3 ? 15 : n >= 2 ? 10 : 0; }
+  function disc(n) { return 0; } // скидки за количество нет: наборы с подносом и промокод −10%
   function rub(v) { var s = String(Math.round(v)); return (s.length > 4 ? s.replace(/\B(?=(\d{3})+(?!\d))/g, ' ') : s) + ' ₽'; }
-  function kitParse(key) { var m = /^kit:([a-z.]{3,80}):(none|ruelle|place)$/.exec(key || ''); if (!m) return null; var o = m[1].split('.'); if (o.length < 2 || o.length > 5) return null;
+  function kitParse(key) { var m = /^kit:([a-z.]{3,80}):(none|ruelle|place|both)$/.exec(key || ''); if (!m) return null; var o = m[1].split('.'); if (o.length < 2 || o.length > 5) return null;
     for (var i = 0; i < o.length; i++) if (!P[o[i]]) return null; o.sort(); return { oils: o, tray: m[2] }; }
   function kitKey(oils, tray) { return 'kit:' + oils.slice().sort().join('.') + ':' + (tray || 'none'); }
-  function kitPrice(k) { var n = k.oils.length, d = disc(n), oils = Math.round(n * PRICE * (100 - d) / 100), tf = k.tray === 'none' ? 0 : TR[k.tray].price;
-    var tp = k.tray === 'none' ? 0 : n === 2 ? Math.round(tf / 2) : n === 3 ? (k.tray === 'ruelle' ? 0 : 400) : 0;
-    return { price: oils + tp, full: n * PRICE + tf, n: n, disc: d, trayPrice: tp }; }
+  var DEAL = { '2:ruelle': { price: 3990, name: 'Дуэт' }, '3:place': { price: 6190, name: 'Трио' }, '5:both': { price: 9790, name: 'Коллекция' } };
+  function kitName(k) { var x = DEAL[k.oils.length + ':' + k.tray]; return x ? x.name : 'Свой набор'; }
+  function kitPrice(k) { var n = k.oils.length, tf = k.tray === 'none' ? 0 : k.tray === 'both' ? TR.ruelle.price + TR.place.price : TR[k.tray].price, full = n * PRICE + tf, x = DEAL[n + ':' + k.tray];
+    if (x) return { price: x.price, full: full, n: n, disc: 0, trayPrice: 0, deal: true };
+    var d = disc(n), oils = Math.round(n * PRICE * (100 - d) / 100);
+    return { price: oils + tf, full: full, n: n, disc: d, trayPrice: tf }; }
   function kitTitle(k) { var cnt = {}, out = []; k.oils.forEach(function (o) { cnt[o] = (cnt[o] || 0) + 1; });
-    Object.keys(cnt).forEach(function (o) { out.push(P[o].name + (cnt[o] > 1 ? ' ×' + cnt[o] : '')); }); return out.join(', ') + (k.tray === 'none' ? '' : ' + поднос ' + TR[k.tray].name.split(' ')[1]); }
+    Object.keys(cnt).forEach(function (o) { out.push(P[o].name + (cnt[o] > 1 ? ' ×' + cnt[o] : '')); }); return out.join(', ') + (k.tray === 'none' ? '' : k.tray === 'both' ? ' + подносы Ruelle и Place' : ' + поднос ' + TR[k.tray].name.split(' ')[1]); }
   // полный расчёт корзины (повторяет api/lib.php → price_order)
   function order(c, promo) {
     c = c || get(); var loose = [], looseN = 0, lines = [], full = 0, sum = 0, freeShip = false, units = 0;
@@ -237,10 +242,10 @@ var RDM = (function () {
       full += looseN * PRICE; sum += target / 100; units += looseN; }
     Object.keys(c).forEach(function (id) { var q = Math.min(20, c[id] | 0); if (q <= 0) return; var m = /^tray_(place|ruelle)$/.exec(id), k = null, t;
       if (m) { t = TR[m[1]]; var pr = Math.round(t.price * (100 - wp) / 100); hasTray = true;
-        lines.push({ id: id, name: t.name, sub: t.tagline, img: t.img, color: '#ECE8E1', href: 'Trays.dc.html', qty: q, amount: pr * q, full: t.price * q }); full += t.price * q; sum += pr * q; units += q; return; }
+        lines.push({ id: id, name: t.name, sub: t.tagline, img: t.img, color: '#ECE8E1', href: '/#trays', qty: q, amount: pr * q, full: t.price * q }); full += t.price * q; sum += pr * q; units += q; return; }
       if (SETS[id]) k = kitParse('kit:' + SETS[id].kit); else if (id.indexOf('kit:') === 0) k = kitParse(id);
       if (!k) return; var kp = kitPrice(k);
-      lines.push({ id: id, name: SETS[id] ? SETS[id].name : 'Свой набор', sub: kitTitle(k) + (k.tray === 'none' ? '' : ' · подарочная коробка'), img: k.tray === 'none' ? P[k.oils[0]].img : TR[k.tray].img,
+      lines.push({ id: id, name: SETS[id] ? SETS[id].name : kitName(k), sub: kitTitle(k) + (k.tray === 'none' ? '' : ' · подарочная коробка'), img: k.tray === 'none' ? P[k.oils[0]].img : k.tray === 'both' ? '/img/v2/set-collection.jpg' : TR[k.tray].img,
         color: '#ECE8E1', href: SETS[id] ? '/#sets' : '/nabor', qty: q, amount: kp.price * q, full: kp.full * q });
       full += kp.full * q; sum += kp.price * q; units += (kp.n + (k.tray === 'none' ? 0 : 1)) * q; if (k.tray !== 'none') freeShip = true; });
     sum = Math.round(sum);
@@ -252,12 +257,12 @@ var RDM = (function () {
     return { n: n, disc: d, full: full, unit: n ? sum / n : PRICE, sum: sum, save: full - sum }; }
   return {
     P: P, TR: TR, SETS: SETS, ORDER: ORDER, PRICE: PRICE, FREE: FREE, get: get, count: count, disc: disc, rub: rub, totals: totals, order: order,
-    kitKey: kitKey, kitParse: kitParse, kitPrice: kitPrice, kitTitle: kitTitle,
+    kitKey: kitKey, kitParse: kitParse, kitPrice: kitPrice, kitName: kitName, kitTitle: kitTitle,
     add: function (id, q) { var c = get(); c[id] = (c[id] || 0) + (q || 1); save(c); },
     set: function (id, q) { var c = get(); if (q > 0) c[id] = q; else delete c[id]; save(c); },
     clear: function () { save({}); },
     img: function (src) { try { var e = document.querySelector('img[data-rdm-src="' + src + '"]'); if (e && e.getAttribute('src')) return e.getAttribute('src'); } catch (x) {} return src; },
-    hint: function (n) { n = n == null ? totals().n : n; if (n >= 5) return 'Скидка 20% на масла применена'; if (n >= 3) return 'Ещё ' + (5 - n) + ' — и скидка на масла станет 20%'; if (n === 2) return 'Ещё одна формула — и скидка станет 15%'; if (n === 1) return 'Добавьте вторую формулу — скидка 10%'; return ''; },
+    hint: function () { return 'Наборы с подносом выгоднее: Дуэт — 3990 ₽, Трио — 6190 ₽'; },
     buy: function (c, ids, q) { var self = this; return function () { [].concat(ids).forEach(function (i) { self.add(i, typeof q === 'function' ? q() : (q || 1)); }); c.setState({ justAdded: Date.now() }); clearTimeout(c._ja); c._ja = setTimeout(function () { c.setState({ justAdded: null }); }, 5000); }; },
     watch: function (fn) { window.addEventListener('rdm-cart', fn); window.addEventListener('storage', fn); }
   };
@@ -308,7 +313,7 @@ if (!window.__rdmNav) { window.__rdmNav = 1; document.addEventListener('click', 
       '.rp label.rp-c{display:grid;grid-template-columns:20px 1fr;gap:10px;font-size:12px;line-height:1.5;color:#4A4846;cursor:pointer}.rp label.rp-c input{width:18px;height:18px;margin:1px 0 0;accent-color:#1B1A19}' +
       '.rp .rp-go{min-height:52px;border:0;background:#1B1A19;color:#FFFFFF;font:inherit;font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;cursor:pointer}.rp .rp-go:hover{background:#4A4846}.rp .rp-go[disabled]{opacity:.5;cursor:default}' +
       '.rp .rp-x{position:absolute;top:12px;right:12px;width:44px;height:44px;border:0;background:transparent;font-size:26px;line-height:1;cursor:pointer;color:#1B1A19}.rp .rp-no{align-self:center;border:0;background:none;font:inherit;font-size:12px;color:#8C8A86;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:8px}' +
-      '.rp .rp-err{min-height:18px;font-size:12px;color:#9B2C2C}.rp a{color:#1B1A19;text-underline-offset:3px}' +
+      '.rp .rp-l{font-size:11px !important;line-height:1.5 !important;color:#8C8A86 !important}.rp .rp-l a{color:#8C8A86}.rp .rp-err{min-height:18px;font-size:12px;color:#9B2C2C}.rp a{color:#1B1A19;text-underline-offset:3px}' +
       '@media (max-width:760px){.rp-bg{align-items:flex-end;padding:0}.rp{grid-template-columns:1fr;max-height:92vh}.rp-ph{min-height:0;height:120px}.rp-logo{display:none !important}.rp .rp-t{font-size:17px}.rp label.rp-c{font-size:11px}.rp-k{font-size:18px;padding:10px}.rp-b{padding:28px 20px 20px;gap:14px}.rp h2{font-size:26px}}' +
       '@media (prefers-reduced-motion:reduce){.rp-bg,.rp{transition:none}}';
     document.head.appendChild(s);
@@ -331,39 +336,38 @@ if (!window.__rdmNav) { window.__rdmNav = 1; document.addEventListener('click', 
     root.innerHTML = '<div class="rp" role="dialog" aria-modal="true" aria-labelledby="rp-h">' +
       '<div class="rp-ph"><img loading="lazy" decoding="async" alt="Масло CORE на коже плеча" src="' + img() + '"></div>' +
       '<form class="rp-b" novalidate>' +
-      '<img loading="lazy" decoding="async" class="rp-logo" alt="" src="' + logo() + '"><h2 id="rp-h">Скидка 10% на&nbsp;первый заказ</h2>' +
-      '<p class="rp-t">Подпишитесь на&nbsp;письма RUE DE MIRÓ&nbsp;— пришлём персональный код на&nbsp;почту. Раз&nbsp;в&nbsp;месяц: новые формулы, ритуалы ухода и&nbsp;закрытые предложения.</p>' +
+      '<img loading="lazy" decoding="async" class="rp-logo" alt="" src="' + logo() + '"><h2 id="rp-h">Дарим −10% на&nbsp;первый заказ</h2>' +
+      '<p class="rp-t">За&nbsp;подписку на&nbsp;письма RUE DE MIRÓ. Раз&nbsp;в&nbsp;месяц&nbsp;— новые формулы, ритуалы ухода и&nbsp;закрытые предложения.</p>' +
       '<label for="rp-n" class="rp-sr">Имя</label><input id="rp-n" type="text" autocomplete="given-name" placeholder="Имя" maxlength="40">' +
       '<label for="rp-e" class="rp-sr">Электронная почта</label><input id="rp-e" type="email" autocomplete="email" inputmode="email" placeholder="Электронная почта" required>' +
-      '<label class="rp-c"><input type="checkbox" id="rp-pd"><span>Даю <a href="/consent" target="_blank">согласие на&nbsp;обработку персональных данных</a> и&nbsp;подтверждаю, что&nbsp;ознакомлена с&nbsp;<a href="/privacy" target="_blank">Политикой конфиденциальности</a></span></label>' +
-      '<label class="rp-c"><input type="checkbox" id="rp-ok"><span>Согласна получать рекламные и&nbsp;информационные письма RUE DE MIRÓ. Отписаться можно в&nbsp;любом письме</span></label>' +
+      '<label class="rp-c"><input type="checkbox" id="rp-ok"><span>Даю <a href="/consent" target="_blank">согласие на&nbsp;обработку персональных данных</a>, согласна получать рекламные и&nbsp;информационные письма RUE DE MIRÓ и&nbsp;ознакомлена с&nbsp;<a href="/privacy" target="_blank">Политикой конфиденциальности</a>. Отписаться можно в&nbsp;любом письме</span></label>' +
       '<button type="submit" class="rp-go">Получить промокод</button>' +
       '<div class="rp-err" role="alert"></div>' +
-      '</form><button type="button" class="rp-x" aria-label="Закрыть">×</button></div>';
+      '<p class="rp-l">Код действует на&nbsp;первый заказ на&nbsp;сайте.</p>' +
+      '<input type="text" name="rdm_url" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;opacity:0;pointer-events:none"></form><button type="button" class="rp-x" aria-label="Закрыть">×</button></div>';
     document.body.appendChild(root);
     requestAnimationFrame(function () { root && root.classList.add('on'); });
     var form = root.querySelector('form'), err = root.querySelector('.rp-err'), go = root.querySelector('.rp-go');
-    var upd = function () { err.textContent = ''; root.querySelectorAll('label.rp-c').forEach(function (l) { l.style.outline = ''; }); }; root.querySelector('#rp-pd').onchange = upd; root.querySelector('#rp-ok').onchange = upd;
+    var upd = function () { err.textContent = ''; root.querySelectorAll('label.rp-c').forEach(function (l) { l.style.outline = ''; }); }; root.querySelector('#rp-ok').onchange = upd;
     root.addEventListener('click', function (e) { if (e.target === root) close(true); });
     root.querySelector('.rp-x').onclick = function () { close(true); };
         document.addEventListener('keydown', onKey, true);
     setTimeout(function () { var i = root && root.querySelector('#rp-e'); if (i) i.focus(); }, 60);
     form.onsubmit = function (e) {
       e.preventDefault();
-      var em = root.querySelector('#rp-e').value.trim(), nm = root.querySelector('#rp-n').value.trim(), ok = root.querySelector('#rp-ok').checked && root.querySelector('#rp-pd').checked;
+      var em = root.querySelector('#rp-e').value.trim(), nm = root.querySelector('#rp-n').value.trim(), ok = root.querySelector('#rp-ok').checked;
       if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) { err.textContent = 'Проверьте адрес почты.'; return; }
       if (!ok) { err.textContent = 'Отметьте согласие на обработку данных и на получение писем — это нужно, чтобы прислать код.'; [].forEach.call((err.closest('form') || document).querySelectorAll('input[type=checkbox]'), function (x) { var l = x.closest('label'); if (!l) return; l.style.outline = x.checked ? '' : '1px solid #9B2C2C'; l.style.outlineOffset = '4px'; x.onchange = function () { l.style.outline = ''; err.textContent = ''; }; }); return; }
       err.textContent = ''; go.disabled = true; go.textContent = 'Отправляем…';
-      var done = function (note) {
+      var done = function (note, d) {
         LS.set('rdm-sub', '1');
-        form.innerHTML = '<img loading="lazy" decoding="async" class="rp-logo" alt="" src="' + logo() + '"><h2 id="rp-h" class="rp-sr">Почти готово</h2>' +
-          '<p class="rp-t">Спасибо! Мы отправили письмо на&nbsp;<b style="color:#1B1A19;font-weight:500">' + em.replace(/[<>&"]/g, '') + '</b>. Нажмите в&nbsp;нём «Подтвердить адрес» — и&nbsp;код −10% придёт следом.</p>' +
+        form.innerHTML = '<img loading="lazy" decoding="async" class="rp-logo" alt="" src="' + logo() + '"><h2 id="rp-h">' + (d && d.state === 'active' ? 'Вы уже с&nbsp;нами' : 'Добро пожаловать') + '</h2>' + subDone(d, em) +
           (note ? '<p class="rp-m" style="font-size:11px;text-align:center">' + note + '</p>' : '') + '<button type="button" class="rp-go">Продолжить покупки</button>';
         form.querySelector('.rp-go').onclick = function () { close(false); };
       };
-      fetch('/api/subscribe.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: em, name: (typeof nm === 'string' ? nm : ''), consent: true, consent_pd: true, page: location.pathname }) })
+      fetch('/api/subscribe.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: em, name: (typeof nm === 'string' ? nm : ''), consent: true, consent_pd: true, page: location.pathname, hp: [].map.call(document.querySelectorAll('input[name=rdm_url]'), function (x) { return x.value; }).join(''), ms: Math.round((window.performance && performance.now && performance.now()) || 0) }) })
         .then(function (r) { return r.json(); })
-        .then(function (d) { if (d && d.ok) done(''); else { go.disabled = false; go.textContent = 'Получить промокод'; err.textContent = (d && d.error) || 'Не получилось. Попробуйте ещё раз.'; } })
+        .then(function (d) { if (d && d.ok) done('', d); else { go.disabled = false; go.textContent = 'Получить промокод'; err.textContent = (d && d.error) || 'Не получилось. Попробуйте ещё раз.'; } })
         .catch(function () {
           if (!/ruedemiro\.com$/.test(location.hostname)) { done('Превью: письмо здесь не отправляется. На сайте придёт настоящее.'); return; }
           go.disabled = false; go.textContent = 'Получить промокод'; err.textContent = 'Нет связи. Попробуйте ещё раз.';
@@ -371,6 +375,19 @@ if (!window.__rdmNav) { window.__rdmNav = 1; document.addEventListener('click', 
     };
   }
   window.RDM_POP = open;
+  function subDone(d, em) {
+    var e = function (v) { return String(v == null ? '' : v).replace(/[<>&"]/g, ''); }, pc = (d && d.percent) || 10;
+    var T = 'margin:0;font-size:14px;line-height:1.6;color:#4A4846;text-align:center';
+    if (d && d.code) {
+      try { var L = JSON.parse(sessionStorage.getItem('rdm-codes') || '[]').filter(function (x) { return x.type !== 'welcome'; }); L.push({ code: d.code, type: 'welcome', percent: pc }); sessionStorage.setItem('rdm-codes', JSON.stringify(L)); } catch (x) {}
+      return '<p style="margin:0;font-family:\'IBM Plex Mono\',ui-monospace,monospace;font-size:11px;letter-spacing:.12em;color:#4A4846;text-align:center">ВАШ КОД НА ПЕРВЫЙ ЗАКАЗ</p>' +
+        '<p style="margin:0;font-family:Forum,Georgia,serif;font-size:44px;line-height:1;text-align:center;color:#1B1A19">−' + pc + '%</p>' +
+        '<p style="margin:0;align-self:center;padding:10px 18px;border:1px solid #1B1A19;background:#FFFFFF;font-family:\'IBM Plex Mono\',ui-monospace,monospace;font-size:20px;letter-spacing:.2em;color:#1B1A19;user-select:all">' + e(d.code) + '</p>' +
+        '<p style="' + T + '">Код уже добавлен в&nbsp;корзину и&nbsp;отправлен на&nbsp;' + e(em) + '. Действует' + (d.until ? ' до&nbsp;' + e(d.until) : '') + ' на&nbsp;первый заказ на&nbsp;сайте.</p>';
+    }
+    if (d && d.state === 'active') return '<p style="' + T + '">Вы уже подписаны на&nbsp;письма RUE DE MIRÓ. Код на&nbsp;первый заказ мы&nbsp;присылали на&nbsp;' + e(em) + '&nbsp;— поищите письмо «Ваш код −10% на&nbsp;первый заказ».</p>';
+    return '<p style="' + T + '">Спасибо! Код отправлен на&nbsp;' + e(em) + '.</p>';
+  }
   // блок подписки на страницах: <form class="rdm-sub"> с полями [type=email], [type=checkbox], .sub-err, .sub-go
   document.addEventListener('submit', function (e) {
     var f = e.target; if (!f || !f.classList || !f.classList.contains('rdm-sub')) return; e.preventDefault();
@@ -378,10 +395,10 @@ if (!window.__rdmNav) { window.__rdmNav = 1; document.addEventListener('click', 
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) { err.textContent = 'Проверьте адрес почты.'; return; }
     if (!ok) { err.textContent = 'Отметьте согласие на обработку данных и на получение писем — это нужно, чтобы прислать код.'; [].forEach.call((err.closest('form') || document).querySelectorAll('input[type=checkbox]'), function (x) { var l = x.closest('label'); if (!l) return; l.style.outline = x.checked ? '' : '1px solid #9B2C2C'; l.style.outlineOffset = '4px'; x.onchange = function () { l.style.outline = ''; err.textContent = ''; }; }); return; }
     err.textContent = ''; go.disabled = true; var t0 = go.textContent; go.textContent = 'Отправляем…';
-    var done = function (note) { LS.set('rdm-sub', '1'); f.innerHTML = '<p class="sub-done" style="margin:0;font-family:\'Cormorant Garamond\',Georgia,serif;font-style:italic;font-size:24px;line-height:1.4">Письмо отправлено на ' + em.replace(/[<>&"]/g, '') + '. Подтвердите адрес — и код −10% придёт следом.</p>' + (note ? '<p style="margin:8px 0 0;font-family:\'IBM Plex Mono\',monospace;font-size:11px;letter-spacing:.06em;color:#4A4846">' + note + '</p>' : ''); };
-    fetch('/api/subscribe.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: em, name: (typeof nm === 'string' ? nm : ''), consent: true, consent_pd: true, page: location.pathname }) })
+    var done = function (note, d) { LS.set('rdm-sub', '1'); f.innerHTML = '<div style="display:flex;flex-direction:column;gap:12px;align-items:center">' + subDone(d, em) + (note ? '<p style="margin:0;font-family:\'IBM Plex Mono\',monospace;font-size:11px;letter-spacing:.06em;color:#4A4846">' + note + '</p>' : '') + '</div>'; };
+    fetch('/api/subscribe.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: em, name: (typeof nm === 'string' ? nm : ''), consent: true, consent_pd: true, page: location.pathname, hp: [].map.call(document.querySelectorAll('input[name=rdm_url]'), function (x) { return x.value; }).join(''), ms: Math.round((window.performance && performance.now && performance.now()) || 0) }) })
       .then(function (r) { return r.json(); })
-      .then(function (d) { if (d && d.ok) done(''); else { go.disabled = false; go.textContent = t0; err.textContent = (d && d.error) || 'Не получилось. Попробуйте ещё раз.'; } })
+      .then(function (d) { if (d && d.ok) done('', d); else { go.disabled = false; go.textContent = t0; err.textContent = (d && d.error) || 'Не получилось. Попробуйте ещё раз.'; } })
       .catch(function () { if (!/ruedemiro\.com$/.test(location.hostname)) { done('ПРЕВЬЮ: ПИСЬМО ЗДЕСЬ НЕ ОТПРАВЛЯЕТСЯ.'); return; } go.disabled = false; go.textContent = t0; err.textContent = 'Нет связи. Попробуйте ещё раз.'; });
   }, true);
   // ручное открытие из подвала

@@ -27,7 +27,9 @@ function cfg(): array {
             'set_grande5' => ['name' => 'Grande Rue · 5', 'kit' => 'core.recharge.escape.weightless.balance:none'],
         ]];
         // подносы временно не продаются: готовые наборы — без подноса (поставьте 'trays_off' => false в config.php, чтобы вернуть)
-        if ($c['trays_off'] ?? true) foreach ($c['sets'] as $k => $st) $c['sets'][$k]['kit'] = preg_replace('/:(ruelle|place)$/', ':none', $st['kit']);
+        if ($c['trays_off'] ?? false) foreach ($c['sets'] as $k => $st) $c['sets'][$k]['kit'] = preg_replace('/:(ruelle|place)$/', ':none', $st['kit']);
+        // готовые наборы с подносом: фиксированная цена (масла на выбор)
+        $c += ['deals' => ['2:ruelle' => ['price' => 3990, 'name' => 'Дуэт'], '3:place' => ['price' => 6190, 'name' => 'Трио'], '5:both' => ['price' => 9790, 'name' => 'Коллекция']]];
         $c += ['cert' => [
             'max' => 50000, 'months' => 12,
             'payment_method' => 3,   // признак способа расчёта при продаже сертификата: 3 — аванс (уточните у бухгалтера)
@@ -77,11 +79,10 @@ function http_req(string $method, string $url, array $opt = []): array {
 // Позиции корзины: масла (core…), подносы (tray_place, tray_ruelle), готовые наборы (set_…),
 // наборы из конструктора: kit:<масла через точку>:<none|ruelle|place>, например kit:core.core.escape:ruelle
 function discount(int $n): int {
-    foreach (cfg()['discounts'] as $from => $pct) if ($n >= $from) return (int)$pct;
-    return 0;
+    return 0;   // скидки за количество флаконов нет: наборы с подносом по фиксированной цене и промокод −10%
 }
 function kit_parse(string $key): ?array {
-    if (!preg_match('/^kit:([a-z.]{3,80}):(none|ruelle|place)$/', $key, $m)) return null;
+    if (!preg_match('/^kit:([a-z.]{3,80}):(none|ruelle|place|both)$/', $key, $m)) return null;
     $oils = explode('.', $m[1]); $P = cfg()['products'];
     foreach ($oils as $o) if (!isset($P[$o])) return null;
     if (count($oils) < 2 || count($oils) > 5) return null;
@@ -89,16 +90,20 @@ function kit_parse(string $key): ?array {
     return ['oils' => $oils, 'tray' => $m[2]];
 }
 function kit_price(array $k): array {
-    $c = cfg(); $n = count($k['oils']); $d = discount($n);
-    $oils = (int)round($n * $c['price'] * (100 - $d) / 100);
-    $tf = $k['tray'] === 'none' ? 0 : $c['trays'][$k['tray']]['price'];
-    $tp = $k['tray'] === 'none' ? 0 : ($n === 2 ? (int)round($tf / 2) : ($n === 3 ? ($k['tray'] === 'ruelle' ? 0 : 400) : 0));
-    return ['price' => $oils + $tp, 'full' => $n * $c['price'] + $tf, 'disc' => $d, 'tray_price' => $tp, 'n' => $n];
+    $c = cfg(); $n = count($k['oils']);
+    $tf = $k['tray'] === 'none' ? 0 : ($k['tray'] === 'both' ? $c['trays']['ruelle']['price'] + $c['trays']['place']['price'] : $c['trays'][$k['tray']]['price']); $full = $n * $c['price'] + $tf;
+    $deal = $c['deals'][$n . ':' . $k['tray']] ?? null;
+    if ($deal) return ['price' => (int)$deal['price'], 'full' => $full, 'disc' => 0, 'tray_price' => 0, 'n' => $n];
+    $d = discount($n); $oils = (int)round($n * $c['price'] * (100 - $d) / 100);
+    return ['price' => $oils + $tf, 'full' => $full, 'disc' => $d, 'tray_price' => $tf, 'n' => $n];
+}
+function kit_name(array $k): string {
+    return (string)(cfg()['deals'][count($k['oils']) . ':' . $k['tray']]['name'] ?? 'Свой набор');
 }
 function kit_title(array $k): string {
     $P = cfg()['products']; $cnt = array_count_values($k['oils']); $parts = [];
     foreach ($cnt as $o => $q) $parts[] = strtoupper($o) . ($q > 1 ? ' ×' . $q : '');
-    return implode(', ', $parts) . ($k['tray'] === 'none' ? '' : ' + поднос ' . ucfirst($k['tray']));
+    return implode(', ', $parts) . ($k['tray'] === 'none' ? '' : ($k['tray'] === 'both' ? ' + подносы Ruelle и Place' : ' + поднос ' . ucfirst($k['tray'])));
 }
 // промокод на первый заказ (из подписки) или подарочный сертификат
 function code_lookup(string $code): ?array {
@@ -160,16 +165,17 @@ function price_order(array $items, ?array $promo = null): array {
     }
     foreach ($kits as [$code, $title, $k, $q]) {
         $kp = kit_price($k);
-        $name = 'Набор RUE DE MIRÓ' . ($title ? ' ' . $title : '') . ': ' . kit_title($k);
+        $name = 'Набор RUE DE MIRÓ ' . ($title ?: kit_name($k)) . ': ' . kit_title($k);
         $lines[] = ['code' => $code, 'name' => mb_substr($name, 0, 100), 'qty' => $q, 'price' => $kp['price'] * 100, 'object' => 1];
-        $full += $kp['full'] * $q; $goods += $kp['price'] * $q; $units += $kp['n'] * $q + ($k['tray'] === 'none' ? 0 : $q);
+        $full += $kp['full'] * $q; $goods += $kp['price'] * $q; $units += $kp['n'] * $q + ($k['tray'] === 'none' ? 0 : ($k['tray'] === 'both' ? 2 : 1) * $q);
         if ($k['tray'] !== 'none') $freeShip = true;
     }
     foreach ($lines as &$l) $l['amount'] = $l['price'] * $l['qty']; unset($l);
     $goods = (int)round($goods);
     return ['lines' => $lines, 'items' => $items, 'loose_n' => $looseN, 'disc' => $looseN ? $d : 0, 'full' => $full, 'sum' => $goods,
             'save' => $full - $goods, 'units' => max(1, $units), 'free_ship' => $freeShip || $goods >= $c['free_from'],
-            'promo' => $wp ? ['code' => $promo['code'], 'percent' => $wp, 'applied' => $promoUsed] : null, 'empty' => !$lines];
+            'promo' => $wp ? ['code' => $promo['code'], 'percent' => $wp, 'applied' => $promoUsed] : null, 'empty' => !$lines,
+            'tray_only' => $trays && !$looseN && !$kits];
 }
 // подогнать строки чека под сумму к оплате картой (если часть оплачена сертификатом)
 function lines_fit(array $lines, int $targetK): array {
@@ -595,4 +601,29 @@ function mail_html(string $to, string $subject, string $html, string $text, stri
     $body = "--$b\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\n" . chunk_split(base64_encode($text))
           . "--$b\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\n" . chunk_split(base64_encode($html)) . "--$b--\r\n";
     return mail_out($to, $subject, "Content-Type: multipart/alternative; boundary=\"$b\"", $body, $replyTo);
+}
+
+// письмо подписчику с кодом на первый заказ (одно письмо, без подтверждения адреса)
+function welcome_mail(array $s): bool {
+    $c = cfg(); $pc = $c['welcome']['percent']; $e = fn($v) => htmlspecialchars((string)$v, ENT_QUOTES);
+    $until = date('d.m.Y', strtotime($s['code_until'])); $unsub = $c['site'] . '/api/unsubscribe.php?t=' . $s['token'];
+    $hi = !empty($s['name']) ? 'Здравствуйте, ' . $s['name'] . '!' : 'Здравствуйте!';
+    $text = $hi . "\n\nСпасибо за подписку на письма RUE DE MIRÓ.\n\nВаш код: {$s['code']}\nСкидка {$pc}% на первый заказ на сайте, действует до $until.\n"
+        . "Введите его в поле «Сертификат или промокод» в корзине.\n\n"
+        . "Раз в месяц будем присылать письмо о бьюти-рутине.\nОтписаться: $unsub\n\nRUE DE MIRÓ\n{$c['site']}";
+    $html = mail_tpl([
+        'hero' => 'hero-welcome.jpg', 'preheader' => "Ваш код −{$pc}% на первый заказ: {$s['code']}",
+        'kicker' => 'ДОБРО ПОЖАЛОВАТЬ', 'title' => 'Спасибо, что вы с нами',
+        'html' => '<p style="margin:0 0 14px">' . $e($hi) . '</p>'
+            . '<p style="margin:0 0 14px">Раз в месяц мы будем присылать письмо о бьюти-рутине: как наносить масла и сочетать формулы, о новинках и закрытых предложениях для подписчиков.</p>'
+            . '<p style="margin:0">RUE DE MIRÓ — пять масел для тела с ароматом: Core, Balance, Escape, Recharge и Weightless. Чтобы знакомство было приятным, дарим скидку на первый заказ.</p>',
+        'box' => '<p style="margin:0 0 6px;font-family:\'IBM Plex Mono\',\'Courier New\',monospace;font-size:11px;letter-spacing:2px;color:#4A4846">ВАШ КОД НА ПЕРВЫЙ ЗАКАЗ</p>'
+            . '<p style="margin:0 0 10px;font-family:Forum,Georgia,serif;font-size:44px;line-height:1.1;color:#1B1A19">−' . $pc . '%</p>'
+            . '<p style="margin:0 0 14px"><span style="display:inline-block;padding:10px 18px;border:1px solid #1B1A19;background:#FFFFFF;font-family:\'IBM Plex Mono\',\'Courier New\',monospace;font-size:20px;letter-spacing:4px;color:#1B1A19">' . $e($s['code']) . '</span></p>'
+            . '<p style="margin:0">Действует до ' . $until . '. Введите код в корзине в поле «Сертификат или промокод».</p>',
+        'button' => ['Выбрать масло', $c['site'] . '/#catalog'],
+        'after' => '<p style="margin:0;text-align:center">Не знаете, с чего начать? <a href="' . $c['site'] . '/quiz" style="color:#1B1A19">Подберите формулу за минуту →</a></p>',
+        'unsub' => $unsub,
+    ]);
+    return mail_html($s['email'], "Ваш код −{$pc}% на первый заказ", $html, $text);
 }

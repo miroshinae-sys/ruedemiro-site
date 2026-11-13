@@ -35,6 +35,7 @@ foreach (array_slice((array)($in['codes'] ?? []), 0, 3) as $code) {
 }
 $t = price_order(is_array($in['items'] ?? null) ? $in['items'] : [], $promo);
 if ($t['empty']) out(['ok' => false, 'error' => 'Корзина пуста.']);
+if (!empty($t['tray_only'])) out(['ok' => false, 'error' => 'Подносы продаются вместе с маслом. Добавьте в корзину масло или выберите набор Дуэт или Трио.']);
 
 $TITLES = ['cdek_pvz' => 'СДЭК — пункт выдачи', 'cdek_courier' => 'СДЭК — курьер'];
 $d = $in['delivery'] ?? [];
