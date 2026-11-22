@@ -57,6 +57,29 @@ a{color:#1B1A19}a:hover{color:#4A4846}
 .life{scrollbar-width:none}@media (max-width:900px){.hero-fig{order:-1;aspect-ratio:16 / 10 !important;max-height:none !important;min-height:0 !important}.hero-sec{padding-top:16px !important}.hero-sec .g{gap:20px !important}.hero-txt{gap:14px !important}.hero-txt h1{font-size:32px !important}.hero-txt p{font-size:19px !important}}@media (max-width:900px){.rv{flex-basis:86% !important;grid-template-columns:minmax(0,1fr) !important;min-height:0 !important}.rv>div:first-child{aspect-ratio:4 / 3}}.life::-webkit-scrollbar{display:none}
 
 @media (max-width:900px){#aroma .g>div{grid-column:1 / -1 !important}#aroma .ar-row{width:100% !important}}
+
+.blackrdm-top{padding:10px 20px;margin:0;background:#1B1A19;color:#FFF;text-align:center;font:400 13px/1.5 'IBM Plex Mono',monospace}
+.blackrdm-top strong{margin-right:.5em;white-space:nowrap;letter-spacing:.06em;font-weight:500}
+.hero-grid{position:relative}
+.blackrdm-lockup{position:absolute;z-index:1;top:3px;left:50%;transform:translateX(-50%);width:max-content;max-width:100%;text-align:center;color:#1B1A19;pointer-events:none}
+.blackrdm-heading{margin:0;font:400 clamp(33px,3.8vw,54px)/1 'Forum',Georgia,serif}
+.blackrdm-code{margin:4px 0 0;font:400 clamp(13px,1.35vw,22px)/1.25 'IBM Plex Mono',monospace;white-space:nowrap}
+.blackrdm-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.hero-fig img[hidden]{display:none !important}
+@media (min-width:901px){
+  .blackrdm-active .hero-fig{align-self:start}
+  .blackrdm-active .hero-txt{padding-top:76px}
+}
+@media (max-width:900px){
+  .blackrdm-active .hero-fig{aspect-ratio:1 / 1 !important}
+  .blackrdm-lockup{top:8px}
+  .blackrdm-photo{object-position:50% 0%}
+  .blackrdm-code{font-size:14px}
+}
+@media (max-width:360px){
+  .blackrdm-heading{font-size:30px}
+  .blackrdm-code{margin-top:2px;font-size:12px}
+}
 </style>
 </head>
 <body>
@@ -64,7 +87,8 @@ a{color:#1B1A19}a:hover{color:#4A4846}
 
 <div style="background: #FFFFFF">
 
-<div class="px" style="border-bottom: 1px solid #1B1A19; padding: 10px 40px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em">
+<p class="blackrdm-top" id="blackrdm-top" hidden><strong lang="en">BLACK FRIDAY</strong> скидки 25% на всё, кроме сертификатов</p>
+<div class="px" id="rdm-service-strip" style="border-bottom: 1px solid #1B1A19; padding: 10px 40px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap">
 <span>[ БЕСПЛАТНАЯ ДОСТАВКА В&nbsp;ПВЗ СДЭК ]</span>
 <span class="hide-m">[ НАБОРЫ СО&nbsp;СТАЛЬНЫМ ПОДНОСОМ&nbsp;— ОТ&nbsp;3990&nbsp;₽ ]</span>
@@ -100,9 +124,13 @@ a{color:#1B1A19}a:hover{color:#4A4846}
 </header>
 
 <!-- 1. первый экран: текст слева, фото справа -->
-<section class="py hero-sec" style="padding: 40px 0 56px">
+<section class="py hero-sec" id="rdm-home-hero" style="padding: 40px 0 56px">
 <div class="px" style="max-width: 1280px; margin: 0 auto; padding: 0 40px; display: flex; flex-direction: column; gap: 32px">
-<div class="g" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 40px; align-items: center">
+<div class="g hero-grid" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 40px; align-items: center">
+<div class="blackrdm-lockup" id="blackrdm-lockup" hidden>
+  <h2 class="blackrdm-heading" lang="en">BLACK FRIDAY</h2>
+  <p class="blackrdm-code">[ промокод BLACKRDM -25% ]</p>
+</div>
 <div class="hero-txt" style="grid-column: span 6; display: flex; flex-direction: column; gap: 22px">
 <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.06em; color: #4A4846">[ КОЖА ОТРАЖАЕТ ]</span>
 <h1 class="h1x" style="margin: 0; font-family: 'Forum', 'Optima', Georgia, serif; font-weight: 400; font-size: 56px; line-height: 1.04; letter-spacing: 0.03em">СУХИЕ МАСЛА ДЛЯ&nbsp;ТЕЛА&nbsp;—<br>5&nbsp;ФОРМУЛ ПОД&nbsp;СОСТОЯНИЕ КОЖИ</h1>
@@ -111,12 +139,42 @@ a{color:#1B1A19}a:hover{color:#4A4846}
 <div style="display: flex; gap: 12px 28px; flex-wrap: wrap; padding-top: 18px; border-top: 1px solid #1B1A19; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em"><span>2190&nbsp;₽&nbsp;· 100&nbsp;МЛ</span><span>НАБОРЫ С&nbsp;ПОДНОСОМ&nbsp;— ОТ&nbsp;3990&nbsp;₽</span><span>ДОСТАВКА В&nbsp;ПВЗ СДЭК&nbsp;— 0&nbsp;₽</span></div>
 </div>
 <figure class="hero-fig" style="grid-column: 7 / span 6; margin: 0; position: relative; aspect-ratio: 1 / 1; max-height: calc(100vh - 170px); min-height: 420px; width: 100%; overflow: hidden; background: #ECE8E1">
-<img src="/img/v2/hero-bottles.jpg" alt="Флаконы пяти масел RUE DE MIRÓ на белом столе в солнечном свете" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; display: block">
+<img id="rdm-hero-bottles" src="/img/v2/hero-bottles.jpg" alt="Флаконы пяти масел RUE DE MIRÓ на белом столе в солнечном свете" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; display: block">
+<img id="blackrdm-photo" class="blackrdm-photo" data-campaign-src="/img/v2/set-collection-2.jpg" alt="Два стальных подноса RUE DE MIRÓ и флаконы масла, вид сверху" hidden>
 </figure>
 </div>
 </div>
 </section>
 
+<script>
+  (function () {
+    var hero = document.getElementById('rdm-home-hero');
+    var topLine = document.getElementById('blackrdm-top');
+    var serviceStrip = document.getElementById('rdm-service-strip');
+    var lockup = document.getElementById('blackrdm-lockup');
+    var photo = document.getElementById('blackrdm-photo');
+    var regularPhoto = document.getElementById('rdm-hero-bottles');
+    var starts = Date.parse('2026-11-23T00:00:00+03:00');
+    var ends = Date.parse('2026-12-01T00:00:00+03:00');
+    var preview = location.hostname === 'test.ruedemiro.com' && /^\/blackrdm-preview-26(?:\.html)?\/?$/.test(location.pathname);
+    var transitionTimer;
+    function updateHero() {
+      var now = Date.now();
+      var active = preview || (now >= starts && now < ends);
+      if (active && !photo.hasAttribute('src')) photo.src = photo.getAttribute('data-campaign-src');
+      hero.classList.toggle('blackrdm-active', active);
+      topLine.hidden = lockup.hidden = photo.hidden = !active;
+      serviceStrip.hidden = regularPhoto.hidden = active;
+      window.clearTimeout(transitionTimer);
+      if (!preview && now < ends) {
+        var transition = now < starts ? starts : ends;
+        transitionTimer = window.setTimeout(updateHero, Math.min(transition - now, 2147483647));
+      }
+    }
+    updateHero();
+    window.addEventListener('pageshow', updateHero);
+  })();
+</script>
 <!-- 2. преимущества -->
 <section style="border-top: 1px solid #1B1A19; border-bottom: 1px solid #1B1A19; background: #F6F4F0">
 <div class="px adv" style="max-width: 1280px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr))">
