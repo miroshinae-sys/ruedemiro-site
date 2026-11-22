@@ -18,7 +18,7 @@ function cfg(): array {
         $c += ['promo_codes' => []];
         $c['promo_codes'] += [
             'SALUT10' => ['percent' => 10, 'until' => '2027-12-31'],
-            'BLACKRDM' => ['percent' => 25],
+            'BLACKRDM' => ['percent' => 25, 'from' => '2026-11-23', 'until' => '2026-11-30'],
         ];
         $c += ['smtp' => ['host' => '', 'port' => 465, 'user' => '', 'pass' => '']];
         $c += ['trays' => [
@@ -114,7 +114,9 @@ function code_lookup(string $code): ?array {
     $code = strtoupper(trim($code)); if ($code === '') return null;
     $pc = cfg()['promo_codes'][$code] ?? null;
     if ($pc) {
-        if (!empty($pc['until']) && $pc['until'] < date('Y-m-d')) return ['type' => 'welcome', 'code' => $code, 'error' => 'Срок действия промокода закончился.'];
+        $today = date('Y-m-d'); // календарный день по Москве, дата окончания включительно
+        if (!empty($pc['from']) && $today < $pc['from']) return ['type' => 'welcome', 'code' => $code, 'error' => 'Промокод начнёт действовать ' . date('d.m.Y', strtotime($pc['from'])) . '.'];
+        if (!empty($pc['until']) && $today > $pc['until']) return ['type' => 'welcome', 'code' => $code, 'error' => 'Срок действия промокода закончился.'];
         return ['type' => 'welcome', 'code' => $code, 'percent' => (int)$pc['percent'], 'until' => $pc['until'] ?? null];
     }
     if (preg_match('/^MIRO-[A-Z0-9]{6}$/', $code)) {
