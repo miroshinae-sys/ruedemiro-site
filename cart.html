@@ -354,7 +354,7 @@ var RDM = (function () {
     c = c || get(); var loose = [], looseN = 0, lines = [], full = 0, sum = 0, freeShip = false, units = 0;
     var wp = promo && promo.type === 'welcome' ? promo.percent : 0;
     Object.keys(c).forEach(function (id) { var q = Math.min(20, c[id] | 0); if (q > 0 && P[id]) { loose.push([id, q]); looseN += q; } });
-    var dv = disc(looseN), d = looseN ? Math.max(dv, wp) : 0, hasTray = false;
+    var dv = disc(looseN), d = looseN ? Math.max(dv, wp) : 0, hasTray = false, hasKit = false;
     if (looseN) { var unitK = PRICE * (100 - d), target = Math.round(looseN * unitK / 100) * 100, diff = target - looseN * unitK;
       ORDER.forEach(function (id) { var q = c[id] | 0; if (q <= 0) return; var amt = unitK * q + diff; diff = 0;
         lines.push({ id: id, name: P[id].name, sub: P[id].tagline, img: P[id].img, color: P[id].color, href: P[id].href, qty: q, amount: amt / 100, full: PRICE * q }); });
@@ -367,13 +367,13 @@ var RDM = (function () {
       if (m) { t = TR[m[1]]; var pr = Math.round(t.price * (100 - wp) / 100); hasTray = true;
         lines.push({ id: id, name: t.name, sub: t.tagline, img: t.img, color: '#ECE8E1', href: '/#trays', qty: q, amount: pr * q, full: t.price * q }); full += t.price * q; sum += pr * q; units += q; return; }
       if (SETS[id]) k = kitParse('kit:' + SETS[id].kit); else if (id.indexOf('kit:') === 0) k = kitParse(id);
-      if (!k) return; var kp = kitPrice(k);
+      if (!k) return; var kp = kitPrice(k), pr = Math.round(kp.price * (100 - wp) / 100); hasKit = true;
       lines.push({ id: id, name: SETS[id] ? SETS[id].name : kitName(k), sub: kitTitle(k) + (k.tray === 'none' ? '' : ' · подарочная коробка'), img: k.tray === 'none' ? P[k.oils[0]].img : k.tray === 'both' ? '/img/v2/set-collection.jpg' : k.tray === 'place' ? '/img/v2/set-trio.jpg' : '/img/v2/set-duet.jpg',
-        color: '#ECE8E1', href: SETS[id] ? '/#sets' : '/nabor', qty: q, amount: kp.price * q, full: kp.full * q });
-      full += kp.full * q; sum += kp.price * q; units += (kp.n + (k.tray === 'none' ? 0 : 1)) * q; if (k.tray !== 'none') freeShip = true; });
+        color: '#ECE8E1', href: SETS[id] ? '/#sets' : '/nabor', qty: q, amount: pr * q, full: kp.full * q });
+      full += kp.full * q; sum += pr * q; units += (kp.n + (k.tray === 'none' ? 0 : 1)) * q; if (k.tray !== 'none') freeShip = true; });
     sum = Math.round(sum);
     return { lines: lines, sum: sum, full: full, save: full - sum, looseN: looseN, disc: looseN ? d : 0, units: Math.max(1, units), freeShip: freeShip || sum >= FREE,
-             promoApplied: wp > 0 && ((looseN > 0 && wp > dv) || hasTray), n: count(c) };
+             promoApplied: wp > 0 && ((looseN > 0 && wp > dv) || hasTray || hasKit), n: count(c) };
   }
   // совместимость: расчёт только по маслам поштучно
   function totals(c) { c = c || get(); var n = 0; ORDER.forEach(function (id) { n += (c[id] | 0) > 0 ? c[id] | 0 : 0; }); var d = disc(n), full = n * PRICE, sum = Math.round(full * (100 - d) / 100);
@@ -686,7 +686,7 @@ var submit = function () {
 return { isEmpty: t.n === 0, hasItems: t.n > 0, items: items, dopts: dopts,
 nText: t.n + ' шт.', fullRub: RDM.rub(t.full), discShow: t.save > 0 ? 'flex' : 'none', discLabel: 'Скидка' + (t.promoApplied ? ' с промокодом' : ''), saveRub: RDM.rub(t.save),
 hintShow: t.looseN > 0 && t.looseN < 5 ? 'flex' : 'none', certShow: certAmt ? 'flex' : 'none', certRub: RDM.rub(certAmt),
-codes: codes.map(function (x) { return { code: x.code, note: x.type === 'cert' ? 'сертификат, остаток ' + RDM.rub(x.balance) : (t.promoApplied ? '−' + x.percent + '% на масла' : 'не даёт доп. скидки к этому заказу'), remove: function () { saveCodes(codes.filter(function (y) { return y.code !== x.code; })); } }; }),
+codes: codes.map(function (x) { return { code: x.code, note: x.type === 'cert' ? 'сертификат, остаток ' + RDM.rub(x.balance) : (t.promoApplied ? '−' + x.percent + '% на все товары' : 'не даёт доп. скидки к этому заказу'), remove: function () { saveCodes(codes.filter(function (y) { return y.code !== x.code; })); } }; }),
 applyCode: applyCode, codeBtn: st.codeBusy ? '…' : 'Применить', codeErr: st.codeErr || '', codeErrShow: st.codeErr ? 'block' : 'none',
 totalLabel: certAmt ? 'К оплате' : 'Итого',
 dlvText: dlvText, totalRub: RDM.rub(toPay), freeShow: !isFree ? 'block' : 'none', freeText: 'До бесплатной доставки' + (dlv === 'cdek_courier' ? ' курьером ' : ' ') + RDM.rub(Math.max(0, thr(dlv) - t.sum)) + (far ? ' — для вашего региона особые условия' : ''),

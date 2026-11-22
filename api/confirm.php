@@ -35,7 +35,7 @@ $unsub = $c['site'] . '/api/unsubscribe.php?t=' . $s['token'];
 if ($r['fresh']) {
     $pc = $c['welcome']['percent']; $e = fn($v) => htmlspecialchars((string)$v, ENT_QUOTES);
     $text = "Спасибо, адрес подтверждён.\n\nВаш код: {$s['code']}\nСкидка {$pc}% на первый заказ на сайте, действует до $until.\n"
-        . "Введите его в поле «Сертификат или промокод» в корзине. На наборы с подносом код не действует.\n\n"
+        . "Введите его в поле «Сертификат или промокод» в корзине. Скидка действует на все товары и подарочные наборы, кроме сертификатов.\n\n"
         . "Раз в месяц будем присылать письмо о бьюти-рутине.\nОтписаться: $unsub\n\nRUE DE MIRÓ\n{$c['site']}";
     $html = mail_tpl([
         'hero' => 'hero-welcome.jpg', 'preheader' => "Ваш код −{$pc}% на первый заказ: {$s['code']}",
@@ -45,7 +45,7 @@ if ($r['fresh']) {
         'box' => '<p style="margin:0 0 6px;font-family:\'IBM Plex Mono\',\'Courier New\',monospace;font-size:11px;letter-spacing:2px;color:#4A4846">ВАШ КОД НА ПЕРВЫЙ ЗАКАЗ</p>'
             . '<p style="margin:0 0 10px;font-family:Forum,Georgia,serif;font-size:44px;line-height:1.1;color:#1B1A19">−' . $pc . '%</p>'
             . '<p style="margin:0 0 14px"><span style="display:inline-block;padding:10px 18px;border:1px solid #1B1A19;background:#FFFFFF;font-family:\'IBM Plex Mono\',\'Courier New\',monospace;font-size:20px;letter-spacing:4px;color:#1B1A19">' . $e($s['code']) . '</span></p>'
-            . '<p style="margin:0">Действует до ' . $until . '. Введите код в корзине в поле «Сертификат или промокод».<br>На наборы с подносом код не действует.</p>',
+            . '<p style="margin:0">Действует до ' . $until . '. Введите код в корзине в поле «Сертификат или промокод».<br>Скидка действует на все товары и подарочные наборы, кроме сертификатов.</p>',
         'button' => ['Выбрать масло', $c['site'] . '/#catalog'],
         'after' => '<p style="margin:0;text-align:center">Не знаете, с чего начать? <a href="' . $c['site'] . '/quiz" style="color:#1B1A19">Подберите формулу за минуту →</a></p>',
         'unsub' => $unsub,

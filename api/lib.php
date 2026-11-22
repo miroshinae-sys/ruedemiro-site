@@ -15,7 +15,11 @@ function cfg(): array {
         $c += ['ship' => ['pvz_free' => 0, 'courier_free' => 5000, 'far_pvz_free' => 3500, 'far_courier_free' => 7000,
             'far_regions' => ['Камчат', 'Магадан', 'Сахалин', 'Чукот', 'Саха', 'Якут', 'Амурск', 'Еврейск', 'Хабаровск', 'Приморск', 'Калининград'],
             'far_cities' => ['Норильск']]];
-        $c += ['promo_codes' => ['SALUT10' => ['percent' => 10, 'until' => '2027-12-31']]];
+        $c += ['promo_codes' => []];
+        $c['promo_codes'] += [
+            'SALUT10' => ['percent' => 10, 'until' => '2027-12-31'],
+            'BLACKRDM' => ['percent' => 25],
+        ];
         $c += ['smtp' => ['host' => '', 'port' => 465, 'user' => '', 'pass' => '']];
         $c += ['trays' => [
             'place'  => ['name' => 'Поднос Place RUE DE MIRÓ, нержавеющая сталь, 20,4 × 15,6 см', 'price' => 990],
@@ -143,7 +147,7 @@ function price_order(array $items, ?array $promo = null): array {
         elseif (($k = kit_parse($id))) { $kits[] = ['kit:' . implode('.', $k['oils']) . ':' . $k['tray'], null, $k, $q]; }
     }
     $wp = ($promo && ($promo['type'] ?? '') === 'welcome' && empty($promo['error'])) ? (int)$promo['percent'] : 0;
-    $dv = discount($looseN); $d = $looseN ? max($dv, $wp) : 0; $promoUsed = $wp > 0 && (($looseN > 0 && $wp > $dv) || $trays);
+    $dv = discount($looseN); $d = $looseN ? max($dv, $wp) : 0; $promoUsed = $wp > 0 && (($looseN > 0 && $wp > $dv) || $trays || $kits);
     $full = 0; $goods = 0; $freeShip = false;
     // масла поштучно: цена за флакон в копейках точная, итог округляем до рубля одной строкой-поправкой
     if ($looseN) {
@@ -165,9 +169,10 @@ function price_order(array $items, ?array $promo = null): array {
     }
     foreach ($kits as [$code, $title, $k, $q]) {
         $kp = kit_price($k);
+        $pk = (int)round($kp['price'] * (100 - $wp) / 100) * 100;
         $name = 'Набор RUE DE MIRÓ ' . ($title ?: kit_name($k)) . ': ' . kit_title($k);
-        $lines[] = ['code' => $code, 'name' => mb_substr($name, 0, 100), 'qty' => $q, 'price' => $kp['price'] * 100, 'object' => 1];
-        $full += $kp['full'] * $q; $goods += $kp['price'] * $q; $units += $kp['n'] * $q + ($k['tray'] === 'none' ? 0 : ($k['tray'] === 'both' ? 2 : 1) * $q);
+        $lines[] = ['code' => $code, 'name' => mb_substr($name, 0, 100), 'qty' => $q, 'price' => $pk, 'object' => 1];
+        $full += $kp['full'] * $q; $goods += $pk / 100 * $q; $units += $kp['n'] * $q + ($k['tray'] === 'none' ? 0 : ($k['tray'] === 'both' ? 2 : 1) * $q);
         if ($k['tray'] !== 'none') $freeShip = true;
     }
     foreach ($lines as &$l) $l['amount'] = $l['price'] * $l['qty']; unset($l);
