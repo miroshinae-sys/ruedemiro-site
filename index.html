@@ -64,6 +64,7 @@ a{color:#1B1A19}a:hover{color:#4A4846}
 .blackrdm-lockup{position:absolute;z-index:1;top:3px;left:50%;transform:translateX(-50%);width:max-content;max-width:100%;text-align:center;color:#1B1A19;pointer-events:none}
 .blackrdm-heading{margin:0;font:400 clamp(33px,3.8vw,54px)/1 'Forum',Georgia,serif}
 .blackrdm-code{margin:4px 0 0;font:400 clamp(13px,1.35vw,22px)/1.25 'IBM Plex Mono',monospace;white-space:nowrap}
+.blackrdm-dates{margin:3px 0 0;font:400 clamp(10px,1.05vw,14px)/1.25 'IBM Plex Mono',monospace;letter-spacing:.035em}
 .blackrdm-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
 .hero-fig img[hidden]{display:none !important}
 @media (min-width:901px){
@@ -75,6 +76,11 @@ a{color:#1B1A19}a:hover{color:#4A4846}
   .blackrdm-lockup{top:8px}
   .blackrdm-photo{object-position:50% 0%}
   .blackrdm-code{font-size:14px}
+  .blackrdm-dates{font-size:11px}
+}
+@media (max-width:480px){
+  .blackrdm-active .hero-fig{box-sizing:content-box;padding-top:20px;background:#D5D5D5 !important}
+  .blackrdm-photo{mask-image:linear-gradient(180deg,transparent,#000 10px)}
 }
 @media (max-width:360px){
   .blackrdm-heading{font-size:30px}
@@ -130,6 +136,7 @@ a{color:#1B1A19}a:hover{color:#4A4846}
 <div class="blackrdm-lockup" id="blackrdm-lockup" hidden>
   <h2 class="blackrdm-heading" lang="en">BLACK FRIDAY</h2>
   <p class="blackrdm-code">[ промокод BLACKRDM -25% ]</p>
+  <p class="blackrdm-dates"><time datetime="2026-11-23">23.11</time> - <time datetime="2026-11-30">30.11</time></p>
 </div>
 <div class="hero-txt" style="grid-column: span 6; display: flex; flex-direction: column; gap: 22px">
 <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.06em; color: #4A4846">[ КОЖА ОТРАЖАЕТ ]</span>
